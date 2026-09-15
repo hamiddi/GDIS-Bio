@@ -1,0 +1,5 @@
+comparison,baseline_metric,mean_gdis_error,mean_baseline_error,mean_baseline_minus_gdis_error,n_groups_gdis_strictly_better,n_groups_tied,n_groups_baseline_strictly_better,exact_one_sided_p,n_exact_sign_flip_permutations,q_bh
+GDIS vs Total variance,total_variance,0.011175105125434043,0.026884281042044204,0.01570917591661016,2,2,0,0.25,16,0.25
+GDIS vs Mean lag-1 pseudotemporal autocorrelation,mean_lag1_autocorrelation,0.011175105125434043,0.07388366734386806,0.06270856221843402,4,0,0,0.0625,16,0.08333333333333333
+GDIS vs Gaussian differential entropy,gaussian_differential_entropy,0.011175105125434043,0.1844555560489854,0.17328045092355132,4,0,0,0.0625,16,0.08333333333333333
+GDIS vs Mean pseudotemporal step distance,mean_step_distance,0.011175105125434043,0.05867716789020678,0.047502062764772736,4,0,0,0.0625,16,0.08333333333333333

@@ -1,0 +1,3 @@
+branch,diff1_windows,diff2_windows,normalized_position_parameter_correlation,normalized_position_parameter_mae
+0,41,47,0.9972310202978703,0.033902333291318906
+1,36,43,0.9988223948269609,0.043896933523096406

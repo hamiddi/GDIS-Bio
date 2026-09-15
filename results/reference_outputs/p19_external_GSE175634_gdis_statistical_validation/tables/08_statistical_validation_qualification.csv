@@ -1,0 +1,7 @@
+check,pass
+All frozen external profiles are present,True
+All four tested score profiles are finite,True
+Each individual profile has unique ordered parameters,True
+Source and destination landmarks map to distinct windows in every tested profile,True
+"Exactly 20,000 circular-shift permutations were used per scope x metric",True
+Independent-unit sign/Wilcoxon tests operate across individuals rather than windows,True

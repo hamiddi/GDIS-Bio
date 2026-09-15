@@ -1,0 +1,4 @@
+scope,transition_id,n_profiles,median_absolute_gdis_peak_error,median_signed_gdis_peak_offset,gdis_localization_p,gdis_localization_q,gdis_localization_significant_fdr,n_positive_source_destination_change,n_negative_source_destination_change,median_source_destination_gdis_change,source_destination_wilcoxon_q,source_destination_increase_significant_fdr,gdis_descriptive_localization_rank_among_6_metrics
+shared_backbone,T2,19,0.0376201649999999,0.0236602949999999,0.0019999000049997,0.0039998000099995,True,15,4,0.0534334938817172,0.037078857421875,True,4.0
+cm_extension,T3_CM,15,0.0953951699999999,-0.0658436,0.0006499675016249,0.0025198740062996,True,9,6,0.0084194799117156,0.20306396484375,False,4.0
+cf_extension,T3_CF,14,0.0405031724999999,-0.0318663975,0.0186490675466226,0.027973601319934,True,0,14,-0.051020706719502,1.0,False,4.0

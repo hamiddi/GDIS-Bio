@@ -1,0 +1,5 @@
+branch,differentiation,n_windows,finite_numeric_outputs,gdis_bounded_0_1,parameters_strictly_increasing,critical_source_data_driven
+0,1,41,True,True,True,True
+0,2,47,True,True,True,True
+1,1,36,True,True,True,True
+1,2,43,True,True,True,True

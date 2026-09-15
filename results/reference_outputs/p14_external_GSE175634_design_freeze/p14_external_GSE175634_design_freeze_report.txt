@@ -1,0 +1,122 @@
+================================================================================================
+GDIS-Bio External Validation Design Freeze
+Dataset: GSE175634
+================================================================================================
+
+SCIENTIFIC DESIGN:
+Primary external-validation trajectory = shared developmental backbone:
+  IPSC -> MES -> CMES -> PROG
+
+Secondary terminal extensions:
+  shared backbone -> CM
+  shared backbone -> CF
+
+Common early cells are NOT assigned an eventual CM or CF fate.
+
+Coverage thresholds frozen before expression preprocessing/GDIS:
+  >= 100 cells in EACH shared-backbone state
+  >= 100 terminal-state cells for CM/CF extension analyses
+
+1. FROZEN INDIVIDUAL COHORTS
+------------------------------------------------------------------------------------------------
+Individuals in dataset: 19
+Shared-backbone eligible: 19
+CM-extension eligible: 16
+CF-extension eligible: 15
+Eligible for both terminal extensions: 12
+
+individual  IPSC  MES  CMES  PROG   CM   CF  shared_backbone_eligible  cm_extension_eligible  cf_extension_eligible  dual_terminal_extension_eligible
+     18489  2208 1386  1185   252 1826 1542                      True                   True                   True                              True
+     18499  1977 6280   255  3500 1604   67                      True                   True                  False                             False
+     18505  1404 2415   941  1371 1357   20                      True                   True                  False                             False
+     18508  3374 1153  2410   897 1445 4648                      True                   True                   True                              True
+     18511  2978 4654   468  2668 1371 2160                      True                   True                   True                              True
+     18517  1681 3036   794  1482 2537  266                      True                   True                   True                              True
+     18520   450 3722  1685  1796  749 2899                      True                   True                   True                              True
+     18855   877 2082   295   795  715 4641                      True                   True                   True                              True
+     18858  2142 5754   124  2629 1543    8                      True                   True                  False                             False
+     18870  3250 2515   155  5189  495   66                      True                   True                  False                             False
+     18907  1009 1163  1928   948  751 3223                      True                   True                   True                              True
+     18912  3593 1568  2185  2956 2821  798                      True                   True                   True                              True
+     19093  1962 7798  1176  1979 2552 3157                      True                   True                   True                              True
+     19108  1386 1693   335   180  166  181                      True                   True                   True                              True
+     19127  1903 1796  1342  1142   34 3944                      True                  False                   True                             False
+     19159  2474 1442   816  1212   15 6909                      True                  False                   True                             False
+     19190  2959 2489  1375  1921   35 8171                      True                  False                   True                             False
+     19193  2364 1125  1332  1104  956 3039                      True                   True                   True                              True
+     19209  1742 3106   343  3701  890  151                      True                   True                   True                              True
+
+2. FROZEN CELL COUNTS
+------------------------------------------------------------------------------------------------
+Known annotated cells with pseudotime: 217,528
+Primary shared-backbone cells: 149,776
+Secondary CM-extension cells: 150,683
+Secondary CF-extension cells: 155,604
+
+3. PRE-SPECIFIED BIOLOGICAL TRANSITIONS
+------------------------------------------------------------------------------------------------
+transition_id  analysis_scope source_state destination_state                            biological_label  primary_external_transition  source_global_median_pseudotime  destination_global_median_pseudotime  destination_minus_source_median                           reference_landmark_definition  true_onset_claimed
+           T1 shared_backbone         IPSC               MES                          mesoderm_induction                        False                         0.028432                              0.047112                         0.018680 destination-state median deposited diffusion pseudotime               False
+           T2 shared_backbone          MES              CMES              cardiac_mesoderm_specification                         True                         0.047112                              0.308482                         0.261370 destination-state median deposited diffusion pseudotime               False
+        T3_CM    cm_extension         PROG                CM      cardiomyocyte_terminal_differentiation                        False                         0.315187                              0.466546                         0.151359 destination-state median deposited diffusion pseudotime               False
+        T3_CF    cf_extension         PROG                CF cardiac_fibroblast_terminal_differentiation                        False                         0.315187                              0.405607                         0.090419 destination-state median deposited diffusion pseudotime               False
+
+PRIMARY EXTERNAL TRANSITION: T2 MES -> CMES (cardiac-mesoderm specification)
+Destination-state median pseudotime is a reproducible state landmark, not a true-onset estimate.
+
+4. FROZEN GLOBAL STATE LANDMARKS
+------------------------------------------------------------------------------------------------
+state  n_cells  pseudotime_min  pseudotime_q25  pseudotime_median  pseudotime_mean  pseudotime_q75  pseudotime_max
+ IPSC    39733        0.000000        0.017589           0.028432         0.034096        0.040807        0.796769
+  MES    55177        0.000864        0.028840           0.047112         0.061352        0.076249        0.384102
+ CMES    19144        0.035448        0.269015           0.308482         0.292518        0.328202        0.399606
+ PROG    35722        0.041973        0.276164           0.315187         0.304475        0.336789        0.528564
+   CM    21862        0.066294        0.368249           0.466546         0.516619        0.658317        1.000000
+   CF    45890        0.032593        0.367075           0.405607         0.395850        0.433189        0.547549
+
+5. INDIVIDUAL FROZEN-SEQUENCE ORDERING
+------------------------------------------------------------------------------------------------
+individual  shared_backbone_median_monotonicity  cm_extension_median_monotonicity  cf_extension_median_monotonicity
+     18489                             1.000000                              1.00                              1.00
+     18499                             1.000000                              1.00                              1.00
+     18505                             1.000000                              1.00                              1.00
+     18508                             0.666667                              0.75                              0.75
+     18511                             1.000000                              1.00                              1.00
+     18517                             1.000000                              1.00                              0.75
+     18520                             0.666667                              0.75                              0.75
+     18855                             1.000000                              1.00                              1.00
+     18858                             1.000000                              1.00                              0.75
+     18870                             1.000000                              1.00                              1.00
+     18907                             0.666667                              0.75                              0.75
+     18912                             1.000000                              1.00                              1.00
+     19093                             1.000000                              1.00                              1.00
+     19108                             1.000000                              1.00                              1.00
+     19127                             1.000000                              1.00                              1.00
+     19159                             0.666667                              0.75                              0.75
+     19190                             1.000000                              1.00                              1.00
+     19193                             1.000000                              1.00                              1.00
+     19209                             1.000000                              1.00                              1.00
+
+6. DESIGN-FREEZE QUALIFICATION
+------------------------------------------------------------------------------------------------
+[PASS] All individuals satisfy shared-backbone coverage requirements
+[PASS] At least 10 independent individuals are eligible for CM-extension validation
+[PASS] At least 10 independent individuals are eligible for CF-extension validation
+[PASS] At least 8 individuals support both terminal extensions
+[PASS] Every frozen transition destination has a larger global median pseudotime than its source
+
+Design checks passed: 5/5
+
+FINAL STATUS: PASS
+The GSE175634 external-validation cohort, trajectory scopes, replicate units, coverage rules, and biological transition landmarks are now frozen.
+The next stage may preprocess expression counts without changing these definitions based on GDIS.
+
+IMPORTANT:
+Experimental day remains an independent biological covariate and is NOT used as the primary ordering coordinate.
+Deposited diffusion pseudotime remains the primary ordering coordinate.
+No common-backbone cell has been assigned an eventual CM or CF fate.
+No GDIS result was examined or calculated in this stage.
+
+Report:  <PROJECT_ROOT>/results/p14_external_GSE175634_design_freeze/p14_external_GSE175634_design_freeze_report.txt
+Tables:  <PROJECT_ROOT>/results/p14_external_GSE175634_design_freeze/tables
+Figures: <PROJECT_ROOT>/results/p14_external_GSE175634_design_freeze/figures

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.conda/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Raw public datasets are downloaded by p1 and p12
+raw_data/*
+!raw_data/README.md
+
+# Generated analysis outputs are ignored; compact reference outputs are tracked
+results/*
+!results/README.md
+!results/reference_outputs/
+!results/reference_outputs/**
+
+# Temporary/log files
+*.log
+*.tmp
+*.bak

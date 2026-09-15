@@ -1,0 +1,63 @@
+========================================================================================================
+GDIS-Bio GSE175634 Pre-Specified Sensitivity Analysis
+========================================================================================================
+
+PRIMARY RESULT REMAINS FROZEN:
+  50 PCs
+  400 cells/window
+  100-cell step
+  48 p17b transition-evaluable profiles
+
+1. WINDOW-SIZE SENSITIVITY AT 50 PCs
+--------------------------------------------------------------------------------------------------------
+Completed sensitivity_w300_s75: 48 profiles
+Completed sensitivity_w500_s125: 48 profiles
+
+2. PCA-DIMENSION SENSITIVITY AT PRIMARY 400/100 WINDOWS
+--------------------------------------------------------------------------------------------------------
+Completed 5-PC sensitivity: 48 profiles
+Completed 10-PC sensitivity: 48 profiles
+Completed 20-PC sensitivity: 48 profiles
+Completed 30-PC sensitivity: 48 profiles
+
+3. SCOPE-LEVEL SENSITIVITY SUMMARY
+--------------------------------------------------------------------------------------------------------
+sensitivity_type     sensitivity_label           scope  n_profiles  median_pearson  median_spearman  median_mean_abs_difference  median_abs_peak_shift  max_abs_peak_shift  median_primary_abs_peak_landmark_error  median_sensitivity_abs_peak_landmark_error  fraction_peak_within_0p05_of_primary  median_abs_transition_energy_peak_shift
+       dimension                  10PC    cf_extension          14        0.765881         0.853024                    0.037787               0.001800            0.341013                                0.040503                                    0.042347                              0.785714                                 0.001844
+       dimension                  10PC    cm_extension          15        0.947877         0.818995                    0.023997               0.009059            0.345550                                0.095395                                    0.068508                              0.800000                                 0.000000
+       dimension                  10PC shared_backbone          19        0.879336         0.793869                    0.031528               0.004127            0.308047                                0.037620                                    0.091546                              0.578947                                 0.000914
+       dimension                  20PC    cf_extension          14        0.908384         0.927398                    0.025915               0.004383            0.341013                                0.040503                                    0.037674                              0.785714                                 0.001114
+       dimension                  20PC    cm_extension          15        0.947383         0.927657                    0.016276               0.007458            0.299967                                0.095395                                    0.103645                              0.733333                                 0.000000
+       dimension                  20PC shared_backbone          19        0.936913         0.873713                    0.020046               0.004127            0.308047                                0.037620                                    0.082343                              0.631579                                 0.000771
+       dimension                  30PC    cf_extension          14        0.935902         0.943186                    0.017962               0.000000            0.091184                                0.040503                                    0.036690                              0.928571                                 0.000000
+       dimension                  30PC    cm_extension          15        0.981825         0.973001                    0.011513               0.000000            0.066200                                0.095395                                    0.095395                              0.933333                                 0.000000
+       dimension                  30PC shared_backbone          19        0.984982         0.967554                    0.013062               0.000000            0.255991                                0.037620                                    0.035752                              0.947368                                 0.000000
+       dimension                   5PC    cf_extension          14        0.738840         0.459460                    0.045282               0.078047            0.411693                                0.040503                                    0.041703                              0.428571                                 0.002362
+       dimension                   5PC    cm_extension          15        0.797986         0.694430                    0.037829               0.011188            0.345550                                0.095395                                    0.060858                              0.733333                                 0.001593
+       dimension                   5PC shared_backbone          19        0.822839         0.583573                    0.040551               0.040186            0.301950                                0.037620                                    0.180787                              0.526316                                 0.001494
+          window  sensitivity_w300_s75    cf_extension          14        0.935820         0.940274                    0.014826               0.002006            0.032006                                0.040503                                    0.039073                              1.000000                                 0.001230
+          window  sensitivity_w300_s75    cm_extension          15        0.984459         0.974942                    0.007217               0.009240            0.113290                                0.095395                                    0.093891                              0.866667                                 0.001188
+          window  sensitivity_w300_s75 shared_backbone          19        0.952058         0.964217                    0.015492               0.005783            0.151844                                0.037620                                    0.051093                              0.947368                                 0.002769
+          window sensitivity_w500_s125    cf_extension          14        0.948997         0.934635                    0.015139               0.001812            0.147064                                0.040503                                    0.044931                              0.785714                                 0.001868
+          window sensitivity_w500_s125    cm_extension          15        0.987863         0.977994                    0.006289               0.003648            0.407750                                0.095395                                    0.116438                              0.800000                                 0.001219
+          window sensitivity_w500_s125 shared_backbone          19        0.961739         0.977831                    0.014558               0.002357            0.266005                                0.037620                                    0.027912                              0.947368                                 0.001593
+
+4. SENSITIVITY ANALYSIS QUALIFICATION
+--------------------------------------------------------------------------------------------------------
+[PASS] Every frozen primary scope x individual profile is represented in every sensitivity analysis
+[PASS] All sensitivity comparison statistics are finite
+[PASS] All sensitivity GDIS values satisfy 0 <= GDIS < 1
+[PASS] Lower-dimensional 400/100 windows exactly reproduce the frozen primary parameter sequence
+[PASS] The p18/p19 primary result is not overwritten or redefined
+
+Qualification checks passed: 5/5
+
+FINAL COMPUTATIONAL STATUS: PASS
+All pre-specified window-size and dimensional sensitivities were completed without changing the frozen primary result.
+
+INTERPRETATION RULE:
+Sensitivity results assess robustness only. They must not be used to replace the primary 50-PC / 400/100 result with a more favorable configuration.
+
+Report: <PROJECT_ROOT>/results/p20_external_GSE175634_gdis_sensitivity/p20_external_GSE175634_gdis_sensitivity_report.txt
+Tables: <PROJECT_ROOT>/results/p20_external_GSE175634_gdis_sensitivity/tables
+Data:   <PROJECT_ROOT>/results/p20_external_GSE175634_gdis_sensitivity/data

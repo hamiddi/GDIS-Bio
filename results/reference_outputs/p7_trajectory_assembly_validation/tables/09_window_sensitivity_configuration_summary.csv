@@ -1,0 +1,4 @@
+config,window_size,step_size,overlap_fraction,primary,minimum_windows,maximum_windows,minimum_cell_coverage,minimum_strict_parameter_increment_fraction,maximum_parameter_tie_fraction
+primary_w400_s100,400,100,0.75,True,36,47,0.9810194071230539,1.0,0.0
+sensitivity_w300_s75,300,75,0.75,False,49,64,0.9916826615483045,1.0,0.0
+sensitivity_w500_s125,500,125,0.75,False,28,37,0.9827044025157232,1.0,0.0

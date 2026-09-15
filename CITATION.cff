@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use GDIS-Bio, please cite this repository and the accompanying manuscript."
+title: "GDIS-Bio: A Generalized Dynamical Instability Framework for Localizing Transcriptional State Transitions in Single-Cell Trajectories"
+type: software
+version: 1.0.0
+authors:
+  - family-names: Ismail
+    given-names: Hamid
+  - family-names: Harb
+    given-names: Ahmed
+  - family-names: William
+    given-names: Basem
+  - family-names: Bikdash
+    given-names: Marwan
+repository-code: "https://github.com/hamiddi/GDIS-Bio"
+url: "https://github.com/hamiddi/GDIS-Bio"
+license: MIT
+keywords:
+  - single-cell RNA-seq
+  - pseudotime
+  - dynamical instability
+  - cell-state transitions
+  - trajectory analysis
+  - GDIS

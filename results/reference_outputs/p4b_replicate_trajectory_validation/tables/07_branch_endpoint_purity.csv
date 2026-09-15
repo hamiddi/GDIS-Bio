@@ -1,0 +1,5 @@
+branch,differentiation,expected_endpoint,n_expected_endpoint,n_opposite_endpoint,endpoint_purity
+0,1,sc_ec,1656,0,1.0
+0,2,sc_ec,1748,0,1.0
+1,1,sc_beta,1084,0,1.0
+1,2,sc_beta,1361,0,1.0

@@ -1,0 +1,5 @@
+transition_id,analysis_scope,source_state,destination_state,biological_label,primary_external_transition,source_global_median_pseudotime,destination_global_median_pseudotime,destination_minus_source_median,reference_landmark_definition,true_onset_claimed
+T1,shared_backbone,IPSC,MES,mesoderm_induction,False,0.028431512,0.04711175,0.018680238000000002,destination-state median deposited diffusion pseudotime,False
+T2,shared_backbone,MES,CMES,cardiac_mesoderm_specification,True,0.04711175,0.30848202999999996,0.26137027999999995,destination-state median deposited diffusion pseudotime,False
+T3_CM,cm_extension,PROG,CM,cardiomyocyte_terminal_differentiation,False,0.315187365,0.46654618999999997,0.15135882499999997,destination-state median deposited diffusion pseudotime,False
+T3_CF,cf_extension,PROG,CF,cardiac_fibroblast_terminal_differentiation,False,0.315187365,0.40560668,0.090419315,destination-state median deposited diffusion pseudotime,False

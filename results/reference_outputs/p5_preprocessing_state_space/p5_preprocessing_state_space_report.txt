@@ -1,0 +1,132 @@
+======================================================================================
+GDIS-Bio Preprocessing and State-Space Construction
+Dataset: GSE114412 Stage-5 endocrine trajectory
+======================================================================================
+
+1. SOFTWARE AND PARAMETERS
+--------------------------------------------------------------------------------------
+Python: 3.11.16
+NumPy: 2.4.6
+Pandas: 2.3.3
+Scanpy: 1.11.5
+AnnData: 0.12.19
+Random seed: 0
+Normalization target: 10000
+Top HVGs: 2000
+PCA components: 50
+HVG batch key: Differentiation
+
+2. VALIDATED ENDOCRINE TRAJECTORY
+--------------------------------------------------------------------------------------
+Validated trajectory cells requested: 18,099
+Branches: [0, 1]
+Differentiations: [1, 2]
+Experimental days: [0, 1, 2, 3, 4, 5, 6, 7]
+
+3. TRAJECTORY CELL EXTRACTION FROM EXPRESSION MATRIX
+--------------------------------------------------------------------------------------
+Streaming processed-count matrix in chunks of 500 rows...
+  chunks processed:   10 | matrix rows seen:  5,000 | trajectory cells retained:  1,487
+  chunks processed:   20 | matrix rows seen: 10,000 | trajectory cells retained:  3,348
+  chunks processed:   30 | matrix rows seen: 15,000 | trajectory cells retained:  5,162
+  chunks processed:   40 | matrix rows seen: 20,000 | trajectory cells retained:  6,796
+  chunks processed:   50 | matrix rows seen: 25,000 | trajectory cells retained:  8,636
+  chunks processed:   60 | matrix rows seen: 30,000 | trajectory cells retained: 10,408
+  chunks processed:   70 | matrix rows seen: 35,000 | trajectory cells retained: 12,126
+  chunks processed:   80 | matrix rows seen: 40,000 | trajectory cells retained: 13,970
+  chunks processed:   90 | matrix rows seen: 45,000 | trajectory cells retained: 15,676
+  chunks processed:  100 | matrix rows seen: 50,000 | trajectory cells retained: 17,562
+
+Full count-matrix rows scanned: 51,274
+Trajectory rows retained: 18,099
+Genes in deposited matrix: 16,224
+Sparse selected matrix shape: 18,099 x 16,224
+Selected matrix nonzero values: 28,170,909
+Selected matrix density: 0.095937
+Missing requested trajectory cells: 0
+Unexpected selected cells: 0
+
+4. DEPOSITED VALUE QUALIFICATION
+--------------------------------------------------------------------------------------
+Negative values: 0
+Nonzero values checked: 28,170,909
+Integer-like nonzero fraction: 1.00000000
+[PASS] Deposited processed values are sufficiently count-like for count-based normalization.
+
+5. ANNDATA CONSTRUCTION
+--------------------------------------------------------------------------------------
+AnnData created: 18,099 cells x 16,224 genes
+
+6. QC SUMMARIES
+--------------------------------------------------------------------------------------
+           metric     n   min    q25  median      mean    q75     max
+     total_counts 18099 751.0 1525.0  2541.0 2920.1162 3886.0 16927.0
+n_genes_by_counts 18099 429.0  990.5  1465.0 1556.4898 2010.5  4664.0
+    pct_counts_mt 18099   0.0    0.0     0.0    0.0000    0.0     0.0
+
+7. REMOVE ZERO-EXPRESSION GENES IN ENDOCRINE SUBSET
+--------------------------------------------------------------------------------------
+Genes before zero-expression removal: 16,224
+Genes retained (expressed in >=1 trajectory cell): 16,178
+Genes removed because they are absent from the endocrine subset: 46
+
+8. NORMALIZATION AND LOG1P TRANSFORMATION
+--------------------------------------------------------------------------------------
+Applied per-cell library-size normalization to 10000, followed by log1p.
+
+9. HIGHLY VARIABLE GENE SELECTION
+--------------------------------------------------------------------------------------
+Highly variable genes selected: 2,000
+
+10. COMMON PCA STATE SPACE
+--------------------------------------------------------------------------------------
+PCA implementation: sc.pp.pca(mask_var='highly_variable', random_state=0)
+PCA coordinate matrix: 18,099 cells x 50 PCs
+Cumulative explained variance, first  5 PCs: 0.173979
+Cumulative explained variance, first 10 PCs: 0.206975
+Cumulative explained variance, first 20 PCs: 0.243650
+Cumulative explained variance, first 30 PCs: 0.268955
+Cumulative explained variance, first 50 PCs: 0.311693
+
+11. STATE-SPACE EXPORTS
+--------------------------------------------------------------------------------------
+Saved  5-PC state space: state_space_pca_05.csv.gz
+Saved 10-PC state space: state_space_pca_10.csv.gz
+Saved 20-PC state space: state_space_pca_20.csv.gz
+Saved 30-PC state space: state_space_pca_30.csv.gz
+Saved 50-PC state space: state_space_pca_50.csv.gz
+
+12. PCA GENE LOADINGS
+--------------------------------------------------------------------------------------
+Saved top 20 absolute gene loadings for PCs 1-10.
+
+13. PCA DESCRIPTIVE FIGURES
+--------------------------------------------------------------------------------------
+Saved PC1-PC2 visualizations by day, pseudotime, biological state, branch, and differentiation.
+
+14. SAVE PREPROCESSED ANNDATA
+--------------------------------------------------------------------------------------
+Saved: <PROJECT_ROOT>/results/p5_preprocessing_state_space/data/GSE114412_endocrine_preprocessed_pca.h5ad
+
+15. FINAL STATE-SPACE QUALIFICATION
+--------------------------------------------------------------------------------------
+[PASS] Exactly 18,099 validated endocrine cells retained
+[PASS] All requested trajectory cells recovered exactly
+[PASS] No negative deposited values
+[PASS] Integer-like nonzero fraction >= 0.999
+[PASS] Exactly 2000 HVGs selected
+[PASS] 50 PCA coordinates computed
+[PASS] PCA coordinates contain only finite values
+[PASS] AnnData output written
+
+State-space qualification checks passed: 8/8
+
+FINAL STATUS: PASS
+The validated endocrine trajectory has been successfully transformed into a common PCA state space.
+No GDIS calculation was performed.
+The next stage should evaluate state-space dimensionality and then calculate GDIS using pre-specified trajectory orderings and sensitivity analyses.
+
+Report:  <PROJECT_ROOT>/results/p5_preprocessing_state_space/p5_preprocessing_state_space_report.txt
+Tables:  <PROJECT_ROOT>/results/p5_preprocessing_state_space/tables
+Figures: <PROJECT_ROOT>/results/p5_preprocessing_state_space/figures
+Data:    <PROJECT_ROOT>/results/p5_preprocessing_state_space/data

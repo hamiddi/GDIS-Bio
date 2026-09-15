@@ -1,0 +1,10 @@
+check,pass
+Every frozen scope x individual group is present,True
+Every primary group has >= 15 complete windows,True
+Every primary group has >= 0.95 unique-cell coverage,True
+Parameters are non-decreasing in every configuration/group,True
+Minimum strict parameter-increment fraction >= 0.99,True
+Maximum parameter-tie fraction <= 0.01,True
+All expected biological states are represented in every primary group,True
+All trajectory arrays contain finite 50-PC values,True
+Every scope's pre-specified primary transition landmark lies inside its primary parameter range,False

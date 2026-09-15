@@ -1,0 +1,2 @@
+selected_primary_dimension,selection_status,reference_dimension,selection_rule
+50,PASS,50,smallest dimension passing all pre-specified stability criteria

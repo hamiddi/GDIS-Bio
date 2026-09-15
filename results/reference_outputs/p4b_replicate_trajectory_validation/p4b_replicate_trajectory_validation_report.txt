@@ -1,0 +1,110 @@
+====================================================================================
+GDIS-Bio Replicate Trajectory Validation
+Dataset: GSE114412 Stage 5 endocrine trajectory
+====================================================================================
+
+This targeted validation evaluates trajectory reproducibility between Differentiation 1 and Differentiation 2.
+
+1. BASIC STRUCTURE
+------------------------------------------------------------------------------------
+Total trajectory cells: 18,099
+Branches: [np.int64(0), np.int64(1)]
+Differentiations: [np.int64(1), np.int64(2)]
+Experimental days: [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6), np.int64(7)]
+
+2. DAY vs PSEUDOTIME CORRELATION BY BRANCH AND DIFFERENTIATION
+------------------------------------------------------------------------------------
+ branch  differentiation  n_cells  spearman_day_vs_pseudotime
+      0                1     4452                    0.817009
+      0                2     5056                    0.720507
+      1                1     3902                    0.810891
+      1                2     4689                    0.698320
+
+3. DAILY MEDIAN PSEUDOTIME PROFILES
+------------------------------------------------------------------------------------
+
+Monotonicity of daily median pseudotime:
+ branch  differentiation  fraction_non_decreasing
+      0                1                      1.0
+      0                2                      1.0
+      1                1                      1.0
+      1                2                      1.0
+
+Cross-replicate agreement of daily median profiles:
+ branch  daily_profile_correlation  mean_absolute_daily_median_difference
+      0                   0.996034                               0.015745
+      1                   0.999101                               0.012077
+
+4. BIOLOGICAL-STATE PSEUDOTIME ORDERING
+------------------------------------------------------------------------------------
+ branch  differentiation         state  n_cells  median_pseudotime      q25      q75  median_day
+      0                1    prog_nkx61     1019           0.058568 0.030840 0.095306         0.0
+      0                1 neurog3_early      364           0.171404 0.156844 0.192865         1.0
+      0                1   neurog3_mid      693           0.270233 0.238204 0.306602         3.0
+      0                1  neurog3_late      720           0.417513 0.373075 0.459228         4.0
+      0                1         sc_ec     1656           0.739645 0.612074 0.865563         5.0
+      0                2    prog_nkx61      706           0.090105 0.049701 0.115539         1.0
+      0                2 neurog3_early      417           0.174967 0.157929 0.193234         2.0
+      0                2   neurog3_mid      922           0.274124 0.238635 0.310718         3.0
+      0                2  neurog3_late     1263           0.418087 0.375532 0.463344         3.0
+      0                2         sc_ec     1748           0.752717 0.613726 0.878268         5.0
+      1                1    prog_nkx61      995           0.054914 0.029084 0.087659         0.0
+      1                1 neurog3_early      404           0.170517 0.152925 0.192788         1.0
+      1                1   neurog3_mid      677           0.269037 0.238366 0.307436         3.0
+      1                1  neurog3_late      742           0.416287 0.374939 0.455561         4.0
+      1                1       sc_beta     1084           0.746012 0.615900 0.882055         5.0
+      1                2    prog_nkx61      689           0.089977 0.052229 0.111373         1.0
+      1                2 neurog3_early      443           0.172877 0.155142 0.192035         2.0
+      1                2   neurog3_mid      985           0.278230 0.242515 0.312154         3.0
+      1                2  neurog3_late     1211           0.421738 0.376871 0.464733         3.0
+      1                2       sc_beta     1361           0.747444 0.610020 0.869325         5.0
+
+5. CROSS-REPLICATE STATE-PROFILE AGREEMENT
+------------------------------------------------------------------------------------
+ branch  state_profile_correlation  mean_absolute_state_median_difference  max_absolute_state_median_difference
+      0                   0.998925                               0.010527                              0.031537
+      1                   0.999144                               0.010700                              0.035063
+
+6. BRANCH ENDPOINT PURITY BY DIFFERENTIATION
+------------------------------------------------------------------------------------
+ branch  differentiation expected_endpoint  n_expected_endpoint  n_opposite_endpoint  endpoint_purity
+      0                1             sc_ec                 1656                    0              1.0
+      0                2             sc_ec                 1748                    0              1.0
+      1                1           sc_beta                 1084                    0              1.0
+      1                2           sc_beta                 1361                    0              1.0
+
+7. TRANSITION-LANDMARK AGREEMENT
+------------------------------------------------------------------------------------
+ branch         state  n_diff1  n_diff2  median_pseudotime_diff1  median_pseudotime_diff2  absolute_pseudotime_difference  median_day_diff1  median_day_diff2  absolute_median_day_difference
+      0    prog_nkx61     1019      706                 0.058568                 0.090105                        0.031537               0.0               1.0                             1.0
+      0 neurog3_early      364      417                 0.171404                 0.174967                        0.003563               1.0               2.0                             1.0
+      0   neurog3_mid      693      922                 0.270233                 0.274124                        0.003891               3.0               3.0                             0.0
+      0  neurog3_late      720     1263                 0.417513                 0.418087                        0.000573               4.0               3.0                             1.0
+      0         sc_ec     1656     1748                 0.739645                 0.752717                        0.013073               5.0               5.0                             0.0
+      1    prog_nkx61      995      689                 0.054914                 0.089977                        0.035063               0.0               1.0                             1.0
+      1 neurog3_early      404      443                 0.170517                 0.172877                        0.002359               1.0               2.0                             1.0
+      1   neurog3_mid      677      985                 0.269037                 0.278230                        0.009193               3.0               3.0                             0.0
+      1  neurog3_late      742     1211                 0.416287                 0.421738                        0.005451               4.0               3.0                             1.0
+      1       sc_beta     1084     1361                 0.746012                 0.747444                        0.001431               5.0               5.0                             0.0
+
+8. FINAL TARGETED REPRODUCIBILITY ASSESSMENT
+------------------------------------------------------------------------------------
+[PASS] All branch/replicate day-vs-pseudotime Spearman correlations >= 0.6
+[PASS] Daily median pseudotime is non-decreasing in every branch and differentiation
+[PASS] Cross-replicate daily median-profile correlations >= 0.95
+[PASS] Cross-replicate biological-state profile correlations >= 0.95
+[PASS] Branch endpoint purity >= 0.99
+[PASS] Maximum state-level median pseudotime difference <= 0.1
+[PASS] Median experimental-day landmarks differ by no more than one day
+
+Targeted reproducibility checks passed: 7/7
+
+FINAL STATUS: PASS
+The endocrine trajectory is reproducible across Differentiation 1 and Differentiation 2 under trajectory-focused validation criteria.
+The dataset can proceed to preprocessing/state-space construction for GDIS analysis.
+
+No normalization, filtering, dimensionality reduction, trajectory reconstruction, or GDIS calculation was performed.
+
+Tables:  <PROJECT_ROOT>/results/p4b_replicate_trajectory_validation/tables
+Figures: <PROJECT_ROOT>/results/p4b_replicate_trajectory_validation/figures
+Report:  <PROJECT_ROOT>/results/p4b_replicate_trajectory_validation/p4b_replicate_trajectory_validation_report.txt

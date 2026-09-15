@@ -1,0 +1,7 @@
+check,pass
+All 18 scope x metric circular-shift tests completed,True
+All 12 pre-specified paired GDIS-vs-conventional comparisons completed,True
+Every paired comparison uses the same individuals for GDIS and its baseline,True
+"Exactly 20,000 structure-preserving permutations used per scope x metric",True
+"BH correction applied separately to localization, IQR enrichment, source/destination change, signed offset, and paired-superiority families",True
+No metric or GDIS profile was recomputed or retuned,True

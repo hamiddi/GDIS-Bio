@@ -1,0 +1,522 @@
+====================================================================================================
+GDIS-Bio External Validation Trajectory-Window Assembly
+Dataset: GSE175634
+====================================================================================================
+
+NO GDIS VALUES ARE CALCULATED.
+Rows within each trajectory window are independent cells ordered by deposited diffusion pseudotime.
+
+Transferred window configurations:
+  sensitivity_w300_s75: 300 cells/window, 75-cell step
+  primary_w400_s100: 400 cells/window, 100-cell step
+  sensitivity_w500_s125: 500 cells/window, 125-cell step
+
+Independent replicate unit: individual
+
+1. FROZEN TRAJECTORY-SCOPE INVENTORY
+----------------------------------------------------------------------------------------------------
+shared_backbone: 19 eligible individuals | states=['IPSC', 'MES', 'CMES', 'PROG']
+cm_extension: 16 eligible individuals | states=['IPSC', 'MES', 'CMES', 'PROG', 'CM']
+cf_extension: 15 eligible individuals | states=['IPSC', 'MES', 'CMES', 'PROG', 'CF']
+
+2. TRAJECTORY ASSEMBLY
+----------------------------------------------------------------------------------------------------
+
+CONFIGURATION: sensitivity_w300_s75
+  shared_backbone  | individual 18489 | cells= 5031 | windows= 64 | coverage=0.9988 | strict=1.0000
+  shared_backbone  | individual 18499 | cells=12012 | windows=157 | coverage=0.9990 | strict=1.0000
+  shared_backbone  | individual 18505 | cells= 6131 | windows= 78 | coverage=0.9909 | strict=1.0000
+  shared_backbone  | individual 18508 | cells= 7834 | windows=101 | coverage=0.9957 | strict=1.0000
+  shared_backbone  | individual 18511 | cells=10768 | windows=140 | coverage=0.9960 | strict=1.0000
+  shared_backbone  | individual 18517 | cells= 6993 | windows= 90 | coverage=0.9974 | strict=1.0000
+  shared_backbone  | individual 18520 | cells= 7653 | windows= 99 | coverage=0.9996 | strict=1.0000
+  shared_backbone  | individual 18855 | cells= 4049 | windows= 50 | coverage=0.9817 | strict=1.0000
+  shared_backbone  | individual 18858 | cells=10649 | windows=138 | coverage=0.9931 | strict=1.0000
+  shared_backbone  | individual 18870 | cells=11109 | windows=145 | coverage=0.9992 | strict=1.0000
+  shared_backbone  | individual 18907 | cells= 5048 | windows= 64 | coverage=0.9954 | strict=1.0000
+  shared_backbone  | individual 18912 | cells=10302 | windows=134 | coverage=0.9974 | strict=1.0000
+  shared_backbone  | individual 19093 | cells=12915 | windows=169 | coverage=0.9988 | strict=1.0000
+  shared_backbone  | individual 19108 | cells= 3594 | windows= 44 | coverage=0.9808 | strict=1.0000
+  shared_backbone  | individual 19127 | cells= 6183 | windows= 79 | coverage=0.9947 | strict=1.0000
+  shared_backbone  | individual 19159 | cells= 5944 | windows= 76 | coverage=0.9968 | strict=1.0000
+  shared_backbone  | individual 19190 | cells= 8744 | windows=113 | coverage=0.9950 | strict=1.0000
+  shared_backbone  | individual 19193 | cells= 5925 | windows= 76 | coverage=1.0000 | strict=1.0000
+  shared_backbone  | individual 19209 | cells= 8892 | windows=115 | coverage=0.9953 | strict=1.0000
+  cm_extension     | individual 18489 | cells= 6857 | windows= 88 | coverage=0.9953 | strict=1.0000
+  cm_extension     | individual 18499 | cells=13616 | windows=178 | coverage=0.9970 | strict=1.0000
+  cm_extension     | individual 18505 | cells= 7488 | windows= 96 | coverage=0.9916 | strict=1.0000
+  cm_extension     | individual 18508 | cells= 9279 | windows=120 | coverage=0.9942 | strict=1.0000
+  cm_extension     | individual 18511 | cells=12139 | windows=158 | coverage=0.9947 | strict=1.0000
+  cm_extension     | individual 18517 | cells= 9530 | windows=124 | coverage=0.9995 | strict=1.0000
+  cm_extension     | individual 18520 | cells= 8402 | windows=109 | coverage=0.9998 | strict=1.0000
+  cm_extension     | individual 18855 | cells= 4764 | windows= 60 | coverage=0.9918 | strict=1.0000
+  cm_extension     | individual 18858 | cells=12192 | windows=159 | coverage=0.9966 | strict=1.0000
+  cm_extension     | individual 18870 | cells=11604 | windows=151 | coverage=0.9953 | strict=1.0000
+  cm_extension     | individual 18907 | cells= 5799 | windows= 74 | coverage=0.9959 | strict=1.0000
+  cm_extension     | individual 18912 | cells=13123 | windows=171 | coverage=0.9944 | strict=1.0000
+  cm_extension     | individual 19093 | cells=15467 | windows=203 | coverage=0.9989 | strict=1.0000
+  cm_extension     | individual 19108 | cells= 3760 | windows= 47 | coverage=0.9973 | strict=1.0000
+  cm_extension     | individual 19193 | cells= 6881 | windows= 88 | coverage=0.9919 | strict=1.0000
+  cm_extension     | individual 19209 | cells= 9782 | windows=127 | coverage=0.9967 | strict=1.0000
+  cf_extension     | individual 18489 | cells= 6573 | windows= 84 | coverage=0.9927 | strict=1.0000
+  cf_extension     | individual 18508 | cells=12482 | windows=163 | coverage=0.9974 | strict=1.0000
+  cf_extension     | individual 18511 | cells=12928 | windows=169 | coverage=0.9978 | strict=1.0000
+  cf_extension     | individual 18517 | cells= 7259 | windows= 93 | coverage=0.9919 | strict=1.0000
+  cf_extension     | individual 18520 | cells=10552 | windows=137 | coverage=0.9951 | strict=1.0000
+  cf_extension     | individual 18855 | cells= 8690 | windows=112 | coverage=0.9925 | strict=1.0000
+  cf_extension     | individual 18907 | cells= 8271 | windows=107 | coverage=0.9975 | strict=1.0000
+  cf_extension     | individual 18912 | cells=11100 | windows=145 | coverage=1.0000 | strict=1.0000
+  cf_extension     | individual 19093 | cells=16072 | windows=211 | coverage=0.9986 | strict=1.0000
+  cf_extension     | individual 19108 | cells= 3775 | windows= 47 | coverage=0.9934 | strict=1.0000
+  cf_extension     | individual 19127 | cells=10127 | windows=132 | coverage=0.9998 | strict=1.0000
+  cf_extension     | individual 19159 | cells=12853 | windows=168 | coverage=0.9978 | strict=1.0000
+  cf_extension     | individual 19190 | cells=16915 | windows=222 | coverage=0.9976 | strict=1.0000
+  cf_extension     | individual 19193 | cells= 8964 | windows=116 | coverage=0.9956 | strict=1.0000
+  cf_extension     | individual 19209 | cells= 9043 | windows=117 | coverage=0.9952 | strict=1.0000
+
+CONFIGURATION: primary_w400_s100
+  shared_backbone  | individual 18489 | cells= 5031 | windows= 47 | coverage=0.9938 | strict=1.0000
+  shared_backbone  | individual 18499 | cells=12012 | windows=117 | coverage=0.9990 | strict=1.0000
+  shared_backbone  | individual 18505 | cells= 6131 | windows= 58 | coverage=0.9949 | strict=1.0000
+  shared_backbone  | individual 18508 | cells= 7834 | windows= 75 | coverage=0.9957 | strict=1.0000
+  shared_backbone  | individual 18511 | cells=10768 | windows=104 | coverage=0.9937 | strict=1.0000
+  shared_backbone  | individual 18517 | cells= 6993 | windows= 66 | coverage=0.9867 | strict=1.0000
+  shared_backbone  | individual 18520 | cells= 7653 | windows= 73 | coverage=0.9931 | strict=1.0000
+  shared_backbone  | individual 18855 | cells= 4049 | windows= 37 | coverage=0.9879 | strict=1.0000
+  shared_backbone  | individual 18858 | cells=10649 | windows=103 | coverage=0.9954 | strict=1.0000
+  shared_backbone  | individual 18870 | cells=11109 | windows=108 | coverage=0.9992 | strict=1.0000
+  shared_backbone  | individual 18907 | cells= 5048 | windows= 47 | coverage=0.9905 | strict=1.0000
+  shared_backbone  | individual 18912 | cells=10302 | windows=100 | coverage=0.9998 | strict=1.0000
+  shared_backbone  | individual 19093 | cells=12915 | windows=126 | coverage=0.9988 | strict=1.0000
+  shared_backbone  | individual 19108 | cells= 3594 | windows= 32 | coverage=0.9738 | strict=1.0000
+  shared_backbone  | individual 19127 | cells= 6183 | windows= 58 | coverage=0.9866 | strict=1.0000
+  shared_backbone  | individual 19159 | cells= 5944 | windows= 56 | coverage=0.9926 | strict=1.0000
+  shared_backbone  | individual 19190 | cells= 8744 | windows= 84 | coverage=0.9950 | strict=1.0000
+  shared_backbone  | individual 19193 | cells= 5925 | windows= 56 | coverage=0.9958 | strict=1.0000
+  shared_backbone  | individual 19209 | cells= 8892 | windows= 85 | coverage=0.9897 | strict=1.0000
+  cm_extension     | individual 18489 | cells= 6857 | windows= 65 | coverage=0.9917 | strict=1.0000
+  cm_extension     | individual 18499 | cells=13616 | windows=133 | coverage=0.9988 | strict=1.0000
+  cm_extension     | individual 18505 | cells= 7488 | windows= 71 | coverage=0.9882 | strict=1.0000
+  cm_extension     | individual 18508 | cells= 9279 | windows= 89 | coverage=0.9915 | strict=1.0000
+  cm_extension     | individual 18511 | cells=12139 | windows=118 | coverage=0.9968 | strict=1.0000
+  cm_extension     | individual 18517 | cells= 9530 | windows= 92 | coverage=0.9969 | strict=1.0000
+  cm_extension     | individual 18520 | cells= 8402 | windows= 81 | coverage=0.9998 | strict=1.0000
+  cm_extension     | individual 18855 | cells= 4764 | windows= 44 | coverage=0.9866 | strict=1.0000
+  cm_extension     | individual 18858 | cells=12192 | windows=118 | coverage=0.9925 | strict=1.0000
+  cm_extension     | individual 18870 | cells=11604 | windows=113 | coverage=0.9997 | strict=1.0000
+  cm_extension     | individual 18907 | cells= 5799 | windows= 54 | coverage=0.9829 | strict=1.0000
+  cm_extension     | individual 18912 | cells=13123 | windows=128 | coverage=0.9982 | strict=1.0000
+  cm_extension     | individual 19093 | cells=15467 | windows=151 | coverage=0.9957 | strict=1.0000
+  cm_extension     | individual 19108 | cells= 3760 | windows= 34 | coverage=0.9840 | strict=1.0000
+  cm_extension     | individual 19193 | cells= 6881 | windows= 65 | coverage=0.9882 | strict=1.0000
+  cm_extension     | individual 19209 | cells= 9782 | windows= 94 | coverage=0.9916 | strict=1.0000
+  cf_extension     | individual 18489 | cells= 6573 | windows= 62 | coverage=0.9889 | strict=1.0000
+  cf_extension     | individual 18508 | cells=12482 | windows=121 | coverage=0.9934 | strict=1.0000
+  cf_extension     | individual 18511 | cells=12928 | windows=126 | coverage=0.9978 | strict=1.0000
+  cf_extension     | individual 18517 | cells= 7259 | windows= 69 | coverage=0.9919 | strict=1.0000
+  cf_extension     | individual 18520 | cells=10552 | windows=102 | coverage=0.9951 | strict=1.0000
+  cf_extension     | individual 18855 | cells= 8690 | windows= 83 | coverage=0.9896 | strict=1.0000
+  cf_extension     | individual 18907 | cells= 8271 | windows= 79 | coverage=0.9914 | strict=1.0000
+  cf_extension     | individual 18912 | cells=11100 | windows=108 | coverage=1.0000 | strict=1.0000
+  cf_extension     | individual 19093 | cells=16072 | windows=157 | coverage=0.9955 | strict=1.0000
+  cf_extension     | individual 19108 | cells= 3775 | windows= 34 | coverage=0.9801 | strict=1.0000
+  cf_extension     | individual 19127 | cells=10127 | windows= 98 | coverage=0.9973 | strict=1.0000
+  cf_extension     | individual 19159 | cells=12853 | windows=125 | coverage=0.9959 | strict=1.0000
+  cf_extension     | individual 19190 | cells=16915 | windows=166 | coverage=0.9991 | strict=1.0000
+  cf_extension     | individual 19193 | cells= 8964 | windows= 86 | coverage=0.9929 | strict=1.0000
+  cf_extension     | individual 19209 | cells= 9043 | windows= 87 | coverage=0.9952 | strict=1.0000
+
+CONFIGURATION: sensitivity_w500_s125
+  shared_backbone  | individual 18489 | cells= 5031 | windows= 37 | coverage=0.9938 | strict=1.0000
+  shared_backbone  | individual 18499 | cells=12012 | windows= 93 | coverage=0.9990 | strict=1.0000
+  shared_backbone  | individual 18505 | cells= 6131 | windows= 46 | coverage=0.9990 | strict=1.0000
+  shared_backbone  | individual 18508 | cells= 7834 | windows= 59 | coverage=0.9893 | strict=1.0000
+  shared_backbone  | individual 18511 | cells=10768 | windows= 83 | coverage=0.9983 | strict=1.0000
+  shared_backbone  | individual 18517 | cells= 6993 | windows= 52 | coverage=0.9831 | strict=1.0000
+  shared_backbone  | individual 18520 | cells= 7653 | windows= 58 | coverage=0.9963 | strict=1.0000
+  shared_backbone  | individual 18855 | cells= 4049 | windows= 29 | coverage=0.9879 | strict=1.0000
+  shared_backbone  | individual 18858 | cells=10649 | windows= 82 | coverage=0.9977 | strict=1.0000
+  shared_backbone  | individual 18870 | cells=11109 | windows= 85 | coverage=0.9902 | strict=1.0000
+  shared_backbone  | individual 18907 | cells= 5048 | windows= 37 | coverage=0.9905 | strict=1.0000
+  shared_backbone  | individual 18912 | cells=10302 | windows= 79 | coverage=0.9950 | strict=1.0000
+  shared_backbone  | individual 19093 | cells=12915 | windows=100 | coverage=0.9969 | strict=1.0000
+  shared_backbone  | individual 19108 | cells= 3594 | windows= 25 | coverage=0.9738 | strict=1.0000
+  shared_backbone  | individual 19127 | cells= 6183 | windows= 46 | coverage=0.9906 | strict=1.0000
+  shared_backbone  | individual 19159 | cells= 5944 | windows= 44 | coverage=0.9884 | strict=1.0000
+  shared_backbone  | individual 19190 | cells= 8744 | windows= 66 | coverage=0.9864 | strict=1.0000
+  shared_backbone  | individual 19193 | cells= 5925 | windows= 44 | coverage=0.9916 | strict=1.0000
+  shared_backbone  | individual 19209 | cells= 8892 | windows= 68 | coverage=0.9981 | strict=1.0000
+  cm_extension     | individual 18489 | cells= 6857 | windows= 51 | coverage=0.9844 | strict=1.0000
+  cm_extension     | individual 18499 | cells=13616 | windows=105 | coverage=0.9915 | strict=1.0000
+  cm_extension     | individual 18505 | cells= 7488 | windows= 56 | coverage=0.9849 | strict=1.0000
+  cm_extension     | individual 18508 | cells= 9279 | windows= 71 | coverage=0.9969 | strict=1.0000
+  cm_extension     | individual 18511 | cells=12139 | windows= 94 | coverage=0.9988 | strict=1.0000
+  cm_extension     | individual 18517 | cells= 9530 | windows= 73 | coverage=0.9969 | strict=1.0000
+  cm_extension     | individual 18520 | cells= 8402 | windows= 64 | coverage=0.9968 | strict=1.0000
+  cm_extension     | individual 18855 | cells= 4764 | windows= 35 | coverage=0.9971 | strict=1.0000
+  cm_extension     | individual 18858 | cells=12192 | windows= 94 | coverage=0.9945 | strict=1.0000
+  cm_extension     | individual 18870 | cells=11604 | windows= 89 | coverage=0.9910 | strict=1.0000
+  cm_extension     | individual 18907 | cells= 5799 | windows= 43 | coverage=0.9916 | strict=1.0000
+  cm_extension     | individual 18912 | cells=13123 | windows=101 | coverage=0.9906 | strict=1.0000
+  cm_extension     | individual 19093 | cells=15467 | windows=120 | coverage=0.9941 | strict=1.0000
+  cm_extension     | individual 19108 | cells= 3760 | windows= 27 | coverage=0.9973 | strict=1.0000
+  cm_extension     | individual 19193 | cells= 6881 | windows= 52 | coverage=0.9991 | strict=1.0000
+  cm_extension     | individual 19209 | cells= 9782 | windows= 75 | coverage=0.9967 | strict=1.0000
+  cf_extension     | individual 18489 | cells= 6573 | windows= 49 | coverage=0.9889 | strict=1.0000
+  cf_extension     | individual 18508 | cells=12482 | windows= 96 | coverage=0.9914 | strict=1.0000
+  cf_extension     | individual 18511 | cells=12928 | windows=100 | coverage=0.9959 | strict=1.0000
+  cf_extension     | individual 18517 | cells= 7259 | windows= 55 | coverage=0.9988 | strict=1.0000
+  cf_extension     | individual 18520 | cells=10552 | windows= 81 | coverage=0.9951 | strict=1.0000
+  cf_extension     | individual 18855 | cells= 8690 | windows= 66 | coverage=0.9925 | strict=1.0000
+  cf_extension     | individual 18907 | cells= 8271 | windows= 63 | coverage=0.9975 | strict=1.0000
+  cf_extension     | individual 18912 | cells=11100 | windows= 85 | coverage=0.9910 | strict=1.0000
+  cf_extension     | individual 19093 | cells=16072 | windows=125 | coverage=0.9955 | strict=1.0000
+  cf_extension     | individual 19108 | cells= 3775 | windows= 27 | coverage=0.9934 | strict=1.0000
+  cf_extension     | individual 19127 | cells=10127 | windows= 78 | coverage=0.9998 | strict=1.0000
+  cf_extension     | individual 19159 | cells=12853 | windows= 99 | coverage=0.9920 | strict=1.0000
+  cf_extension     | individual 19190 | cells=16915 | windows=132 | coverage=0.9976 | strict=1.0000
+  cf_extension     | individual 19193 | cells= 8964 | windows= 68 | coverage=0.9901 | strict=1.0000
+  cf_extension     | individual 19209 | cells= 9043 | windows= 69 | coverage=0.9952 | strict=1.0000
+
+3. FROZEN BIOLOGICAL-LANDMARK MAPPING TO PRIMARY WINDOWS
+----------------------------------------------------------------------------------------------------
+          scope individual state  state_median_pseudotime  nearest_window_index  nearest_window_parameter  absolute_parameter_difference  nearest_window_median_day nearest_window_dominant_state
+shared_backbone      18489  IPSC                 0.028921                    15                  0.028468                       0.000453                        0.0                          IPSC
+shared_backbone      18489   MES                 0.031532                    17                  0.031604                       0.000072                        0.0                          IPSC
+shared_backbone      18489  CMES                 0.287835                    41                  0.290208                       0.002373                        3.0                          CMES
+shared_backbone      18489  PROG                 0.305923                    43                  0.307272                       0.001349                        3.0                          CMES
+shared_backbone      18499  IPSC                 0.025685                    15                  0.025282                       0.000403                        1.0                           MES
+shared_backbone      18499   MES                 0.057991                    47                  0.058024                       0.000033                        1.0                           MES
+shared_backbone      18499  CMES                 0.231745                    88                  0.233467                       0.001722                        7.0                          PROG
+shared_backbone      18499  PROG                 0.288868                   100                  0.288249                       0.000619                        7.0                          PROG
+shared_backbone      18505  IPSC                 0.029764                     9                  0.029516                       0.000249                        1.0                           MES
+shared_backbone      18505   MES                 0.051449                    23                  0.051956                       0.000506                        1.0                           MES
+shared_backbone      18505  CMES                 0.268901                    43                  0.271075                       0.002174                        3.0                          CMES
+shared_backbone      18505  PROG                 0.312411                    51                  0.312770                       0.000359                        7.0                          PROG
+shared_backbone      18508  IPSC                 0.027093                    17                  0.026877                       0.000215                        0.0                          IPSC
+shared_backbone      18508   MES                 0.065810                    35                  0.061913                       0.003897                        0.0                           MES
+shared_backbone      18508  CMES                 0.325506                    63                  0.325841                       0.000335                        3.0                          CMES
+shared_backbone      18508  PROG                 0.277597                    50                  0.276672                       0.000925                        3.0                          CMES
+shared_backbone      18511  IPSC                 0.028514                    25                  0.028841                       0.000328                        1.0                           MES
+shared_backbone      18511   MES                 0.043917                    45                  0.043911                       0.000006                        1.0                           MES
+shared_backbone      18511  CMES                 0.268500                    78                  0.264975                       0.003525                        5.0                          PROG
+shared_backbone      18511  PROG                 0.327949                    92                  0.327939                       0.000011                        5.0                          PROG
+shared_backbone      18517  IPSC                 0.026842                    17                  0.026824                       0.000018                        1.0                           MES
+shared_backbone      18517   MES                 0.033100                    24                  0.033039                       0.000061                        1.0                           MES
+shared_backbone      18517  CMES                 0.278562                    51                  0.283103                       0.004541                        3.0                          CMES
+shared_backbone      18517  PROG                 0.327149                    60                  0.327417                       0.000268                        5.0                          PROG
+shared_backbone      18520  IPSC                 0.033357                    11                  0.032475                       0.000882                        1.0                           MES
+shared_backbone      18520   MES                 0.056999                    21                  0.058102                       0.001103                        1.0                           MES
+shared_backbone      18520  CMES                 0.299934                    58                  0.300723                       0.000788                        5.0                          PROG
+shared_backbone      18520  PROG                 0.295526                    57                  0.297479                       0.001953                        5.0                          PROG
+shared_backbone      18855  IPSC                 0.030864                     9                  0.030879                       0.000015                        1.0                           MES
+shared_backbone      18855   MES                 0.041213                    15                  0.041600                       0.000387                        1.0                           MES
+shared_backbone      18855  CMES                 0.305947                    33                  0.309081                       0.003134                        5.0                          PROG
+shared_backbone      18855  PROG                 0.309258                    33                  0.309081                       0.000176                        5.0                          PROG
+shared_backbone      18858  IPSC                 0.028164                    27                  0.027869                       0.000295                        1.0                           MES
+shared_backbone      18858   MES                 0.038656                    42                  0.039061                       0.000405                        1.0                           MES
+shared_backbone      18858  CMES                 0.271027                    82                  0.270724                       0.000303                        7.0                          PROG
+shared_backbone      18858  PROG                 0.314624                    91                  0.314069                       0.000554                        7.0                          PROG
+shared_backbone      18870  IPSC                 0.024417                    17                  0.024357                       0.000059                        0.0                          IPSC
+shared_backbone      18870   MES                 0.066600                    39                  0.065776                       0.000824                        1.0                           MES
+shared_backbone      18870  CMES                 0.258835                    76                  0.260354                       0.001519                        7.0                          PROG
+shared_backbone      18870  PROG                 0.279476                    83                  0.280819                       0.001343                        7.0                          PROG
+shared_backbone      18907  IPSC                 0.035739                    10                  0.036160                       0.000421                        0.0                          IPSC
+shared_backbone      18907   MES                 0.031077                     8                  0.031849                       0.000772                        1.0                           MES
+shared_backbone      18907  CMES                 0.304319                    33                  0.303481                       0.000838                        3.0                          CMES
+shared_backbone      18907  PROG                 0.313770                    36                  0.314241                       0.000471                        3.0                          CMES
+shared_backbone      18912  IPSC                 0.026256                    21                  0.026363                       0.000107                        0.0                          IPSC
+shared_backbone      18912   MES                 0.041372                    35                  0.041798                       0.000426                        0.0                          IPSC
+shared_backbone      18912  CMES                 0.312626                    75                  0.312447                       0.000180                        3.0                          CMES
+shared_backbone      18912  PROG                 0.313186                    75                  0.312447                       0.000739                        3.0                          CMES
+shared_backbone      19093  IPSC                 0.036976                    27                  0.036752                       0.000223                        1.0                           MES
+shared_backbone      19093   MES                 0.053483                    55                  0.053795                       0.000312                        1.0                           MES
+shared_backbone      19093  CMES                 0.310819                   107                  0.310138                       0.000682                        5.0                          PROG
+shared_backbone      19093  PROG                 0.323522                   113                  0.323188                       0.000334                        5.0                          PROG
+shared_backbone      19108  IPSC                 0.026033                     7                  0.026033                       0.000000                        0.0                          IPSC
+shared_backbone      19108   MES                 0.050666                    19                  0.050271                       0.000395                        1.0                           MES
+shared_backbone      19108  CMES                 0.293644                    31                  0.294614                       0.000970                        3.0                          CMES
+shared_backbone      19108  PROG                 0.319511                    31                  0.294614                       0.024897                        3.0                          CMES
+shared_backbone      19127  IPSC                 0.027987                    13                  0.027971                       0.000016                        1.0                           MES
+shared_backbone      19127   MES                 0.039202                    21                  0.039543                       0.000341                        0.0                          IPSC
+shared_backbone      19127  CMES                 0.307962                    44                  0.305078                       0.002884                        3.0                          CMES
+shared_backbone      19127  PROG                 0.339928                    54                  0.341025                       0.001097                        5.0                          PROG
+shared_backbone      19159  IPSC                 0.038799                    20                  0.038431                       0.000368                        0.0                          IPSC
+shared_backbone      19159   MES                 0.027496                    12                  0.027753                       0.000257                        0.0                          IPSC
+shared_backbone      19159  CMES                 0.334777                    43                  0.334180                       0.000596                        3.0                          CMES
+shared_backbone      19159  PROG                 0.379604                    51                  0.377298                       0.002306                        5.0                          PROG
+shared_backbone      19190  IPSC                 0.025594                    17                  0.025479                       0.000115                        0.0                          IPSC
+shared_backbone      19190   MES                 0.041907                    36                  0.042281                       0.000375                        1.0                           MES
+shared_backbone      19190  CMES                 0.312709                    63                  0.314333                       0.001624                        3.0                          CMES
+shared_backbone      19190  PROG                 0.342182                    76                  0.342949                       0.000767                        5.0                          PROG
+shared_backbone      19193  IPSC                 0.027199                    14                  0.027065                       0.000133                        0.0                          IPSC
+shared_backbone      19193   MES                 0.033077                    18                  0.032601                       0.000476                        0.0                          IPSC
+shared_backbone      19193  CMES                 0.328153                    44                  0.328092                       0.000060                        3.0                          CMES
+shared_backbone      19193  PROG                 0.333821                    48                  0.333879                       0.000057                        3.0                          CMES
+shared_backbone      19209  IPSC                 0.027816                    12                  0.028548                       0.000731                        0.0                          IPSC
+shared_backbone      19209   MES                 0.069371                    29                  0.068148                       0.001223                        3.0                           MES
+shared_backbone      19209  CMES                 0.283515                    59                  0.282628                       0.000887                        7.0                          PROG
+shared_backbone      19209  PROG                 0.311648                    67                  0.310347                       0.001301                        7.0                          PROG
+   cm_extension      18489  IPSC                 0.028921                    15                  0.028468                       0.000453                        0.0                          IPSC
+   cm_extension      18489   MES                 0.031532                    17                  0.031604                       0.000072                        0.0                          IPSC
+   cm_extension      18489  CMES                 0.287835                    41                  0.285169                       0.002666                        3.0                          CMES
+   cm_extension      18489  PROG                 0.305923                    44                  0.305714                       0.000209                        3.0                          CMES
+   cm_extension      18489    CM                 0.443284                    57                  0.429970                       0.013314                        7.0                            CM
+   cm_extension      18499  IPSC                 0.025685                    15                  0.025282                       0.000403                        1.0                           MES
+   cm_extension      18499   MES                 0.057991                    47                  0.058024                       0.000033                        1.0                           MES
+   cm_extension      18499  CMES                 0.231745                    88                  0.232076                       0.000331                        7.0                          PROG
+   cm_extension      18499  PROG                 0.288868                   102                  0.290547                       0.001679                        7.0                          PROG
+   cm_extension      18499    CM                 0.394675                   126                  0.394400                       0.000274                       11.0                            CM
+   cm_extension      18505  IPSC                 0.029764                     9                  0.029516                       0.000249                        1.0                           MES
+   cm_extension      18505   MES                 0.051449                    23                  0.051956                       0.000506                        1.0                           MES
+   cm_extension      18505  CMES                 0.268901                    43                  0.270541                       0.001641                        3.0                          CMES
+   cm_extension      18505  PROG                 0.312411                    52                  0.313851                       0.001440                        7.0                          PROG
+   cm_extension      18505    CM                 0.558775                    66                  0.553579                       0.005196                       11.0                            CM
+   cm_extension      18508  IPSC                 0.027093                    17                  0.026877                       0.000215                        0.0                          IPSC
+   cm_extension      18508   MES                 0.065810                    35                  0.061913                       0.003897                        0.0                           MES
+   cm_extension      18508  CMES                 0.325506                    63                  0.325307                       0.000199                        3.0                          CMES
+   cm_extension      18508  PROG                 0.277597                    50                  0.276208                       0.001388                        3.0                          CMES
+   cm_extension      18508    CM                 0.659375                    84                  0.678655                       0.019279                        7.0                            CM
+   cm_extension      18511  IPSC                 0.028514                    25                  0.028841                       0.000328                        1.0                           MES
+   cm_extension      18511   MES                 0.043917                    45                  0.043911                       0.000006                        1.0                           MES
+   cm_extension      18511  CMES                 0.268500                    79                  0.273055                       0.004555                        6.0                          PROG
+   cm_extension      18511  PROG                 0.327949                    94                  0.328298                       0.000348                        5.0                          PROG
+   cm_extension      18511    CM                 0.426866                   112                  0.416084                       0.010782                        7.0                            CM
+   cm_extension      18517  IPSC                 0.026842                    17                  0.026824                       0.000018                        1.0                           MES
+   cm_extension      18517   MES                 0.033100                    24                  0.033039                       0.000061                        1.0                           MES
+   cm_extension      18517  CMES                 0.278562                    51                  0.279520                       0.000957                        5.0                          CMES
+   cm_extension      18517  PROG                 0.327149                    63                  0.327668                       0.000520                        5.0                          PROG
+   cm_extension      18517    CM                 0.465993                    81                  0.473172                       0.007178                        7.0                            CM
+   cm_extension      18520  IPSC                 0.033357                    11                  0.032475                       0.000882                        1.0                           MES
+   cm_extension      18520   MES                 0.056999                    21                  0.058102                       0.001103                        1.0                           MES
+   cm_extension      18520  CMES                 0.299934                    58                  0.299536                       0.000399                        5.0                          PROG
+   cm_extension      18520  PROG                 0.295526                    57                  0.296134                       0.000608                        5.0                          PROG
+   cm_extension      18520    CM                 0.436573                    78                  0.426080                       0.010493                       11.0                            CM
+   cm_extension      18855  IPSC                 0.030864                     9                  0.030879                       0.000015                        1.0                           MES
+   cm_extension      18855   MES                 0.041213                    15                  0.041600                       0.000387                        1.0                           MES
+   cm_extension      18855  CMES                 0.305947                    33                  0.305167                       0.000781                        5.0                          PROG
+   cm_extension      18855  PROG                 0.309258                    34                  0.312539                       0.003281                        5.0                          PROG
+   cm_extension      18855    CM                 0.401350                    42                  0.401276                       0.000074                       11.0                            CM
+   cm_extension      18858  IPSC                 0.028164                    27                  0.027869                       0.000295                        1.0                           MES
+   cm_extension      18858   MES                 0.038656                    42                  0.039061                       0.000405                        1.0                           MES
+   cm_extension      18858  CMES                 0.271027                    82                  0.268361                       0.002666                        7.0                          PROG
+   cm_extension      18858  PROG                 0.314624                    92                  0.313851                       0.000772                        7.0                          PROG
+   cm_extension      18858    CM                 0.490367                   112                  0.484234                       0.006133                       11.0                            CM
+   cm_extension      18870  IPSC                 0.024417                    17                  0.024357                       0.000059                        0.0                          IPSC
+   cm_extension      18870   MES                 0.066600                    39                  0.065776                       0.000824                        1.0                           MES
+   cm_extension      18870  CMES                 0.258835                    76                  0.259201                       0.000365                        7.0                          PROG
+   cm_extension      18870  PROG                 0.279476                    83                  0.279631                       0.000155                        7.0                          PROG
+   cm_extension      18870    CM                 0.357248                   110                  0.355791                       0.001457                       15.0                          PROG
+   cm_extension      18907  IPSC                 0.035739                    10                  0.036160                       0.000421                        0.0                          IPSC
+   cm_extension      18907   MES                 0.031077                     8                  0.031849                       0.000772                        1.0                           MES
+   cm_extension      18907  CMES                 0.304319                    34                  0.305575                       0.001255                        3.0                          CMES
+   cm_extension      18907  PROG                 0.313770                    36                  0.312430                       0.001340                        3.0                          CMES
+   cm_extension      18907    CM                 0.403184                    52                  0.397222                       0.005962                       11.0                            CM
+   cm_extension      18912  IPSC                 0.026256                    21                  0.026363                       0.000107                        0.0                          IPSC
+   cm_extension      18912   MES                 0.041372                    35                  0.041798                       0.000426                        0.0                          IPSC
+   cm_extension      18912  CMES                 0.312626                    76                  0.312090                       0.000536                        5.0                          CMES
+   cm_extension      18912  PROG                 0.313186                    77                  0.313933                       0.000747                        3.0                          CMES
+   cm_extension      18912    CM                 0.514471                   115                  0.510546                       0.003925                       11.0                            CM
+   cm_extension      19093  IPSC                 0.036976                    27                  0.036752                       0.000223                        1.0                           MES
+   cm_extension      19093   MES                 0.053483                    55                  0.053795                       0.000312                        1.0                           MES
+   cm_extension      19093  CMES                 0.310819                   108                  0.311500                       0.000680                        5.0                          PROG
+   cm_extension      19093  PROG                 0.323522                   114                  0.323577                       0.000055                        5.0                          PROG
+   cm_extension      19093    CM                 0.633624                   140                  0.635978                       0.002354                        7.0                            CM
+   cm_extension      19108  IPSC                 0.026033                     7                  0.026033                       0.000000                        0.0                          IPSC
+   cm_extension      19108   MES                 0.050666                    19                  0.050271                       0.000395                        1.0                           MES
+   cm_extension      19108  CMES                 0.293644                    31                  0.291331                       0.002313                        3.0                          CMES
+   cm_extension      19108  PROG                 0.319511                    33                  0.324326                       0.004815                        5.0                          CMES
+   cm_extension      19108    CM                 0.375341                    33                  0.324326                       0.051014                        5.0                          CMES
+   cm_extension      19193  IPSC                 0.027199                    14                  0.027065                       0.000133                        0.0                          IPSC
+   cm_extension      19193   MES                 0.033077                    18                  0.032601                       0.000476                        0.0                          IPSC
+   cm_extension      19193  CMES                 0.328153                    46                  0.328859                       0.000706                        3.0                          CMES
+   cm_extension      19193  PROG                 0.333821                    50                  0.333957                       0.000136                        3.0                          CMES
+   cm_extension      19193    CM                 0.374162                    61                  0.374532                       0.000369                       11.0                            CM
+   cm_extension      19209  IPSC                 0.027816                    12                  0.028548                       0.000731                        0.0                          IPSC
+   cm_extension      19209   MES                 0.069371                    29                  0.068148                       0.001223                        3.0                           MES
+   cm_extension      19209  CMES                 0.283515                    60                  0.285223                       0.001708                        7.0                          PROG
+   cm_extension      19209  PROG                 0.311648                    68                  0.310403                       0.001245                        7.0                          PROG
+   cm_extension      19209    CM                 0.393015                    91                  0.394765                       0.001750                       15.0                            CM
+   cf_extension      18489  IPSC                 0.028921                    15                  0.028468                       0.000453                        0.0                          IPSC
+   cf_extension      18489   MES                 0.031532                    17                  0.031604                       0.000072                        0.0                          IPSC
+   cf_extension      18489  CMES                 0.287835                    42                  0.287504                       0.000331                        3.0                          CMES
+   cf_extension      18489  PROG                 0.305923                    45                  0.305011                       0.000912                        3.0                          CMES
+   cf_extension      18489    CF                 0.355965                    56                  0.357238                       0.001272                       11.0                            CF
+   cf_extension      18508  IPSC                 0.027093                    17                  0.026877                       0.000215                        0.0                          IPSC
+   cf_extension      18508   MES                 0.065810                    35                  0.061913                       0.003897                        0.0                           MES
+   cf_extension      18508  CMES                 0.325506                    65                  0.325155                       0.000350                        3.0                          CMES
+   cf_extension      18508  PROG                 0.277597                    51                  0.280088                       0.002492                        3.0                          CMES
+   cf_extension      18508    CF                 0.411623                   100                  0.412320                       0.000697                       11.0                            CF
+   cf_extension      18511  IPSC                 0.028514                    25                  0.028841                       0.000328                        1.0                           MES
+   cf_extension      18511   MES                 0.043917                    45                  0.043911                       0.000006                        1.0                           MES
+   cf_extension      18511  CMES                 0.268500                    79                  0.267450                       0.001050                        7.0                          PROG
+   cf_extension      18511  PROG                 0.327949                    97                  0.328318                       0.000369                        5.0                          PROG
+   cf_extension      18511    CF                 0.373301                   116                  0.374162                       0.000861                        7.0                            CF
+   cf_extension      18517  IPSC                 0.026842                    17                  0.026824                       0.000018                        1.0                           MES
+   cf_extension      18517   MES                 0.033100                    24                  0.033039                       0.000061                        1.0                           MES
+   cf_extension      18517  CMES                 0.278562                    51                  0.279820                       0.001258                        5.0                          CMES
+   cf_extension      18517  PROG                 0.327149                    61                  0.326279                       0.000869                        5.0                          PROG
+   cf_extension      18517    CF                 0.321171                    59                  0.321104                       0.000067                        5.0                          PROG
+   cf_extension      18520  IPSC                 0.033357                    11                  0.032475                       0.000882                        1.0                           MES
+   cf_extension      18520   MES                 0.056999                    21                  0.058102                       0.001103                        1.0                           MES
+   cf_extension      18520  CMES                 0.299934                    59                  0.300033                       0.000098                        7.0                          PROG
+   cf_extension      18520  PROG                 0.295526                    58                  0.297199                       0.001673                        7.0                          PROG
+   cf_extension      18520    CF                 0.390142                    89                  0.390738                       0.000596                       11.0                            CF
+   cf_extension      18855  IPSC                 0.030864                     9                  0.030879                       0.000015                        1.0                           MES
+   cf_extension      18855   MES                 0.041213                    15                  0.041600                       0.000387                        1.0                           MES
+   cf_extension      18855  CMES                 0.305947                    35                  0.307739                       0.001791                        7.0                            CF
+   cf_extension      18855  PROG                 0.309258                    35                  0.307739                       0.001519                        7.0                            CF
+   cf_extension      18855    CF                 0.403991                    62                  0.404667                       0.000676                       11.0                            CF
+   cf_extension      18907  IPSC                 0.035739                    10                  0.036160                       0.000421                        0.0                          IPSC
+   cf_extension      18907   MES                 0.031077                     8                  0.031849                       0.000772                        1.0                           MES
+   cf_extension      18907  CMES                 0.304319                    35                  0.303029                       0.001290                        3.0                          CMES
+   cf_extension      18907  PROG                 0.313770                    39                  0.314560                       0.000790                        3.0                          CMES
+   cf_extension      18907    CF                 0.381795                    64                  0.380276                       0.001519                       11.0                            CF
+   cf_extension      18912  IPSC                 0.026256                    21                  0.026363                       0.000107                        0.0                          IPSC
+   cf_extension      18912   MES                 0.041372                    35                  0.041798                       0.000426                        0.0                          IPSC
+   cf_extension      18912  CMES                 0.312626                    76                  0.312770                       0.000143                        3.0                          CMES
+   cf_extension      18912  PROG                 0.313186                    76                  0.312770                       0.000416                        3.0                          CMES
+   cf_extension      18912    CF                 0.368472                   102                  0.367596                       0.000876                        7.0                          PROG
+   cf_extension      19093  IPSC                 0.036976                    27                  0.036752                       0.000223                        1.0                           MES
+   cf_extension      19093   MES                 0.053483                    55                  0.053795                       0.000312                        1.0                           MES
+   cf_extension      19093  CMES                 0.310819                   108                  0.310250                       0.000570                        5.0                          PROG
+   cf_extension      19093  PROG                 0.323522                   115                  0.323617                       0.000095                        5.0                          PROG
+   cf_extension      19093    CF                 0.409976                   143                  0.410378                       0.000403                        7.0                            CF
+   cf_extension      19108  IPSC                 0.026033                     7                  0.026033                       0.000000                        0.0                          IPSC
+   cf_extension      19108   MES                 0.050666                    19                  0.050271                       0.000395                        1.0                           MES
+   cf_extension      19108  CMES                 0.293644                    31                  0.293315                       0.000329                        3.0                          CMES
+   cf_extension      19108  PROG                 0.319511                    33                  0.325726                       0.006215                        5.0                          CMES
+   cf_extension      19108    CF                 0.376905                    33                  0.325726                       0.051179                        5.0                          CMES
+   cf_extension      19127  IPSC                 0.027987                    13                  0.027971                       0.000016                        1.0                           MES
+   cf_extension      19127   MES                 0.039202                    21                  0.039543                       0.000341                        0.0                          IPSC
+   cf_extension      19127  CMES                 0.307962                    46                  0.308049                       0.000087                        3.0                          CMES
+   cf_extension      19127  PROG                 0.339928                    58                  0.339735                       0.000193                        5.0                          PROG
+   cf_extension      19127    CF                 0.409341                    79                  0.408021                       0.001320                       11.0                            CF
+   cf_extension      19159  IPSC                 0.038799                    20                  0.038431                       0.000368                        0.0                          IPSC
+   cf_extension      19159   MES                 0.027496                    12                  0.027753                       0.000257                        0.0                          IPSC
+   cf_extension      19159  CMES                 0.334777                    45                  0.333623                       0.001154                        3.0                          CMES
+   cf_extension      19159  PROG                 0.379604                    59                  0.378862                       0.000742                        7.0                            CF
+   cf_extension      19159    CF                 0.435215                    92                  0.435353                       0.000138                       11.0                            CF
+   cf_extension      19190  IPSC                 0.025594                    17                  0.025479                       0.000115                        0.0                          IPSC
+   cf_extension      19190   MES                 0.041907                    36                  0.042281                       0.000375                        1.0                           MES
+   cf_extension      19190  CMES                 0.312709                    65                  0.312090                       0.000618                        5.0                          CMES
+   cf_extension      19190  PROG                 0.342182                    82                  0.341609                       0.000574                        5.0                          PROG
+   cf_extension      19190    CF                 0.415723                   126                  0.415321                       0.000403                       11.0                            CF
+   cf_extension      19193  IPSC                 0.027199                    14                  0.027065                       0.000133                        0.0                          IPSC
+   cf_extension      19193   MES                 0.033077                    18                  0.032601                       0.000476                        0.0                          IPSC
+   cf_extension      19193  CMES                 0.328153                    48                  0.328849                       0.000696                        3.0                          CMES
+   cf_extension      19193  PROG                 0.333821                    52                  0.333752                       0.000069                        3.0                          CMES
+   cf_extension      19193    CF                 0.393660                    72                  0.393553                       0.000107                       11.0                            CF
+   cf_extension      19209  IPSC                 0.027816                    12                  0.028548                       0.000731                        0.0                          IPSC
+   cf_extension      19209   MES                 0.069371                    29                  0.068148                       0.001223                        3.0                           MES
+   cf_extension      19209  CMES                 0.283515                    59                  0.282034                       0.001481                        7.0                          PROG
+   cf_extension      19209  PROG                 0.311648                    68                  0.312724                       0.001076                        7.0                          PROG
+   cf_extension      19209    CF                 0.350831                    82                  0.348837                       0.001995                       11.0                          PROG
+
+4. PRE-SPECIFIED TRANSITION LANDMARK COVERAGE
+----------------------------------------------------------------------------------------------------
+          scope individual transition_id destination_state  destination_state_median_pseudotime  primary_parameter_min  primary_parameter_max  landmark_inside_primary_parameter_range  nearest_window_index  nearest_window_parameter  absolute_parameter_difference  nearest_window_median_day nearest_window_dominant_state
+shared_backbone      18489            T2              CMES                             0.287835               0.009312               0.326350                                     True                    41                  0.290208                       0.002373                        3.0                          CMES
+shared_backbone      18499            T2              CMES                             0.231745               0.010500               0.345389                                     True                    88                  0.233467                       0.001722                        7.0                          PROG
+shared_backbone      18505            T2              CMES                             0.268901               0.012319               0.337209                                     True                    43                  0.271075                       0.002174                        3.0                          CMES
+shared_backbone      18508            T2              CMES                             0.325506               0.008214               0.338699                                     True                    63                  0.325841                       0.000335                        3.0                          CMES
+shared_backbone      18511            T2              CMES                             0.268500               0.008325               0.346314                                     True                    78                  0.264975                       0.003525                        5.0                          PROG
+shared_backbone      18517            T2              CMES                             0.278562               0.010778               0.341391                                     True                    51                  0.283103                       0.004541                        3.0                          CMES
+shared_backbone      18520            T2              CMES                             0.299934               0.013444               0.340759                                     True                    58                  0.300723                       0.000788                        5.0                          PROG
+shared_backbone      18855            T2              CMES                             0.305947               0.014204               0.332731                                     True                    33                  0.309081                       0.003134                        5.0                          PROG
+shared_backbone      18858            T2              CMES                             0.271027               0.008779               0.349148                                     True                    82                  0.270724                       0.000303                        7.0                          PROG
+shared_backbone      18870            T2              CMES                             0.258835               0.007289               0.351795                                     True                    76                  0.260354                       0.001519                        7.0                          PROG
+shared_backbone      18907            T2              CMES                             0.304319               0.014148               0.337738                                     True                    33                  0.303481                       0.000838                        3.0                          CMES
+shared_backbone      18912            T2              CMES                             0.312626               0.008064               0.372724                                     True                    75                  0.312447                       0.000180                        3.0                          CMES
+shared_backbone      19093            T2              CMES                             0.310819               0.012020               0.346556                                     True                   107                  0.310138                       0.000682                        5.0                          PROG
+shared_backbone      19108            T2              CMES                             0.293644               0.013454               0.294614                                     True                    31                  0.294614                       0.000970                        3.0                          CMES
+shared_backbone      19127            T2              CMES                             0.307962               0.009877               0.364450                                     True                    44                  0.305078                       0.002884                        3.0                          CMES
+shared_backbone      19159            T2              CMES                             0.334777               0.011886               0.401278                                     True                    43                  0.334180                       0.000596                        3.0                          CMES
+shared_backbone      19190            T2              CMES                             0.312709               0.008986               0.364081                                     True                    63                  0.314333                       0.001624                        3.0                          CMES
+shared_backbone      19193            T2              CMES                             0.328153               0.009603               0.357805                                     True                    44                  0.328092                       0.000060                        3.0                          CMES
+shared_backbone      19209            T2              CMES                             0.283515               0.010101               0.365858                                     True                    59                  0.282628                       0.000887                        7.0                          PROG
+   cm_extension      18489         T3_CM                CM                             0.443284               0.009312               0.733422                                     True                    57                  0.429970                       0.013314                        7.0                            CM
+   cm_extension      18499         T3_CM                CM                             0.394675               0.010500               0.639714                                     True                   126                  0.394400                       0.000274                       11.0                            CM
+   cm_extension      18505         T3_CM                CM                             0.558775               0.012319               0.746029                                     True                    66                  0.553579                       0.005196                       11.0                            CM
+   cm_extension      18508         T3_CM                CM                             0.659375               0.008214               0.822147                                     True                    84                  0.678655                       0.019279                        7.0                            CM
+   cm_extension      18511         T3_CM                CM                             0.426866               0.008325               0.630816                                     True                   112                  0.416084                       0.010782                        7.0                            CM
+   cm_extension      18517         T3_CM                CM                             0.465993               0.010778               0.743765                                     True                    81                  0.473172                       0.007178                        7.0                            CM
+   cm_extension      18520         T3_CM                CM                             0.436573               0.013444               0.586114                                     True                    78                  0.426080                       0.010493                       11.0                            CM
+   cm_extension      18855         T3_CM                CM                             0.401350               0.014204               0.420748                                     True                    42                  0.401276                       0.000074                       11.0                            CM
+   cm_extension      18858         T3_CM                CM                             0.490367               0.008779               0.679257                                     True                   112                  0.484234                       0.006133                       11.0                            CM
+   cm_extension      18870         T3_CM                CM                             0.357248               0.007289               0.372471                                     True                   110                  0.355791                       0.001457                       15.0                          PROG
+   cm_extension      18907         T3_CM                CM                             0.403184               0.014148               0.425005                                     True                    52                  0.397222                       0.005962                       11.0                            CM
+   cm_extension      18912         T3_CM                CM                             0.514471               0.008064               0.851569                                     True                   115                  0.510546                       0.003925                       11.0                            CM
+   cm_extension      19093         T3_CM                CM                             0.633624               0.012020               0.828918                                     True                   140                  0.635978                       0.002354                        7.0                            CM
+   cm_extension      19108         T3_CM                CM                             0.375341               0.013454               0.324326                                    False                    33                  0.324326                       0.051014                        5.0                          CMES
+   cm_extension      19193         T3_CM                CM                             0.374162               0.009603               0.435765                                     True                    61                  0.374532                       0.000369                       11.0                            CM
+   cm_extension      19209         T3_CM                CM                             0.393015               0.010101               0.496660                                     True                    91                  0.394765                       0.001750                       15.0                            CM
+   cf_extension      18489         T3_CF                CF                             0.355965               0.009312               0.397613                                     True                    56                  0.357238                       0.001272                       11.0                            CF
+   cf_extension      18508         T3_CF                CF                             0.411623               0.008214               0.448995                                     True                   100                  0.412320                       0.000697                       11.0                            CF
+   cf_extension      18511         T3_CF                CF                             0.373301               0.008325               0.430136                                     True                   116                  0.374162                       0.000861                        7.0                            CF
+   cf_extension      18517         T3_CF                CF                             0.321171               0.010778               0.349083                                     True                    59                  0.321104                       0.000067                        5.0                          PROG
+   cf_extension      18520         T3_CF                CF                             0.390142               0.013444               0.439611                                     True                    89                  0.390738                       0.000596                       11.0                            CF
+   cf_extension      18855         T3_CF                CF                             0.403991               0.014204               0.447424                                     True                    62                  0.404667                       0.000676                       11.0                            CF
+   cf_extension      18907         T3_CF                CF                             0.381795               0.014148               0.430680                                     True                    64                  0.380276                       0.001519                       11.0                            CF
+   cf_extension      18912         T3_CF                CF                             0.368472               0.008064               0.395891                                     True                   102                  0.367596                       0.000876                        7.0                          PROG
+   cf_extension      19093         T3_CF                CF                             0.409976               0.012020               0.446863                                     True                   143                  0.410378                       0.000403                        7.0                            CF
+   cf_extension      19108         T3_CF                CF                             0.376905               0.013454               0.325726                                    False                    33                  0.325726                       0.051179                        5.0                          CMES
+   cf_extension      19127         T3_CF                CF                             0.409341               0.009877               0.450146                                     True                    79                  0.408021                       0.001320                       11.0                            CF
+   cf_extension      19159         T3_CF                CF                             0.435215               0.011886               0.457456                                     True                    92                  0.435353                       0.000138                       11.0                            CF
+   cf_extension      19190         T3_CF                CF                             0.415723               0.008986               0.454109                                     True                   126                  0.415321                       0.000403                       11.0                            CF
+   cf_extension      19193         T3_CF                CF                             0.393660               0.009603               0.443561                                     True                    72                  0.393553                       0.000107                       11.0                            CF
+   cf_extension      19209         T3_CF                CF                             0.350831               0.010101               0.371246                                     True                    82                  0.348837                       0.001995                       11.0                          PROG
+
+5. WINDOW-SIZE SENSITIVITY SUMMARY
+----------------------------------------------------------------------------------------------------
+               config           scope  n_individuals  min_windows  median_windows  max_windows  min_cell_coverage  mean_cell_coverage  min_strict_increment_fraction  max_tie_fraction
+    primary_w400_s100    cf_extension             15           34            98.0          166           0.980132            0.993616                            1.0               0.0
+    primary_w400_s100    cm_extension             16           34            90.5          151           0.982928            0.992691                            1.0               0.0
+    primary_w400_s100 shared_backbone             19           32            73.0          126           0.973845            0.992734                            1.0               0.0
+ sensitivity_w300_s75    cf_extension             15           47           132.0          222           0.991872            0.996204                            1.0               0.0
+ sensitivity_w300_s75    cm_extension             16           47           122.0          203           0.991587            0.995681                            1.0               0.0
+ sensitivity_w300_s75 shared_backbone             19           44            99.0          169           0.980801            0.995027                            1.0               0.0
+sensitivity_w500_s125    cf_extension             15           27            78.0          132           0.988894            0.994311                            1.0               0.0
+sensitivity_w500_s125    cm_extension             16           27            72.0          120           0.984396            0.993886                            1.0               0.0
+sensitivity_w500_s125 shared_backbone             19           25            58.0          100           0.973845            0.991895                            1.0               0.0
+
+6. TRAJECTORY-ASSEMBLY QUALIFICATION
+----------------------------------------------------------------------------------------------------
+[PASS] Every frozen scope x individual group is present
+[PASS] Every primary group has >= 15 complete windows
+[PASS] Every primary group has >= 0.95 unique-cell coverage
+[PASS] Parameters are non-decreasing in every configuration/group
+[PASS] Minimum strict parameter-increment fraction >= 0.99
+[PASS] Maximum parameter-tie fraction <= 0.01
+[PASS] All expected biological states are represented in every primary group
+[PASS] All trajectory arrays contain finite 50-PC values
+[REVIEW] Every scope's pre-specified primary transition landmark lies inside its primary parameter range
+
+Qualification checks passed: 8/9
+
+7. FIGURES
+----------------------------------------------------------------------------------------------------
+Saved primary window-count and cell-coverage figures.
+
+8. FINAL STATUS
+----------------------------------------------------------------------------------------------------
+Primary groups assembled: 50
+Primary windows total: 4,385
+Minimum primary windows/group: 32
+Minimum primary unique-cell coverage: 0.973845
+Minimum strict parameter-increment fraction across all configurations: 1.000000
+Maximum parameter-tie fraction across all configurations: 0.000000
+
+FINAL STATUS: REVIEW REQUIRED
+Review the flagged assembly property before running external GDIS.
+
+IMPORTANT:
+No biological landmark was used to define a window.
+No window size or step was optimized based on GDIS.
+No common early cell was assigned an eventual CM or CF fate.
+NO GDIS VALUES WERE CALCULATED.
+
+Report:  <PROJECT_ROOT>/results/p17_external_GSE175634_trajectory_window_assembly/p17_external_GSE175634_trajectory_window_assembly_report.txt
+Tables:  <PROJECT_ROOT>/results/p17_external_GSE175634_trajectory_window_assembly/tables
+Figures: <PROJECT_ROOT>/results/p17_external_GSE175634_trajectory_window_assembly/figures
+Data:    <PROJECT_ROOT>/results/p17_external_GSE175634_trajectory_window_assembly/data

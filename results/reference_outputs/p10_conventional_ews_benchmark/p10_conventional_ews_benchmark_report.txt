@@ -1,0 +1,143 @@
+==============================================================================================
+GDIS-Bio Benchmark Against Conventional Early-Warning / Transition Metrics
+==============================================================================================
+
+Frozen analysis design:
+  50 PCs; 400 cells/window; 100-cell step; 75% overlap
+  No GDIS values are recomputed.
+  No windows, landmarks, or hyperparameters are changed.
+
+Conventional benchmark metrics:
+  - Total variance
+  - Mean lag-1 pseudotemporal autocorrelation
+  - Gaussian differential entropy
+  - Mean pseudotemporal step distance
+
+NOTE: autocorrelation and step distance are pseudotemporal, not physical-time, quantities.
+
+1. COMPUTE CONVENTIONAL METRICS ON FROZEN WINDOWS
+----------------------------------------------------------------------------------------------
+branch0_diff1: 41 windows computed
+branch0_diff2: 47 windows computed
+branch1_diff1: 36 windows computed
+branch1_diff2: 43 windows computed
+
+2. GLOBAL-PEAK LOCALIZATION BENCHMARK
+----------------------------------------------------------------------------------------------
+ branch lineage  differentiation                        metric                              metric_label  peak_parameter  neurog3_early_landmark  peak_minus_early_landmark  absolute_peak_localization_error  peak_median_day peak_dominant_state  peak_value
+      0   SC-EC                1                          gdis                                      GDIS        0.192374                0.171404                   0.020970                          0.020970              1.0       neurog3_early    0.852791
+      0   SC-EC                1             transition_energy                    GDIS transition energy        0.120740                0.171404                  -0.050663                          0.050663              1.0          prog_nkx61    0.869697
+      0   SC-EC                1                total_variance                            Total variance        0.192374                0.171404                   0.020970                          0.020970              1.0       neurog3_early   96.248436
+      0   SC-EC                1     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation        0.137656                0.171404                  -0.033748                          0.033748              1.0          prog_nkx61    0.118869
+      0   SC-EC                1 gaussian_differential_entropy             Gaussian differential entropy        0.344733                0.171404                   0.173329                          0.173329              3.0        neurog3_late   76.295846
+      0   SC-EC                1            mean_step_distance         Mean pseudotemporal step distance        0.209371                0.171404                   0.037967                          0.037967              2.0         neurog3_mid   12.891167
+      0   SC-EC                2                          gdis                                      GDIS        0.172633                0.174967                  -0.002335                          0.002335              3.0       neurog3_early    0.863924
+      0   SC-EC                2             transition_energy                    GDIS transition energy        0.140523                0.174967                  -0.034445                          0.034445              3.0          prog_nkx61    1.000000
+      0   SC-EC                2                total_variance                            Total variance        0.199787                0.174967                   0.024820                          0.024820              3.0       neurog3_early  100.971610
+      0   SC-EC                2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation        0.057380                0.174967                  -0.117587                          0.117587              0.0          prog_nkx61    0.086474
+      0   SC-EC                2 gaussian_differential_entropy             Gaussian differential entropy        0.356529                0.174967                   0.181561                          0.181561              3.0        neurog3_late   79.269427
+      0   SC-EC                2            mean_step_distance         Mean pseudotemporal step distance        0.274369                0.174967                   0.099402                          0.099402              3.0         neurog3_mid   13.691224
+      1 SC-beta                1                          gdis                                      GDIS        0.189676                0.170517                   0.019159                          0.019159              1.0       neurog3_early    0.830154
+      1 SC-beta                1             transition_energy                    GDIS transition energy        0.154206                0.170517                  -0.016311                          0.016311              1.0       neurog3_early    0.824385
+      1 SC-beta                1                total_variance                            Total variance        0.189676                0.170517                   0.019159                          0.019159              1.0       neurog3_early   96.024202
+      1 SC-beta                1     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation        0.138098                0.170517                  -0.032419                          0.032419              1.0       neurog3_early    0.109679
+      1 SC-beta                1 gaussian_differential_entropy             Gaussian differential entropy        0.387162                0.170517                   0.216645                          0.216645              4.0        neurog3_late   76.504644
+      1 SC-beta                1            mean_step_distance         Mean pseudotemporal step distance        0.225268                0.170517                   0.054751                          0.054751              2.0         neurog3_mid   12.974681
+      1 SC-beta                2                          gdis                                      GDIS        0.170639                0.172877                  -0.002237                          0.002237              2.5       neurog3_early    0.863612
+      1 SC-beta                2             transition_energy                    GDIS transition energy        0.138464                0.172877                  -0.034413                          0.034413              3.0       neurog3_early    0.968195
+      1 SC-beta                2                total_variance                            Total variance        0.215465                0.172877                   0.042589                          0.042589              3.0         neurog3_mid   99.478560
+      1 SC-beta                2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation        0.061097                0.172877                  -0.111780                          0.111780              0.0          prog_nkx61    0.095037
+      1 SC-beta                2 gaussian_differential_entropy             Gaussian differential entropy        0.339164                0.172877                   0.166287                          0.166287              3.0         neurog3_mid   79.337754
+      1 SC-beta                2            mean_step_distance         Mean pseudotemporal step distance        0.215465                0.172877                   0.042589                          0.042589              3.0         neurog3_mid   13.609006
+
+3. PROGENITOR -> NEUROG3-EARLY METRIC CHANGE
+----------------------------------------------------------------------------------------------
+ branch lineage  differentiation                        metric                              metric_label  progenitor_value  neurog3_early_value  early_minus_progenitor  normalized_early_minus_progenitor  increases_to_neurog3_early
+      0   SC-EC                1                          gdis                                      GDIS          0.539370             0.841983                0.302613                           0.893089                        True
+      0   SC-EC                1             transition_energy                    GDIS transition energy          0.348541             0.826942                0.478401                           0.599774                        True
+      0   SC-EC                1                total_variance                            Total variance         51.246162            92.940846               41.694684                           0.918150                        True
+      0   SC-EC                1     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          0.024865             0.080703                0.055838                           0.439265                        True
+      0   SC-EC                1 gaussian_differential_entropy             Gaussian differential entropy         55.674282            71.615652               15.941370                           0.763389                        True
+      0   SC-EC                1            mean_step_distance         Mean pseudotemporal step distance          9.774666            11.993009                2.218343                           0.647494                        True
+      0   SC-EC                2                          gdis                                      GDIS          0.284987             0.863924                0.578937                           0.974374                        True
+      0   SC-EC                2             transition_energy                    GDIS transition energy          0.396844             0.798383                0.401539                           0.401539                        True
+      0   SC-EC                2                total_variance                            Total variance         59.211825            92.237167               33.025342                           0.722325                        True
+      0   SC-EC                2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          0.076360             0.036486               -0.039874                          -0.352236                       False
+      0   SC-EC                2 gaussian_differential_entropy             Gaussian differential entropy         60.544957            75.024832               14.479875                           0.664394                        True
+      0   SC-EC                2            mean_step_distance         Mean pseudotemporal step distance         10.026121            12.708075                2.681954                           0.720210                        True
+      1 SC-beta                1                          gdis                                      GDIS          0.472720             0.824160                0.351440                           0.793280                        True
+      1 SC-beta                1             transition_energy                    GDIS transition energy          0.380510             0.784291                0.403781                           0.556075                        True
+      1 SC-beta                1                total_variance                            Total variance         52.377485            91.391774               39.014289                           0.876753                        True
+      1 SC-beta                1     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          0.010656             0.062192                0.051535                           0.431988                        True
+      1 SC-beta                1 gaussian_differential_entropy             Gaussian differential entropy         56.683452            72.263785               15.580333                           0.767377                        True
+      1 SC-beta                1            mean_step_distance         Mean pseudotemporal step distance          9.952142            12.159470                2.207328                           0.703335                        True
+      1 SC-beta                2                          gdis                                      GDIS          0.279755             0.863612                0.583857                           0.967076                        True
+      1 SC-beta                2             transition_energy                    GDIS transition energy          0.286086             0.833488                0.547402                           0.565384                        True
+      1 SC-beta                2                total_variance                            Total variance         59.271102            92.589061               33.317959                           0.753539                        True
+      1 SC-beta                2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          0.062197             0.042046               -0.020151                          -0.186140                       False
+      1 SC-beta                2 gaussian_differential_entropy             Gaussian differential entropy         61.455290            74.363747               12.908457                           0.610857                        True
+      1 SC-beta                2            mean_step_distance         Mean pseudotemporal step distance         10.130335            12.632886                2.502551                           0.688817                        True
+
+4. CROSS-REPLICATE PROFILE AGREEMENT
+----------------------------------------------------------------------------------------------
+ branch lineage                        metric                              metric_label  pearson  spearman      mae  shared_pseudotime_min  shared_pseudotime_max
+      0   SC-EC                          gdis                                      GDIS 0.927466  0.855391 0.031242               0.057380               0.921783
+      0   SC-EC             transition_energy                    GDIS transition energy 0.855520  0.751507 0.113818               0.057380               0.921783
+      0   SC-EC                total_variance                            Total variance 0.955978  0.835382 3.854229               0.057380               0.921783
+      0   SC-EC     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation 0.851157  0.624517 0.019265               0.057380               0.921783
+      0   SC-EC gaussian_differential_entropy             Gaussian differential entropy 0.991530  0.973292 2.638501               0.057380               0.921783
+      0   SC-EC            mean_step_distance         Mean pseudotemporal step distance 0.955690  0.891858 0.466006               0.057380               0.921783
+      1 SC-beta                          gdis                                      GDIS 0.913442  0.851601 0.047380               0.061097               0.887832
+      1 SC-beta             transition_energy                    GDIS transition energy 0.607384  0.473842 0.140676               0.061097               0.887832
+      1 SC-beta                total_variance                            Total variance 0.979628  0.976924 2.928422               0.061097               0.887832
+      1 SC-beta     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation 0.852624  0.438196 0.016372               0.061097               0.887832
+      1 SC-beta gaussian_differential_entropy             Gaussian differential entropy 0.994313  0.978652 1.906643               0.061097               0.887832
+      1 SC-beta            mean_step_distance         Mean pseudotemporal step distance 0.973940  0.929167 0.382949               0.061097               0.887832
+
+5. INTEGRATED DESCRIPTIVE BENCHMARK
+----------------------------------------------------------------------------------------------
+                       metric                              metric_label  mean_absolute_peak_localization_error  median_absolute_peak_localization_error  n_of_4_peaks_in_neurog3_early_dominant_window  n_of_4_increasing_from_progenitor_to_neurog3_early  mean_normalized_progenitor_to_early_change  minimum_replicate_pearson  mean_replicate_pearson  minimum_replicate_spearman  mean_replicate_spearman
+                         gdis                                      GDIS                               0.011175                                 0.010747                                              4                                                   4                                    0.906955                   0.913442                0.920454                    0.851601                 0.853496
+               total_variance                            Total variance                               0.026884                                 0.022895                                              3                                                   4                                    0.817692                   0.955978                0.967803                    0.835382                 0.906153
+            transition_energy                    GDIS transition energy                               0.033958                                 0.034429                                              2                                                   4                                    0.530693                   0.607384                0.731452                    0.473842                 0.612675
+           mean_step_distance         Mean pseudotemporal step distance                               0.058677                                 0.048670                                              0                                                   4                                    0.689964                   0.955690                0.964815                    0.891858                 0.910512
+    mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation                               0.073884                                 0.072764                                              1                                                   2                                    0.083219                   0.851157                0.851890                    0.438196                 0.531357
+gaussian_differential_entropy             Gaussian differential entropy                               0.184456                                 0.177445                                              0                                                   4                                    0.701504                   0.991530                0.992921                    0.973292                 0.975972
+
+6. BRANCH-CONSENSUS BENCHMARK
+----------------------------------------------------------------------------------------------
+ branch lineage                        metric                              metric_label  consensus_peak_parameter  mean_neurog3_early_landmark  consensus_peak_minus_early_landmark  absolute_consensus_peak_localization_error  consensus_peak_value
+      0   SC-EC                          gdis                                      GDIS                  0.182354                     0.173186                             0.009169                                    0.009169              0.853732
+      0   SC-EC             transition_energy                    GDIS transition energy                  0.140696                     0.173186                            -0.032489                                    0.032489              0.930938
+      0   SC-EC                total_variance                            Total variance                  0.199712                     0.173186                             0.026526                                    0.026526             98.370139
+      0   SC-EC     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation                  0.140696                     0.173186                            -0.032489                                    0.032489              0.101440
+      0   SC-EC gaussian_differential_entropy             Gaussian differential entropy                  0.345515                     0.173186                             0.172329                                    0.172329             77.719420
+      0   SC-EC            mean_step_distance         Mean pseudotemporal step distance                  0.206655                     0.173186                             0.033469                                    0.033469             13.256102
+      1 SC-beta                          gdis                                      GDIS                  0.170664                     0.171697                            -0.001033                                    0.001033              0.843579
+      1 SC-beta             transition_energy                    GDIS transition energy                  0.140782                     0.171697                            -0.030915                                    0.030915              0.892977
+      1 SC-beta                total_variance                            Total variance                  0.200546                     0.171697                             0.028849                                    0.028849             97.513980
+      1 SC-beta     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation                  0.137462                     0.171697                            -0.034235                                    0.034235              0.095649
+      1 SC-beta gaussian_differential_entropy             Gaussian differential entropy                  0.339995                     0.171697                             0.168298                                    0.168298             77.827524
+      1 SC-beta            mean_step_distance         Mean pseudotemporal step distance                  0.217147                     0.171697                             0.045450                                    0.045450             13.266160
+
+7. BENCHMARK FIGURES
+----------------------------------------------------------------------------------------------
+Saved standardized profile figures and localization-error summary.
+
+8. FINAL STATUS
+----------------------------------------------------------------------------------------------
+[PASS] All benchmark metric values are finite.
+[PASS] All four frozen branch x differentiation profiles were benchmarked.
+
+FINAL COMPUTATIONAL STATUS: PASS
+
+INTERPRETATION RULES:
+  - Smaller peak-localization error means closer alignment to the frozen median NEUROG3-early landmark.
+  - A conventional metric is not considered superior or inferior from any single criterion alone.
+  - Replicate reproducibility, biological localization, and progenitor-to-early change should be interpreted together.
+  - The NEUROG3-early median is a frozen state landmark, not a proven true transition-onset time.
+  - No benchmark result is used here to retune GDIS.
+
+Report:  <PROJECT_ROOT>/results/p10_conventional_ews_benchmark/p10_conventional_ews_benchmark_report.txt
+Tables:  <PROJECT_ROOT>/results/p10_conventional_ews_benchmark/tables
+Figures: <PROJECT_ROOT>/results/p10_conventional_ews_benchmark/figures

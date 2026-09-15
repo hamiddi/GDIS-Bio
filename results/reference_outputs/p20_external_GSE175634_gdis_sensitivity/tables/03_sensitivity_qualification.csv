@@ -1,0 +1,6 @@
+check,pass
+Every frozen primary scope x individual profile is represented in every sensitivity analysis,True
+All sensitivity comparison statistics are finite,True
+All sensitivity GDIS values satisfy 0 <= GDIS < 1,True
+Lower-dimensional 400/100 windows exactly reproduce the frozen primary parameter sequence,True
+The p18/p19 primary result is not overwritten or redefined,True

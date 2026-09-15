@@ -1,0 +1,6 @@
+check,pass
+All final primary GDIS groups contain their pre-specified transition landmark,True
+All final trajectory and metadata files exist,True
+Each final scope retains at least 10 independent individuals,True
+Shared-backbone cohort remains unchanged,True
+Only the two p17-flagged individual 19108 terminal profiles are excluded,True

@@ -1,0 +1,4 @@
+scope,transition_id,n_individuals,median_gdis_abs_error,median_transition_energy_abs_error,median_energy_minus_gdis_error,gdis_wins,ties,gdis_losses,p_sign_gdis_better,p_wilcoxon_gdis_better,gdis_better_sign_test_significant,gdis_better_wilcoxon_significant
+shared_backbone,T2,19,0.0376201649999999,0.258705465,0.2054755539999999,18,1,0,3.814697265625e-06,9.821836310615568e-05,True,True
+cm_extension,T3_CM,15,0.0953951699999999,0.39815294,0.2992847085000001,15,0,0,3.0517578125e-05,3.0517578125e-05,True,True
+cf_extension,T3_CF,14,0.0405031724999999,0.29997908925,0.28147614675,9,3,2,0.03271484375,0.0038228808464958,True,True

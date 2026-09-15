@@ -1,0 +1,7 @@
+filename,url,status,remote_size_bytes,local_size_bytes,gzip_integrity_pass,sha256
+GSE175634_cell_metadata.tsv.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_metadata.tsv.gz,downloaded,10295284,10295284,True,426f3f8ef9a02da8cbf8247ef5d80a142a7e72883df61dad26c8453bd3d627a1
+GSE175634_cell_indices.tsv.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_indices.tsv.gz,downloaded,1576338,1576338,True,f88c17042c7051d31b5baab04a13c722655175950fa904d3d98c615f5645f939
+GSE175634_gene_indices_counts.tsv.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_gene_indices_counts.tsv.gz,downloaded,235955,235955,True,6ad124f5328ed32b4f6c6f02a237399a901fa64fb0fbdbf1ba8a9c2423873622
+GSE175634_collection_metadata.txt.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_collection_metadata.txt.gz,downloaded,2985,2985,True,852bd218b458081d55f15d15ab03a63dba126e844ed6f12d391dea16066b2664
+GSE175634_experimental_design.txt.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_experimental_design.txt.gz,downloaded,736,736,True,a3e89118ae341014a435ba9f954f22fda3b43475ebc7bcf462e5184638e98669
+GSE175634_cell_counts.mtx.gz,https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_counts.mtx.gz,downloaded,1016951477,1016951477,True,bc1314d98cf5f33ffc33ea284c1475117af6d72df35175ed7f8aa702445c3cce

@@ -1,0 +1,52 @@
+# Documentation mirror of the frozen analysis settings used in the manuscript.
+# The analysis scripts remain the executable source of truth.
+project:
+  title: "GDIS-Bio: A Generalized Dynamical Instability Framework for Localizing Transcriptional State Transitions in Single-Cell Trajectories"
+  authors:
+    - Hamid Ismail
+    - Ahmed Harb
+    - Basem William
+    - Marwan Bikdash
+
+discovery_GSE114412:
+  primary_pca_dimensions: 50
+  pca_sensitivity_dimensions: [5, 10, 20, 30, 50]
+  primary_window_size: 400
+  primary_window_step: 100
+  window_sensitivity:
+    - {window_size: 300, step: 75}
+    - {window_size: 500, step: 125}
+  null_model:
+    method: circular_shift
+    permutations: 20000
+    random_seed: 20260913
+
+external_GSE175634:
+  primary_pca_dimensions: 50
+  primary_window_size: 400
+  primary_window_step: 100
+  expected_profiles:
+    shared_backbone: 19
+    cm_extension: 15
+    cf_extension: 14
+    total: 48
+
+pygdis:
+  package_version: "1.0.0"
+  alpha_j: 0.42
+  alpha_s: 0.33
+  alpha_a: 0.25
+  k_j: 3.0
+  k_s: 2.6
+  k_a: 2.4
+  hill_gamma: 0.72
+  hill_c: 0.22
+  complexity_gain: 0.055
+  temporal_gain: 0.055
+  temporal_threshold: 0.60
+  transition_weight: 0.18
+  transition_width_fraction: 0.09
+  critical_value: null
+  smoothing_window: 9
+  smoothing_polynomial_order: 3
+  max_sustained: 0.985

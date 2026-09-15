@@ -1,0 +1,69 @@
+====================================================================================================
+GDIS-Bio GSE175634 Transition-Evaluability Freeze
+====================================================================================================
+
+NO GDIS VALUES HAVE BEEN CALCULATED.
+This step resolves the pre-GDIS p17 transition-landmark coverage criterion without changing windows, landmarks, PCA dimensions, or GDIS settings.
+
+1. P17 PRIMARY GROUPS FAILING TRANSITION EVALUABILITY
+----------------------------------------------------------------------------------------------------
+       scope individual transition_id destination_state  destination_state_median_pseudotime  parameter_min  parameter_max  landmark_minus_parameter_max
+cf_extension      19108         T3_CF                CF                             0.376905       0.013454       0.325726                      0.051179
+cm_extension      19108         T3_CM                CM                             0.375341       0.013454       0.324326                      0.051014
+
+Interpretation:
+These profiles do not extend far enough in the transferred 400/100 complete-window family to reach the frozen terminal state median landmark.
+They are excluded from terminal-transition GDIS validation rather than modifying the window construction.
+
+2. FINAL PRIMARY EXTERNAL GDIS COHORT
+----------------------------------------------------------------------------------------------------
+          scope  p17_primary_groups  final_primary_gdis_groups  excluded_for_transition_evaluability
+shared_backbone                  19                         19                                     0
+   cm_extension                  16                         15                                     1
+   cf_extension                  15                         14                                     1
+
+Total final primary GDIS profiles: 48
+
+3. WINDOW-CONFIGURATION LANDMARK AUDIT
+----------------------------------------------------------------------------------------------------
+               config           scope  n_groups  n_landmark_inside  min_parameter_max  max_landmark_overrun
+    primary_w400_s100    cf_extension        15                 14           0.325726              0.051179
+    primary_w400_s100    cm_extension        16                 15           0.324326              0.051014
+    primary_w400_s100 shared_backbone        19                 19           0.294614             -0.000970
+ sensitivity_w300_s75    cf_extension        15                 14           0.340727              0.036178
+ sensitivity_w300_s75    cm_extension        16                 15           0.338490              0.036850
+ sensitivity_w300_s75 shared_backbone        19                 19           0.310045             -0.014536
+sensitivity_w500_s125    cf_extension        15                 14           0.325726              0.051179
+sensitivity_w500_s125    cm_extension        16                 15           0.324326              0.051014
+sensitivity_w500_s125 shared_backbone        19                 18           0.277476              0.016168
+
+4. FINAL QUALIFICATION
+----------------------------------------------------------------------------------------------------
+[PASS] All final primary GDIS groups contain their pre-specified transition landmark
+[PASS] All final trajectory and metadata files exist
+[PASS] Each final scope retains at least 10 independent individuals
+[PASS] Shared-backbone cohort remains unchanged
+[PASS] Only the two p17-flagged individual 19108 terminal profiles are excluded
+
+Qualification checks passed: 5/5
+
+FINAL STATUS: PASS
+The transition-evaluable external-validation cohort is now frozen before GDIS.
+Final primary replicate counts:
+  shared_backbone: 19
+  cm_extension: 15
+  cf_extension: 14
+  TOTAL: 48
+
+The next step may run unchanged pyGDIS independently on the final manifest.
+
+IMPORTANT:
+Individual 19108 remains in the shared-backbone analysis.
+No incomplete window tail was added or padded.
+No transition landmark was moved.
+No PCA dimension, window size, step size, or GDIS parameter was changed.
+Sensitivity analyses use the same frozen primary-evaluable scope x individual groups for paired comparability.
+NO GDIS VALUES WERE CALCULATED.
+
+Report:  <PROJECT_ROOT>/results/p17b_external_GSE175634_transition_evaluability_freeze/p17b_external_GSE175634_transition_evaluability_freeze_report.txt
+Tables:  <PROJECT_ROOT>/results/p17b_external_GSE175634_transition_evaluability_freeze/tables

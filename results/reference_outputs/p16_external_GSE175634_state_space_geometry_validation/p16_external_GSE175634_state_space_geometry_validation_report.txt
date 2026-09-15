@@ -1,0 +1,140 @@
+==================================================================================================
+GDIS-Bio External Validation State-Space Geometry Validation
+Dataset: GSE175634
+==================================================================================================
+
+50 PCs are transferred from the discovery workflow as the primary external-validation representation.
+Lower-dimensional prefixes are sensitivity analyses only.
+NO GDIS VALUES ARE CALCULATED.
+
+1. INPUT VALIDATION
+--------------------------------------------------------------------------------------------------
+Cells: 217,283
+Individuals: 19
+Cell states: ['CF', 'CM', 'CMES', 'IPSC', 'MES', 'PROG']
+PC dimensions: 50
+Finite PC coordinates: True
+
+2. RANDOM-PAIR DISTANCE GEOMETRY
+--------------------------------------------------------------------------------------------------
+ 5 PCs: mean=10.852360, CV=0.545158, q95/q05=8.043528
+10 PCs: mean=12.736195, CV=0.438343, q95/q05=4.829354
+20 PCs: mean=14.436377, CV=0.385215, q95/q05=3.816931
+30 PCs: mean=15.493586, CV=0.356683, q95/q05=3.397760
+50 PCs: mean=16.993255, CV=0.326369, q95/q05=3.031453
+
+Distance convergence to 50 PCs:
+ dimension  spearman_distance_vs_50pc
+         5                   0.898073
+        10                   0.943145
+        20                   0.976416
+        30                   0.989965
+        50                   1.000000
+
+Adjacent-dimensional convergence:
+ lower_dimension  upper_dimension  spearman_distance_correlation
+               5               10                       0.961383
+              10               20                       0.980006
+              20               30                       0.991290
+              30               50                       0.989965
+
+3. LOCAL NEIGHBORHOOD GEOMETRY (STRATIFIED EXACT-kNN SAMPLE)
+--------------------------------------------------------------------------------------------------
+Stratified geometry sample: 3,745 cells
+Target per individual x state: 35
+ dimension  sample_cells  k  median_first_neighbor_distance  median_kth_neighbor_distance  median_kth_to_first_ratio  mean_local_scale  local_scale_cv  spearman_local_scale_vs_pseudotime
+         5          3745 30                        0.976289                      2.268804                   2.323907          2.196253        0.564581                            0.839327
+        10          3745 30                        2.429238                      4.260540                   1.753858          3.953622        0.401770                            0.843081
+        20          3745 30                        4.323062                      6.404905                   1.481567          6.041267        0.351606                            0.869815
+        30          3745 30                        5.705585                      7.882785                   1.381591          7.442015        0.325884                            0.873424
+        50          3745 30                        7.640625                      9.781926                   1.280252          9.443925        0.312029                            0.882303
+
+Neighbor overlap versus 50 PCs:
+ dimension  mean_30nn_overlap_vs_50pc
+         5                   0.229186
+        10                   0.386088
+        20                   0.562510
+        30                   0.704050
+        50                   1.000000
+
+4. INDIVIDUAL x STATE CENTROID GEOMETRY
+--------------------------------------------------------------------------------------------------
+ dimension  spearman_centroid_distance_vs_50pc  state_separation_to_individual_dispersion_ratio
+         5                            0.950913                                         5.237665
+        10                            0.984657                                         3.822251
+        20                            0.995682                                         2.874768
+        30                            0.999087                                         2.556214
+        50                            1.000000                                         2.317885
+
+5. LEAVE-ONE-INDIVIDUAL-OUT CORE-STATE GENERALIZATION
+--------------------------------------------------------------------------------------------------
+ dimension  n_classified_centroids  overall_accuracy  balanced_accuracy
+         5                      76          0.973684           0.973684
+        10                      76          0.986842           0.986842
+        20                      76          0.986842           0.986842
+        30                      76          0.986842           0.986842
+        50                      76          0.986842           0.986842
+
+6. BIOLOGICAL-TRANSITION VECTOR REPRODUCIBILITY
+--------------------------------------------------------------------------------------------------
+ dimension segment_id source_state destination_state  n_individuals  median_cosine  q25_cosine  q75_cosine  fraction_positive_cosine
+         5         T1         IPSC               MES             19       0.909396    0.853878    0.952008                       1.0
+         5         T2          MES              CMES             19       0.973756    0.957230    0.984743                       1.0
+         5      CORE3         CMES              PROG             19       0.905084    0.878130    0.956026                       1.0
+         5      T3_CM         PROG                CM             16       0.942813    0.915916    0.970797                       1.0
+         5      T3_CF         PROG                CF             15       0.931407    0.896749    0.977066                       1.0
+        10         T1         IPSC               MES             19       0.956598    0.925272    0.978039                       1.0
+        10         T2          MES              CMES             19       0.941731    0.898328    0.967049                       1.0
+        10      CORE3         CMES              PROG             19       0.923411    0.900558    0.954010                       1.0
+        10      T3_CM         PROG                CM             16       0.937880    0.903367    0.949734                       1.0
+        10      T3_CF         PROG                CF             15       0.918929    0.852226    0.956195                       1.0
+        20         T1         IPSC               MES             19       0.944462    0.922724    0.960473                       1.0
+        20         T2          MES              CMES             19       0.901424    0.832105    0.958964                       1.0
+        20      CORE3         CMES              PROG             19       0.869581    0.841007    0.914280                       1.0
+        20      T3_CM         PROG                CM             16       0.907168    0.884768    0.936266                       1.0
+        20      T3_CF         PROG                CF             15       0.861012    0.814695    0.910564                       1.0
+        30         T1         IPSC               MES             19       0.912812    0.883418    0.944206                       1.0
+        30         T2          MES              CMES             19       0.876347    0.806688    0.923614                       1.0
+        30      CORE3         CMES              PROG             19       0.834405    0.796855    0.899202                       1.0
+        30      T3_CM         PROG                CM             16       0.902228    0.872023    0.925225                       1.0
+        30      T3_CF         PROG                CF             15       0.835637    0.802750    0.906340                       1.0
+        50         T1         IPSC               MES             19       0.888845    0.844560    0.927725                       1.0
+        50         T2          MES              CMES             19       0.861181    0.798349    0.902347                       1.0
+        50      CORE3         CMES              PROG             19       0.825968    0.766517    0.873244                       1.0
+        50      T3_CM         PROG                CM             16       0.887898    0.857918    0.918606                       1.0
+        50      T3_CF         PROG                CF             15       0.820612    0.787576    0.895184                       1.0
+
+7. TRANSFERRED 50-PC PRIMARY-SPACE QUALIFICATION
+--------------------------------------------------------------------------------------------------
+[PASS] 50-PC pairwise-distance CV >= 0.1
+[PASS] 50-PC q95/q05 distance ratio >= 1.5
+[PASS] 50-PC median 30th/1st neighbor ratio >= 1.1
+[PASS] 50-PC local-scale CV >= 0.05
+[PASS] 30->50 random-pair distance Spearman >= 0.98
+[PASS] 30->50 mean 30-NN overlap >= 0.5
+[PASS] 30-vs-50 individual-state centroid-distance Spearman >= 0.98
+[PASS] 50-PC leave-one-individual-out core-state balanced accuracy >= 0.75
+[PASS] 50-PC biological-state separation / individual-dispersion ratio >= 1.0
+
+Geometry checks passed: 9/9
+
+8. FIGURES
+--------------------------------------------------------------------------------------------------
+Saved distance, neighborhood, state-generalization, and state-separation figures.
+
+9. FINAL STATUS
+--------------------------------------------------------------------------------------------------
+FINAL STATUS: PASS
+The transferred 50-PC state space is geometrically well behaved and biologically reproducible across independent individuals.
+50 PCs remain frozen as the PRIMARY external-validation state space.
+5/10/20/30 PCs remain frozen sensitivity analyses.
+The next step may assemble pseudotemporal GDIS windows without changing dimensionality based on GDIS outcomes.
+
+IMPORTANT:
+No dimensionality was selected by optimizing a GDIS result.
+No batch correction was introduced.
+NO GDIS VALUES WERE CALCULATED.
+
+Report:  <PROJECT_ROOT>/results/p16_external_GSE175634_state_space_geometry_validation/p16_external_GSE175634_state_space_geometry_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p16_external_GSE175634_state_space_geometry_validation/tables
+Figures: <PROJECT_ROOT>/results/p16_external_GSE175634_state_space_geometry_validation/figures

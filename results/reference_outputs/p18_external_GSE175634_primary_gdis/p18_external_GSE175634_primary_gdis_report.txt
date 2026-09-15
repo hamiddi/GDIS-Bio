@@ -1,0 +1,137 @@
+======================================================================================================
+GDIS-Bio Primary External Validation GDIS Analysis
+Dataset: GSE175634
+======================================================================================================
+
+THIS IS THE FIRST GDIS CALCULATION ON GSE175634.
+Biological transition landmarks are NOT supplied to pyGDIS.
+Data-only mode is used: no analytical Jacobian.
+
+1. SOFTWARE AND FROZEN pyGDIS CONFIGURATION
+------------------------------------------------------------------------------------------------------
+Python: 3.11.16
+pyGDIS: 1.0.0
+Analytical Jacobian supplied: NO
+Biological critical_value supplied: NO
+Frozen profiles: 48
+Frozen scope counts: {'cf_extension': 14, 'cm_extension': 15, 'shared_backbone': 19}
+
+Reference configuration verification:
+                 parameter  expected  observed  match
+                   alpha_j     0.420     0.420   True
+                   alpha_s     0.330     0.330   True
+                   alpha_a     0.250     0.250   True
+                       k_j     3.000     3.000   True
+                       k_s     2.600     2.600   True
+                       k_a     2.400     2.400   True
+                hill_gamma     0.720     0.720   True
+                    hill_c     0.220     0.220   True
+           complexity_gain     0.055     0.055   True
+             temporal_gain     0.055     0.055   True
+        temporal_threshold     0.600     0.600   True
+         transition_weight     0.180     0.180   True
+ transition_width_fraction     0.090     0.090   True
+            critical_value       NaN       NaN   True
+          smoothing_window     9.000     9.000   True
+smoothing_polynomial_order     3.000     3.000   True
+             max_sustained     0.985     0.985   True
+
+2. PRIMARY EXTERNAL GDIS CALCULATION
+------------------------------------------------------------------------------------------------------
+[01/48] cf_extension     | individual 18489 | windows= 62 | GDIS max=0.838081 at p=0.326320 | energy peak p=0.045131 | landmark=0.355965
+[02/48] cf_extension     | individual 18508 | windows=121 | GDIS max=0.840979 at p=0.336286 | energy peak p=0.336286 | landmark=0.411623
+[03/48] cf_extension     | individual 18511 | windows=126 | GDIS max=0.816051 at p=0.404367 | energy peak p=0.028169 | landmark=0.373301
+[04/48] cf_extension     | individual 18517 | windows= 69 | GDIS max=0.817356 at p=0.328532 | energy peak p=0.032047 | landmark=0.321171
+[05/48] cf_extension     | individual 18520 | windows=102 | GDIS max=0.884458 at p=0.425136 | energy peak p=0.013444 | landmark=0.390142
+[06/48] cf_extension     | individual 18855 | windows= 83 | GDIS max=0.828984 at p=0.447424 | energy peak p=0.447424 | landmark=0.403991
+[07/48] cf_extension     | individual 18907 | windows= 79 | GDIS max=0.855332 at p=0.337908 | energy peak p=0.332538 | landmark=0.381795
+[08/48] cf_extension     | individual 18912 | windows=108 | GDIS max=0.838218 at p=0.334385 | energy peak p=0.043408 | landmark=0.368472
+[09/48] cf_extension     | individual 19093 | windows=157 | GDIS max=0.842935 at p=0.336634 | energy peak p=0.052114 | landmark=0.409975
+[10/48] cf_extension     | individual 19127 | windows= 98 | GDIS max=0.840283 at p=0.333293 | energy peak p=0.335034 | landmark=0.409341
+[11/48] cf_extension     | individual 19159 | windows=125 | GDIS max=0.818235 at p=0.392595 | energy peak p=0.049289 | landmark=0.435215
+[12/48] cf_extension     | individual 19190 | windows=166 | GDIS max=0.833405 at p=0.454109 | energy peak p=0.454109 | landmark=0.415723
+[13/48] cf_extension     | individual 19193 | windows= 86 | GDIS max=0.838530 at p=0.335982 | energy peak p=0.337443 | landmark=0.393660
+[14/48] cf_extension     | individual 19209 | windows= 87 | GDIS max=0.806700 at p=0.331534 | energy peak p=0.022625 | landmark=0.350831
+[15/48] cm_extension     | individual 18489 | windows= 65 | GDIS max=0.815287 at p=0.733422 | energy peak p=0.045131 | landmark=0.443284
+[16/48] cm_extension     | individual 18499 | windows=133 | GDIS max=0.816449 at p=0.371026 | energy peak p=0.025282 | landmark=0.394675
+[17/48] cm_extension     | individual 18505 | windows= 71 | GDIS max=0.817225 at p=0.317528 | energy peak p=0.042545 | landmark=0.558775
+[18/48] cm_extension     | individual 18508 | windows= 89 | GDIS max=0.830485 at p=0.339576 | energy peak p=0.337310 | landmark=0.659375
+[19/48] cm_extension     | individual 18511 | windows=118 | GDIS max=0.817851 at p=0.416084 | energy peak p=0.028169 | landmark=0.426866
+[20/48] cm_extension     | individual 18517 | windows= 92 | GDIS max=0.816599 at p=0.370598 | energy peak p=0.032047 | landmark=0.465993
+[21/48] cm_extension     | individual 18520 | windows= 81 | GDIS max=0.818817 at p=0.312728 | energy peak p=0.013444 | landmark=0.436573
+[22/48] cm_extension     | individual 18855 | windows= 44 | GDIS max=0.815767 at p=0.420748 | energy peak p=0.036083 | landmark=0.401350
+[23/48] cm_extension     | individual 18858 | windows=118 | GDIS max=0.826924 at p=0.324739 | energy peak p=0.018648 | landmark=0.490367
+[24/48] cm_extension     | individual 18870 | windows=113 | GDIS max=0.814577 at p=0.355791 | energy peak p=0.017459 | landmark=0.357248
+[25/48] cm_extension     | individual 18907 | windows= 54 | GDIS max=0.838983 at p=0.337340 | energy peak p=0.334676 | landmark=0.403184
+[26/48] cm_extension     | individual 18912 | windows=128 | GDIS max=0.817319 at p=0.331958 | energy peak p=0.043408 | landmark=0.514471
+[27/48] cm_extension     | individual 19093 | windows=151 | GDIS max=0.816900 at p=0.331810 | energy peak p=0.052114 | landmark=0.633624
+[28/48] cm_extension     | individual 19193 | windows= 65 | GDIS max=0.834185 at p=0.342499 | energy peak p=0.340107 | landmark=0.374162
+[29/48] cm_extension     | individual 19209 | windows= 94 | GDIS max=0.819975 at p=0.394765 | energy peak p=0.022625 | landmark=0.393015
+[30/48] shared_backbone  | individual 18489 | windows= 47 | GDIS max=0.818125 at p=0.049743 | energy peak p=0.043292 | landmark=0.287835
+[31/48] shared_backbone  | individual 18499 | windows=117 | GDIS max=0.890441 at p=0.329159 | energy peak p=0.026196 | landmark=0.231745
+[32/48] shared_backbone  | individual 18505 | windows= 58 | GDIS max=0.817414 at p=0.308908 | energy peak p=0.042545 | landmark=0.268901
+[33/48] shared_backbone  | individual 18508 | windows= 75 | GDIS max=0.838375 at p=0.338699 | energy peak p=0.338699 | landmark=0.325506
+[34/48] shared_backbone  | individual 18511 | windows=104 | GDIS max=0.809242 at p=0.233020 | energy peak p=0.027544 | landmark=0.268500
+[35/48] shared_backbone  | individual 18517 | windows= 66 | GDIS max=0.894817 at p=0.329655 | energy peak p=0.032047 | landmark=0.278562
+[36/48] shared_backbone  | individual 18520 | windows= 73 | GDIS max=0.820606 at p=0.314733 | energy peak p=0.013444 | landmark=0.299934
+[37/48] shared_backbone  | individual 18855 | windows= 37 | GDIS max=0.828306 at p=0.318528 | energy peak p=0.036083 | landmark=0.305947
+[38/48] shared_backbone  | individual 18858 | windows=103 | GDIS max=0.856994 at p=0.325654 | energy peak p=0.018648 | landmark=0.271027
+[39/48] shared_backbone  | individual 18870 | windows=108 | GDIS max=0.812673 at p=0.334039 | energy peak p=0.017459 | landmark=0.258835
+[40/48] shared_backbone  | individual 18907 | windows= 47 | GDIS max=0.816514 at p=0.330940 | energy peak p=0.045772 | landmark=0.304319
+[41/48] shared_backbone  | individual 18912 | windows=100 | GDIS max=0.844417 at p=0.335774 | energy peak p=0.043408 | landmark=0.312626
+[42/48] shared_backbone  | individual 19093 | windows=126 | GDIS max=0.904057 at p=0.334480 | energy peak p=0.052114 | landmark=0.310819
+[43/48] shared_backbone  | individual 19108 | windows= 32 | GDIS max=0.885969 at p=0.094669 | energy peak p=0.026033 | landmark=0.293644
+[44/48] shared_backbone  | individual 19127 | windows= 58 | GDIS max=0.829224 at p=0.332351 | energy peak p=0.036633 | landmark=0.307962
+[45/48] shared_backbone  | individual 19159 | windows= 56 | GDIS max=0.817525 at p=0.051581 | energy peak p=0.046434 | landmark=0.334777
+[46/48] shared_backbone  | individual 19190 | windows= 84 | GDIS max=0.817492 at p=0.350329 | energy peak p=0.019957 | landmark=0.312709
+[47/48] shared_backbone  | individual 19193 | windows= 56 | GDIS max=0.808976 at p=0.336639 | energy peak p=0.017529 | landmark=0.328153
+[48/48] shared_backbone  | individual 19209 | windows= 85 | GDIS max=0.807669 at p=0.330623 | energy peak p=0.022625 | landmark=0.283515
+
+3. AGGREGATE PRIMARY OUTPUTS
+------------------------------------------------------------------------------------------------------
+
+Scope-level descriptive summary:
+          scope transition_id destination_state  n_profiles  median_gdis_max  q25_gdis_max  q75_gdis_max  median_gdis_peak_minus_landmark  median_transition_energy_peak_minus_landmark  median_abs_gdis_peak_landmark_error  median_abs_transition_energy_peak_landmark_error
+   cf_extension         T3_CF                CF          14         0.838150      0.820922      0.840805                        -0.031866                                     -0.299979                             0.040503                                          0.299979
+   cm_extension         T3_CM                CM          15         0.817319      0.816524      0.823449                        -0.065844                                     -0.398153                             0.095395                                          0.398153
+shared_backbone            T2              CMES          19         0.820606      0.816964      0.850705                         0.023660                                     -0.258705                             0.037620                                          0.258705
+
+4. PRIMARY PROFILE FIGURES
+------------------------------------------------------------------------------------------------------
+Saved one raw-pseudotime profile figure per scope.
+
+5. COMPUTATIONAL QUALIFICATION
+------------------------------------------------------------------------------------------------------
+[PASS] Installed pyGDIS version is exactly 1.0.0
+[PASS] Installed GDISConfig defaults match frozen reference
+[PASS] All 48 frozen primary profiles were analyzed
+[PASS] All trajectory arrays are n_windows x 400 x 50
+[PASS] All input parameters are strictly increasing
+[PASS] All pyGDIS result parameters match frozen inputs
+[PASS] All primary GDIS outputs are finite
+[PASS] All GDIS values satisfy 0 <= GDIS < 1
+[PASS] Every profile records data-driven transition-energy critical localization
+
+Computational checks passed: 9/9
+
+6. FINAL STATUS
+------------------------------------------------------------------------------------------------------
+FINAL COMPUTATIONAL STATUS: PASS
+All 48 frozen primary external-validation GDIS profiles were computed with the unchanged reference implementation.
+
+INTERPRETATION GUARDRAILS:
+  - This script does NOT declare external validation success.
+  - GDIS peak, sustained-instability peak, transition-instability peak, and transition-energy peak are distinct.
+  - A negative peak-minus-landmark value means the peak precedes the destination-state MEDIAN landmark, not proven biological onset.
+  - Biological landmarks were attached only after the unsupervised/data-driven GDIS calculation.
+  - Overlapping windows are statistically dependent and must not be treated as independent observations.
+  - Individual is the independent replication unit.
+  - No GDIS parameter was selected or changed based on GSE175634 results.
+
+Next step:
+Evaluate transition localization, across-individual consistency, null alignment, and transferred sensitivity analyses without retuning GDIS.
+
+Report:  <PROJECT_ROOT>/results/p18_external_GSE175634_primary_gdis/p18_external_GSE175634_primary_gdis_report.txt
+Tables:  <PROJECT_ROOT>/results/p18_external_GSE175634_primary_gdis/tables
+Figures: <PROJECT_ROOT>/results/p18_external_GSE175634_primary_gdis/figures
+Data:    <PROJECT_ROOT>/results/p18_external_GSE175634_primary_gdis/data

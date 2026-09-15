@@ -1,0 +1,19 @@
+scope,transition_id,metric,metric_label,n_profiles,n_positive_change,median_change,mean_change,median_normalized_change
+cf_extension,T3_CF,gaussian_differential_entropy,Gaussian differential entropy,14,13,4.382600681838888,4.176833280625132,0.12879054903774495
+cf_extension,T3_CF,gdis,GDIS,14,0,-0.05102070671950204,-0.06691962810991388,-0.06349366995922995
+cf_extension,T3_CF,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,14,5,-0.0023747426115486095,-0.0002708818161435618,-0.03718498083739184
+cf_extension,T3_CF,mean_step_distance,Mean pseudotemporal step distance,14,13,1.040582716154396,1.0966106688796085,0.13370783151013282
+cf_extension,T3_CF,total_variance,Total variance,14,11,16.793455069419885,16.31820821324782,0.18850967409295627
+cf_extension,T3_CF,transition_energy,GDIS transition energy,14,3,-0.2612458408828311,-0.22127332729539242,-0.26703182350060467
+cm_extension,T3_CM,gaussian_differential_entropy,Gaussian differential entropy,15,15,7.259655031459829,7.576547491156776,0.19488325542500806
+cm_extension,T3_CM,gdis,GDIS,15,9,0.008419479911715655,0.05491014482205274,0.010493377393237233
+cm_extension,T3_CM,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,15,11,0.016119732986875232,0.022997672100573848,0.22236514448186265
+cm_extension,T3_CM,mean_step_distance,Mean pseudotemporal step distance,15,15,3.5044144544942277,3.5375286084351116,0.3327841412864795
+cm_extension,T3_CM,total_variance,Total variance,15,15,81.32904296122217,72.18355619651282,0.442762250231486
+cm_extension,T3_CM,transition_energy,GDIS transition energy,15,0,-0.382052203204345,-0.3982083925462241,-0.382052203204345
+shared_backbone,T2,gaussian_differential_entropy,Gaussian differential entropy,19,19,20.37308697299214,20.641560197828426,0.7335738370591169
+shared_backbone,T2,gdis,GDIS,19,15,0.05343349388171725,0.034798700698724185,0.06964994583737603
+shared_backbone,T2,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,19,10,0.00013539922990730632,0.0006105681115726514,0.001644298010667976
+shared_backbone,T2,mean_step_distance,Mean pseudotemporal step distance,19,19,3.6344396269082058,3.5161388768027675,0.6286682938914568
+shared_backbone,T2,total_variance,Total variance,19,19,42.35265020252836,42.555943764300665,0.5571289890053435
+shared_backbone,T2,transition_energy,GDIS transition energy,19,3,-0.2758501269987192,-0.2994131640653411,-0.29354423215028963

@@ -1,0 +1,13 @@
+cluster,first_day,last_day,peak_day,peak_cells,total_cells
+prog_nkx61,0,7,0,2053,3409
+prog_sox2,0,7,0,2831,2927
+neurog3_early,0,7,1,883,1628
+exo,0,7,3,5055,20206
+fev_high_isl_low,0,7,3,870,2501
+neurog3_late,0,7,3,1908,3936
+neurog3_mid,0,7,3,1156,3277
+phox2a,0,7,3,561,1483
+sc_alpha,0,7,3,1174,4005
+sst_hhex,0,7,3,454,1675
+sc_beta,0,7,6,726,2823
+sc_ec,2,7,5,963,3404

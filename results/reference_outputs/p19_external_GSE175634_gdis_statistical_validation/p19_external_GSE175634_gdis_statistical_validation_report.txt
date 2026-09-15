@@ -1,0 +1,103 @@
+========================================================================================================
+GDIS-Bio GSE175634 Primary External Statistical Validation
+========================================================================================================
+
+Circular-shift permutations per scope x metric: 20,000
+Random seed: 20260913
+Independent inferential unit: individual
+Overlapping windows are NOT treated as independent samples.
+
+1. STRUCTURE-PRESERVING CIRCULAR-SHIFT NULL TESTS
+--------------------------------------------------------------------------------------------------------
+
+shared_backbone | T2: MES -> CMES
+  GDIS: median abs peak error=0.037620, p=0.0019999; peaks in destination IQR=3/19, p=0.59387; median source->destination delta=0.053433, p=0.0957952
+  Sustained instability: median abs peak error=0.026621, p=0.000249988; peaks in destination IQR=3/19, p=0.60207; median source->destination delta=0.067139, p=0.114494
+  Transition instability: median abs peak error=0.260889, p=0.99335; peaks in destination IQR=0/19, p=1; median source->destination delta=-0.067712, p=0.984351
+  Transition energy: median abs peak error=0.258705, p=0.986001; peaks in destination IQR=0/19, p=1; median source->destination delta=-0.275850, p=0.969102
+
+cm_extension | T3_CM: PROG -> CM
+  GDIS: median abs peak error=0.095395, p=0.000899955; peaks in destination IQR=6/15, p=0.00164992; median source->destination delta=0.008419, p=0.751312
+  Sustained instability: median abs peak error=0.104144, p=0.00214989; peaks in destination IQR=6/15, p=0.0020499; median source->destination delta=0.012873, p=0.753012
+  Transition instability: median abs peak error=0.398153, p=0.99675; peaks in destination IQR=0/15, p=1; median source->destination delta=-0.000005, p=0.503175
+  Transition energy: median abs peak error=0.398153, p=0.9941; peaks in destination IQR=0/15, p=1; median source->destination delta=-0.382052, p=0.99895
+
+cf_extension | T3_CF: PROG -> CF
+  GDIS: median abs peak error=0.040503, p=0.0217489; peaks in destination IQR=4/14, p=0.278136; median source->destination delta=-0.051021, p=0.937853
+  Sustained instability: median abs peak error=0.037754, p=0.0152492; peaks in destination IQR=4/14, p=0.278736; median source->destination delta=-0.045405, p=0.923504
+  Transition instability: median abs peak error=0.299979, p=0.904255; peaks in destination IQR=0/14, p=1; median source->destination delta=-0.000000, p=0.561772
+  Transition energy: median abs peak error=0.299979, p=0.903905; peaks in destination IQR=0/14, p=1; median source->destination delta=-0.261246, p=0.982051
+
+2. INDEPENDENT-INDIVIDUAL SOURCE-to-DESTINATION TESTS
+--------------------------------------------------------------------------------------------------------
+          scope transition_id                 metric           metric_label  n_individuals  n_positive_delta  n_negative_delta  n_zero_delta  median_delta  mean_delta  sign_test_n_positive_nonzero  sign_test_n_nonzero  p_sign_greater  p_wilcoxon_greater  q_sign_greater_bh  q_wilcoxon_greater_bh
+   cf_extension         T3_CF                   gdis                   GDIS             14                 0                14             0     -0.051021   -0.066920                             0                   14        1.000000            1.000000           1.000000               1.000000
+   cf_extension         T3_CF  sustained_instability  Sustained instability             14                 1                13             0     -0.045405   -0.061270                             1                   14        0.999939            0.999939           1.000000               1.000000
+   cf_extension         T3_CF      transition_energy      Transition energy             14                 3                11             0     -0.261246   -0.221273                             3                   14        0.993530            0.991699           1.000000               1.000000
+   cf_extension         T3_CF transition_instability Transition instability             14                 3                 9             2     -0.000000   -0.018945                             3                   12        0.980713            0.950260           1.000000               1.000000
+   cm_extension         T3_CM                   gdis                   GDIS             15                 9                 6             0      0.008419    0.054910                             9                   15        0.303619            0.067688           0.910858               0.203064
+   cm_extension         T3_CM  sustained_instability  Sustained instability             15                 9                 6             0      0.012873    0.055079                             9                   15        0.303619            0.041626           0.910858               0.166504
+   cm_extension         T3_CM      transition_energy      Transition energy             15                 0                15             0     -0.382052   -0.398208                             0                   15        1.000000            1.000000           1.000000               1.000000
+   cm_extension         T3_CM transition_instability Transition instability             15                 1                14             0     -0.000005   -0.009719                             1                   15        0.999969            0.999969           1.000000               1.000000
+shared_backbone            T2                   gdis                   GDIS             19                15                 4             0      0.053433    0.034799                            15                   19        0.009605            0.006180           0.057632               0.037079
+shared_backbone            T2  sustained_instability  Sustained instability             19                15                 4             0      0.067139    0.056007                            15                   19        0.009605            0.002289           0.057632               0.027466
+shared_backbone            T2      transition_energy      Transition energy             19                 3                16             0     -0.275850   -0.299413                             3                   19        0.999636            0.999918           1.000000               1.000000
+shared_backbone            T2 transition_instability Transition instability             19                 1                18             0     -0.067712   -0.071572                             1                   19        0.999998            0.999987           1.000000               1.000000
+
+3. CROSS-INDIVIDUAL PROFILE AGREEMENT (DESCRIPTIVE)
+--------------------------------------------------------------------------------------------------------
+          scope                 metric           metric_label  n_profiles  n_profile_pairs  common_parameter_min  common_parameter_max  median_pairwise_pearson  q25_pairwise_pearson  q75_pairwise_pearson  median_pairwise_spearman  q25_pairwise_spearman  q75_pairwise_spearman
+shared_backbone                   gdis                   GDIS          19              171              0.014204              0.294614                 0.486805              0.299112              0.684907                  0.174871              -0.251247               0.499217
+shared_backbone  sustained_instability  Sustained instability          19              171              0.014204              0.294614                 0.541953              0.344983              0.734551                  0.281155              -0.176500               0.562848
+shared_backbone transition_instability Transition instability          19              171              0.014204              0.294614                 0.821760              0.679139              0.921248                  0.891847               0.817567               0.934419
+shared_backbone      transition_energy      Transition energy          19              171              0.014204              0.294614                 0.713184              0.630135              0.797810                  0.632429               0.463663               0.759771
+   cm_extension                   gdis                   GDIS          15              105              0.014204              0.372471                 0.565640              0.408949              0.760492                  0.436853               0.229665               0.620105
+   cm_extension  sustained_instability  Sustained instability          15              105              0.014204              0.372471                 0.620789              0.487966              0.769174                  0.447676               0.228166               0.641299
+   cm_extension transition_instability Transition instability          15              105              0.014204              0.372471                 0.820647             -0.205417              0.884579                  0.808960              -0.779352               0.921172
+   cm_extension      transition_energy      Transition energy          15              105              0.014204              0.372471                 0.645662              0.555295              0.732132                  0.646627               0.520332               0.755060
+   cf_extension                   gdis                   GDIS          14               91              0.014204              0.349083                 0.611843              0.435603              0.771312                  0.408189               0.092423               0.607075
+   cf_extension  sustained_instability  Sustained instability          14               91              0.014204              0.349083                 0.642841              0.462646              0.800027                  0.428631               0.183188               0.637773
+   cf_extension transition_instability Transition instability          14               91              0.014204              0.349083                -0.115583             -0.167317              0.812213                  0.159946              -0.287587               0.784612
+   cf_extension      transition_energy      Transition energy          14               91              0.014204              0.349083                 0.695716              0.600868              0.773911                  0.727943               0.628258               0.802948
+
+4. PRIMARY GDIS EXTERNAL-VALIDATION SUMMARY
+--------------------------------------------------------------------------------------------------------
+          scope transition_id  n_profiles  observed_median_abs_peak_error  p_localization_lower  q_localization_bh  observed_n_peak_inside_destination_iqr  p_peak_inside_iqr_upper  q_peak_inside_iqr_bh  observed_median_signed_peak_offset  observed_median_source_to_destination_delta  n_positive_delta  n_negative_delta  p_sign_greater  q_sign_greater_bh  p_wilcoxon_greater  q_wilcoxon_greater_bh
+   cf_extension         T3_CF          14                        0.040503              0.021749           0.043498                                       4                 0.278136              0.836208                           -0.031866                                    -0.051021                 0                14        1.000000           1.000000            1.000000               1.000000
+   cm_extension         T3_CM          15                        0.095395              0.000900           0.005400                                       6                 0.001650              0.012299                           -0.065844                                     0.008419                 9                 6        0.303619           0.910858            0.067688               0.203064
+shared_backbone            T2          19                        0.037620              0.002000           0.006450                                       3                 0.593870              1.000000                            0.023660                                     0.053433                15                 4        0.009605           0.057632            0.006180               0.037079
+
+5. CONSENSUS GDIS FIGURES
+--------------------------------------------------------------------------------------------------------
+Saved one cross-individual consensus GDIS figure per scope.
+
+6. COMPUTATIONAL QUALIFICATION
+--------------------------------------------------------------------------------------------------------
+[PASS] All frozen external profiles are present
+[PASS] All four tested score profiles are finite
+[PASS] Each individual profile has unique ordered parameters
+[PASS] Source and destination landmarks map to distinct windows in every tested profile
+[PASS] Exactly 20,000 circular-shift permutations were used per scope x metric
+[PASS] Independent-unit sign/Wilcoxon tests operate across individuals rather than windows
+
+Qualification checks passed: 6/6
+
+7. FINAL STATUS
+--------------------------------------------------------------------------------------------------------
+FINAL COMPUTATIONAL STATUS: PASS
+The frozen primary external GDIS profiles have been evaluated with individual-level and structure-preserving null procedures without recomputing or retuning GDIS.
+
+INTERPRETATION GUARDRAILS:
+  - Circular-shift significance means alignment is stronger than expected after breaking biological alignment while preserving profile structure.
+  - It does not establish causal transition prediction.
+  - Destination-state medians and IQRs are state landmarks, not true onset times.
+  - Cross-individual pairwise correlations are descriptive and are not independent inferential samples.
+  - GDIS is the primary external-validation metric; its internal components are secondary analyses.
+  - No GDIS setting, window, PCA dimension, cohort, or biological landmark was changed based on these tests.
+
+Next step after interpretation:
+Run the already frozen 300/75 and 500/125 window sensitivities and the 5/10/20/30-PC dimensional sensitivities without changing the primary result.
+
+Report:  <PROJECT_ROOT>/results/p19_external_GSE175634_gdis_statistical_validation/p19_external_GSE175634_gdis_statistical_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p19_external_GSE175634_gdis_statistical_validation/tables
+Figures: <PROJECT_ROOT>/results/p19_external_GSE175634_gdis_statistical_validation/figures

@@ -1,0 +1,10 @@
+check,pass
+Installed pyGDIS version is exactly 1.0.0,True
+Installed GDISConfig defaults match frozen reference,True
+All 48 frozen primary profiles were analyzed,True
+All trajectory arrays are n_windows x 400 x 50,True
+All input parameters are strictly increasing,True
+All pyGDIS result parameters match frozen inputs,True
+All primary GDIS outputs are finite,True
+All GDIS values satisfy 0 <= GDIS < 1,True
+Every profile records data-driven transition-energy critical localization,True

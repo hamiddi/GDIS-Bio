@@ -1,0 +1,121 @@
+================================================================================================
+GDIS-Bio External Validation Preprocessing and State Space
+Dataset: GSE175634
+================================================================================================
+
+No GDIS values are calculated in p15.
+The p14 cohort definitions and biological transitions are used unchanged.
+
+1. SOFTWARE AND FROZEN PREPROCESSING PARAMETERS
+------------------------------------------------------------------------------------------------
+Python: 3.11.16
+NumPy: 2.4.6
+Pandas: 2.3.3
+SciPy: 1.17.1
+Scanpy: 1.11.5
+AnnData: 0.12.19
+Normalization target: 10,000
+Gene min_cells: 1
+HVGs: 2000
+HVG flavor: seurat
+HVG batch key: individual
+Batch correction: NONE
+Scale max_value: 10.0
+PCA components: 50
+PCA solver: arpack
+PCA random state: 20260913
+
+2. FROZEN COMMON STATE-SPACE POPULATION
+------------------------------------------------------------------------------------------------
+Frozen known cells: 217,528
+Union included in common state space: 217,283
+  include_shared_backbone_primary: 149,776
+  include_cm_extension_secondary: 150,683
+  include_cf_extension_secondary: 155,604
+
+3. RAW COUNT MATRIX ALIGNMENT
+------------------------------------------------------------------------------------------------
+Cell index rows: 230,786
+Gene index rows: 38,943
+Loading Matrix Market counts. This is the memory-intensive step...
+Loaded matrix shape: 38,943 x 230,786
+Loaded matrix nnz: 317,416,972
+Raw count dtype: int64
+Integer count dtype: True
+Nonzero count range: 1 to 2526
+Nonnegative counts: True
+Converting genes x cells matrix to CSC for frozen-column subsetting...
+Frozen cells x genes sparse matrix: 217,283 x 38,943
+Frozen matrix nnz: 298,664,810
+Frozen sparse storage estimate: 3.34 GiB
+
+4. RAW-COUNT QC WITHOUT CELL FILTERING
+------------------------------------------------------------------------------------------------
+Cells with zero total counts: 0
+Mitochondrial gene names detected: 30
+
+Raw total counts/cell:
+{'min': 338.0, 'q25': 1182.0, 'median': 2222.0, 'mean': 3196.1248003755472, 'q75': 4111.0, 'max': 16768.0}
+
+Raw detected genes/cell:
+{'min': 298.0, 'q25': 700.0, 'median': 1140.0, 'mean': 1374.5429232843803, 'q75': 1809.0, 'max': 5076.0}
+
+Raw mitochondrial percent:
+{'min': 0.05991611743559017, 'q25': 9.19343295818701, 'median': 12.90650406504065, 'mean': 13.17124830608751, 'q75': 16.949152542372882, 'max': 25.044091710758376}
+
+5. NORMALIZATION AND BATCH-AWARE HVG SELECTION
+------------------------------------------------------------------------------------------------
+Genes before min_cells filter: 38,943
+Genes retained with min_cells >= 1: 38,935
+Genes removed: 8
+Highly variable genes selected: 2,000
+
+6. COMMON 50-PC STATE SPACE
+------------------------------------------------------------------------------------------------
+HVG matrix: 217,283 cells x 2,000 genes
+Scaling HVG expression. This may densify the 2,000-gene matrix...
+Scaled HVG dense matrix storage: 1.62 GiB
+Cumulative variance,  5 PCs: 0.096428
+Cumulative variance, 10 PCs: 0.122068
+Cumulative variance, 20 PCs: 0.151021
+Cumulative variance, 30 PCs: 0.170700
+Cumulative variance, 50 PCs: 0.201560
+
+7. STATE-SPACE EXPORTS
+------------------------------------------------------------------------------------------------
+Saved 5-PC state space: external_state_space_pca_5.csv.gz
+Saved 10-PC state space: external_state_space_pca_10.csv.gz
+Saved 20-PC state space: external_state_space_pca_20.csv.gz
+Saved 30-PC state space: external_state_space_pca_30.csv.gz
+Saved 50-PC state space: external_state_space_pca_50.csv.gz
+
+8. STATE-SPACE DESCRIPTIVE SUMMARIES
+------------------------------------------------------------------------------------------------
+
+9. PREPROCESSING / STATE-SPACE QUALIFICATION
+------------------------------------------------------------------------------------------------
+[PASS] Raw count matrix dimensions match GEO indices
+[PASS] All frozen union cell IDs were found in the count matrix
+[PASS] Raw count entries are nonnegative
+[PASS] Raw count matrix uses integer count dtype
+[PASS] No selected cells have zero total counts
+[PASS] Exactly 2,000 batch-aware HVGs were selected
+[PASS] 50-PC state-space coordinates are finite
+[PASS] All frozen primary/secondary cohort counts are preserved in the common state space
+
+Qualification checks passed: 8/8
+
+FINAL STATUS: PASS
+The common GSE175634 expression state space has been constructed successfully.
+The 50-PC representation is the provisional primary external-validation state space.
+The 5/10/20/30-PC exports are frozen for pre-GDIS dimensionality sensitivity.
+No batch correction was applied.
+NO GDIS VALUES WERE CALCULATED.
+
+Next step:
+Validate dimensionality and individual-level trajectory geometry before assembling GDIS windows.
+
+Report:  <PROJECT_ROOT>/results/p15_external_GSE175634_preprocessing_state_space/p15_external_GSE175634_preprocessing_state_space_report.txt
+Tables:  <PROJECT_ROOT>/results/p15_external_GSE175634_preprocessing_state_space/tables
+Figures: <PROJECT_ROOT>/results/p15_external_GSE175634_preprocessing_state_space/figures
+Data:    <PROJECT_ROOT>/results/p15_external_GSE175634_preprocessing_state_space/data

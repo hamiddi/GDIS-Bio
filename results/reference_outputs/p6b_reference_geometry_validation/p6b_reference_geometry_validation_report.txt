@@ -1,0 +1,111 @@
+========================================================================================
+GDIS-Bio 50-PC Reference Geometry Validation
+========================================================================================
+
+Cells: 18,099
+Available PCA coordinates: 50
+Local neighborhood size: k=30
+Pairwise-distance sample: 2,500 cells
+
+1. PAIRWISE-DISTANCE CONCENTRATION
+----------------------------------------------------------------------------------------
+ dimension  mean_pairwise_distance  sd_pairwise_distance  pairwise_distance_cv  q05_pairwise_distance  q95_pairwise_distance  q95_q05_distance_ratio
+         5               12.379148              5.096210              0.411677               3.834505              19.951478                5.203142
+        10               13.738579              4.632232              0.337170               5.907543              20.645538                3.494776
+        15               14.503714              4.407017              0.303854               7.097183              21.120951                2.975963
+        20               15.058090              4.225797              0.280633               7.945765              21.400312                2.693298
+        25               15.501737              4.089966              0.263839               8.615346              21.646386                2.512538
+        30               15.893575              3.981411              0.250504               9.175141              21.865111                2.383082
+        35               16.247541              3.889627              0.239398               9.680459              22.077234                2.280598
+        40               16.574447              3.808231              0.229765              10.128208              22.274108                2.199215
+        45               16.886235              3.731798              0.220996              10.548754              22.457841                2.128957
+        50               17.178426              3.665869              0.213400              10.931239              22.637554                2.070905
+
+2. ADJACENT-DIMENSION DISTANCE CONVERGENCE
+----------------------------------------------------------------------------------------
+ dimension_from  dimension_to  distance_spearman
+              5            10           0.983627
+             10            15           0.993031
+             15            20           0.996621
+             20            25           0.997620
+             25            30           0.998022
+             30            35           0.998331
+             35            40           0.998514
+             40            45           0.998553
+             45            50           0.998660
+
+3. LOCAL NEIGHBOR GEOMETRY
+----------------------------------------------------------------------------------------
+ dimension  median_nearest_neighbor_distance  median_30th_neighbor_distance  median_30th_to_first_ratio  mean_local_scale  local_scale_cv  spearman_local_scale_vs_pseudotime
+         5                          0.753985                       1.664474                    2.207568          1.446251        0.304484                            0.260694
+        10                          2.167243                       3.449658                    1.591726          3.079022        0.233035                            0.288990
+        15                          3.208542                       4.601765                    1.434223          4.187721        0.201833                            0.234375
+        20                          4.076772                       5.542496                    1.359531          5.075668        0.190413                            0.233382
+        25                          4.837523                       6.314535                    1.305324          5.810776        0.182621                            0.255064
+        30                          5.479132                       6.961665                    1.270578          6.452498        0.175593                            0.243619
+        35                          6.052619                       7.524348                    1.243156          7.031077        0.168147                            0.227687
+        40                          6.585410                       8.051537                    1.222633          7.560503        0.162306                            0.214509
+        45                          7.073114                       8.526056                    1.205418          8.039352        0.159339                            0.207071
+        50                          7.514750                       8.961359                    1.192503          8.482094        0.156414                            0.198128
+
+Adjacent dimensionality neighbor overlap:
+ dimension_from  dimension_to  mean_neighbor_overlap  median_neighbor_overlap  q25_neighbor_overlap  q75_neighbor_overlap
+              5            10               0.253539                 0.233333              0.166667              0.333333
+             10            15               0.494583                 0.500000              0.400000              0.600000
+             15            20               0.609262                 0.600000              0.533333              0.700000
+             20            25               0.677750                 0.700000              0.600000              0.766667
+             25            30               0.715833                 0.733333              0.666667              0.800000
+             30            35               0.740652                 0.733333              0.666667              0.800000
+             35            40               0.759915                 0.766667              0.700000              0.833333
+             40            45               0.781036                 0.800000              0.733333              0.833333
+             45            50               0.795232                 0.800000              0.733333              0.866667
+
+4. 50-PC LOCAL SCALE BY EXPERIMENTAL DAY AND DIFFERENTIATION
+----------------------------------------------------------------------------------------
+ CellDay Differentiation  local_scale_50PC
+       0               1          6.680540
+       0               2          6.427521
+       1               1          8.035765
+       1               2          7.751594
+       2               1          8.994373
+       2               2          9.350543
+       3               1          8.762040
+       3               2          9.442061
+       4               1          8.578231
+       4               2          8.626072
+       5               1          8.274717
+       5               2          8.459304
+       6               1          8.302287
+       6               2          8.776616
+       7               1          8.633951
+       7               2          8.382780
+
+Cross-replicate correlation of daily median 50-PC local scale: 0.946941
+
+5. 50-PC LOCAL SCALE REPRODUCIBILITY WITHIN BRANCHES
+----------------------------------------------------------------------------------------
+branch  replicate_daily_local_scale_correlation
+     0                                 0.955577
+     1                                 0.919248
+
+6. FINAL 50-PC REFERENCE QUALIFICATION
+----------------------------------------------------------------------------------------
+[PASS] 50-PC pairwise-distance CV >= 0.1
+[PASS] 50-PC median 30th/1st neighbor distance ratio >= 1.1
+[PASS] 50-PC local-scale CV >= 0.05
+[PASS] Overall daily local-scale replicate correlation >= 0.9
+[PASS] Branch-specific daily local-scale replicate correlations >= 0.9
+
+50-PC geometry checks passed: 5/5
+
+FINAL STATUS: PASS
+The 50-PC state space retains informative and reproducible local geometry and is suitable as the primary reference representation for the first GDIS-Bio calculation.
+
+The p6 dimensionality decision is not modified by this script.
+Lower-dimensional spaces remain mandatory sensitivity analyses.
+
+No GDIS values were calculated.
+
+Report:  <PROJECT_ROOT>/results/p6b_reference_geometry_validation/p6b_reference_geometry_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p6b_reference_geometry_validation/tables
+Figures: <PROJECT_ROOT>/results/p6b_reference_geometry_validation/figures

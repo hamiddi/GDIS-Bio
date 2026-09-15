@@ -1,0 +1,19 @@
+scope,transition_id,metric,metric_label,observed_median_abs_peak_error,p_localization_lower,q_localization_bh,localization_rank_within_scope
+cf_extension,T3_CF,gaussian_differential_entropy,Gaussian differential entropy,0.02379055500000002,0.0010499475026248687,0.0031498425078746056,1.0
+cf_extension,T3_CF,total_variance,Total variance,0.028559997500000017,0.003399830008499575,0.005972428651294708,2.0
+cf_extension,T3_CF,mean_step_distance,Mean pseudotemporal step distance,0.028559997500000017,0.003649817509124544,0.005972428651294708,2.0
+cf_extension,T3_CF,gdis,GDIS,0.04050317249999999,0.01864906754662267,0.027973601319934,4.0
+cf_extension,T3_CF,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,0.222443625,0.767711614419279,0.9212539373031349,5.0
+cf_extension,T3_CF,transition_energy,GDIS transition energy,0.29997908925000005,0.9091545422728864,0.9935503224838756,6.0
+cm_extension,T3_CM,total_variance,Total variance,0.047541425000000026,4.999750012499375e-05,0.00044997750112494374,1.0
+cm_extension,T3_CM,gaussian_differential_entropy,Gaussian differential entropy,0.06755866000000005,4.999750012499375e-05,0.00044997750112494374,2.0
+cm_extension,T3_CM,mean_step_distance,Mean pseudotemporal step distance,0.06755866000000005,9.99950002499875e-05,0.000599970001499925,2.0
+cm_extension,T3_CM,gdis,GDIS,0.09539516999999997,0.0006499675016249188,0.002519874006299685,4.0
+cm_extension,T3_CM,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,0.20395000999999996,0.12649367531623418,0.1626347254065868,5.0
+cm_extension,T3_CM,transition_energy,GDIS transition energy,0.39815294,0.9935503224838758,0.9935503224838756,6.0
+shared_backbone,T2,mean_step_distance,Mean pseudotemporal step distance,0.03306330499999999,0.0006999650017499125,0.002519874006299685,1.0
+shared_backbone,T2,total_variance,Total variance,0.035736904999999985,0.0017499125043747813,0.003937303134843258,2.0
+shared_backbone,T2,gaussian_differential_entropy,Gaussian differential entropy,0.03633974000000001,0.0015499225038748063,0.003937303134843258,3.0
+shared_backbone,T2,gdis,GDIS,0.03762016499999998,0.00199990000499975,0.0039998000099995,4.0
+shared_backbone,T2,mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,0.09910972000000001,0.08129593520323984,0.11256360258910132,5.0
+shared_backbone,T2,transition_energy,GDIS transition energy,0.258705465,0.983550822458877,0.9935503224838756,6.0

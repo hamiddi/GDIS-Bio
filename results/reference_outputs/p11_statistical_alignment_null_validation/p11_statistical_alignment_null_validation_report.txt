@@ -1,0 +1,84 @@
+================================================================================================
+GDIS-Bio Statistical Alignment and Null Validation
+================================================================================================
+
+Random seed: 20260913
+Circular-shift permutations per metric: 20,000
+Null model preserves each metric profile's values and neighboring shape while breaking alignment to biological pseudotime landmarks.
+Overlapping windows are NOT treated as independent samples in the circular-shift tests.
+
+1. CIRCULAR-SHIFT BIOLOGICAL ALIGNMENT NULL TESTS
+------------------------------------------------------------------------------------------------
+GDIS: observed mean localization error=0.011175, p=4.99975e-05; early-state peaks=4/4
+GDIS transition energy: observed mean localization error=0.033958, p=0.000949953; early-state peaks=2/4
+Total variance: observed mean localization error=0.026884, p=0.000299985; early-state peaks=3/4
+Mean lag-1 pseudotemporal autocorrelation: observed mean localization error=0.073884, p=0.0170991; early-state peaks=1/4
+Gaussian differential entropy: observed mean localization error=0.184456, p=0.261437; early-state peaks=0/4
+Mean pseudotemporal step distance: observed mean localization error=0.058677, p=0.00819959; early-state peaks=0/4
+
+FDR-adjusted alignment summary:
+                             metric_label  observed_mean_localization_error  p_localization_lower  q_localization_bh  observed_n_peaks_in_neurog3_early  p_early_peak_enrichment_upper  q_early_peak_enrichment_bh  observed_n_positive_progenitor_to_early_rise  p_mean_rise_upper  q_mean_rise_bh  observed_mean_signed_peak_offset  p_signed_offset_lower  q_signed_offset_bh
+                                     GDIS                          0.011175              0.000050           0.000300                                  4                       0.000050                    0.000300                                             4           0.000050        0.000150                          0.008889               0.028299            0.056597
+                   GDIS transition energy                          0.033958              0.000950           0.001900                                  2                       0.041798                    0.083596                                             4           0.003450        0.004140                         -0.033958               0.007750            0.023249
+                           Total variance                          0.026884              0.000300           0.000900                                  3                       0.001650                    0.004950                                             4           0.000050        0.000150                          0.026884               0.043998            0.065997
+Mean lag-1 pseudotemporal autocorrelation                          0.073884              0.017099           0.020519                                  1                       0.326834                    0.490250                                             2           0.259837        0.259837                         -0.073884               0.001050            0.006300
+            Gaussian differential entropy                          0.184456              0.261437           0.261437                                  0                       1.000000                    1.000000                                             4           0.000100        0.000200                          0.184456               0.388231            0.388231
+        Mean pseudotemporal step distance                          0.058677              0.008200           0.012299                                  0                       1.000000                    1.000000                                             4           0.000600        0.000900                          0.058677               0.083546            0.100255
+
+2. CROSS-REPLICATE CORRELATION NULL TESTS
+------------------------------------------------------------------------------------------------
+                       metric                              metric_label  branch lineage  observed_pearson  null_mean  null_q025  null_q975  p_upper     q_bh
+                         gdis                                      GDIS       0   SC-EC          0.927466  -0.005752  -0.344557   0.766607 0.000050 0.000075
+                         gdis                                      GDIS       1 SC-beta          0.913442  -0.002259  -0.406291   0.690611 0.000050 0.000075
+            transition_energy                    GDIS transition energy       0   SC-EC          0.855520  -0.018057  -0.493231   0.804424 0.021899 0.028679
+            transition_energy                    GDIS transition energy       1 SC-beta          0.607384   0.000466  -0.477056   0.678276 0.070346 0.070346
+               total_variance                            Total variance       0   SC-EC          0.955978  -0.018554  -0.386772   0.832119 0.000050 0.000075
+               total_variance                            Total variance       1 SC-beta          0.979628  -0.030065  -0.557823   0.932285 0.000050 0.000075
+    mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation       0   SC-EC          0.851157  -0.012007  -0.482022   0.878963 0.045398 0.049525
+    mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation       1 SC-beta          0.852624  -0.018790  -0.428236   0.808235 0.023899 0.028679
+gaussian_differential_entropy             Gaussian differential entropy       0   SC-EC          0.991530  -0.013545  -0.363742   0.917183 0.000050 0.000075
+gaussian_differential_entropy             Gaussian differential entropy       1 SC-beta          0.994313  -0.027016  -0.531706   0.913670 0.000050 0.000075
+           mean_step_distance         Mean pseudotemporal step distance       0   SC-EC          0.955690  -0.000413  -0.297685   0.875420 0.000050 0.000075
+           mean_step_distance         Mean pseudotemporal step distance       1 SC-beta          0.973940  -0.018658  -0.556851   0.919155 0.000050 0.000075
+
+3. EXACT PAIRED GDIS-vs-BASELINE LOCALIZATION TESTS
+------------------------------------------------------------------------------------------------
+                                       comparison               baseline_metric  mean_gdis_error  mean_baseline_error  mean_baseline_minus_gdis_error  n_groups_gdis_strictly_better  n_groups_tied  n_groups_baseline_strictly_better  exact_one_sided_p  n_exact_sign_flip_permutations     q_bh
+                           GDIS vs Total variance                total_variance         0.011175             0.026884                        0.015709                              2              2                                  0             0.2500                              16 0.250000
+GDIS vs Mean lag-1 pseudotemporal autocorrelation     mean_lag1_autocorrelation         0.011175             0.073884                        0.062709                              4              0                                  0             0.0625                              16 0.083333
+            GDIS vs Gaussian differential entropy gaussian_differential_entropy         0.011175             0.184456                        0.173280                              4              0                                  0             0.0625                              16 0.083333
+        GDIS vs Mean pseudotemporal step distance            mean_step_distance         0.011175             0.058677                        0.047502                              4              0                                  0             0.0625                              16 0.083333
+
+4. SIGNED PEAK-POSITION INTERPRETATION
+------------------------------------------------------------------------------------------------
+                       metric                              metric_label  observed_mean_signed_peak_offset  null_mean_signed_peak_offset  p_signed_offset_lower  q_signed_offset_bh                                         interpretation
+                         gdis                                      GDIS                          0.008889                      0.228946               0.028299            0.056597  peak follows median NEUROG3-early landmark on average
+            transition_energy                    GDIS transition energy                         -0.033958                      0.230137               0.007750            0.023249 peak precedes median NEUROG3-early landmark on average
+               total_variance                            Total variance                          0.026884                      0.229474               0.043998            0.065997  peak follows median NEUROG3-early landmark on average
+    mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation                         -0.073884                      0.230943               0.001050            0.006300 peak precedes median NEUROG3-early landmark on average
+gaussian_differential_entropy             Gaussian differential entropy                          0.184456                      0.225544               0.388231            0.388231  peak follows median NEUROG3-early landmark on average
+           mean_step_distance         Mean pseudotemporal step distance                          0.058677                      0.227114               0.083546            0.100255  peak follows median NEUROG3-early landmark on average
+
+5. NULL-VALIDATION FIGURE
+------------------------------------------------------------------------------------------------
+Saved observed-versus-null localization figure.
+
+6. FINAL INTERPRETATION
+------------------------------------------------------------------------------------------------
+GDIS circular-shift localization p-value: 4.99975e-05
+GDIS localization BH q-value: 0.000299985
+
+The exact paired comparisons use only the four independent branch x differentiation analyses and therefore have very limited resolution. A non-significant paired test must NOT be interpreted as evidence of equivalence.
+
+The circular-shift tests assess biological alignment relative to this trajectory while preserving each profile's internal structure. They do not replace independent-dataset validation.
+
+The median NEUROG3-early landmark is not the true transition-onset time. A statistically early signed peak therefore supports earlier positioning relative to the state median, not proven prospective prediction.
+
+No GDIS parameter or analysis choice was changed based on these null-test results.
+
+Recommended next step:
+Freeze the current GSE114412 result and move to an independent biological dataset for external validation.
+
+Report:  <PROJECT_ROOT>/results/p11_statistical_alignment_null_validation/p11_statistical_alignment_null_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p11_statistical_alignment_null_validation/tables
+Figures: <PROJECT_ROOT>/results/p11_statistical_alignment_null_validation/figures

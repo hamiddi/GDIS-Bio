@@ -1,0 +1,7 @@
+metric,metric_label,observed_mean_signed_peak_offset,null_mean_signed_peak_offset,p_signed_offset_lower,q_signed_offset_bh,interpretation
+gdis,GDIS,0.008889224027263207,0.22894555000004557,0.028298585070746462,0.056597170141492924,peak follows median NEUROG3-early landmark on average
+transition_energy,GDIS transition energy,-0.0339580434951352,0.23013712788563015,0.007749612519374031,0.02324883755812209,peak precedes median NEUROG3-early landmark on average
+total_variance,Total variance,0.026884281042044204,0.22947383617637812,0.0439978001099945,0.06599670016499176,peak follows median NEUROG3-early landmark on average
+mean_lag1_autocorrelation,Mean lag-1 pseudotemporal autocorrelation,-0.07388366734386806,0.23094252704498427,0.0010499475026248687,0.006299685015749212,peak precedes median NEUROG3-early landmark on average
+gaussian_differential_entropy,Gaussian differential entropy,0.1844555560489854,0.22554405342948602,0.38823058847057645,0.3882305884705765,peak follows median NEUROG3-early landmark on average
+mean_step_distance,Mean pseudotemporal step distance,0.05867716789020678,0.2271143563403238,0.08354582270886456,0.10025498725063746,peak follows median NEUROG3-early landmark on average

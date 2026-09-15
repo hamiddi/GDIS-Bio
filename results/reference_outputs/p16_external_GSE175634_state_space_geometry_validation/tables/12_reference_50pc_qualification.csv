@@ -1,0 +1,10 @@
+check,pass
+50-PC pairwise-distance CV >= 0.1,True
+50-PC q95/q05 distance ratio >= 1.5,True
+50-PC median 30th/1st neighbor ratio >= 1.1,True
+50-PC local-scale CV >= 0.05,True
+30->50 random-pair distance Spearman >= 0.98,True
+30->50 mean 30-NN overlap >= 0.5,True
+30-vs-50 individual-state centroid-distance Spearman >= 0.98,True
+50-PC leave-one-individual-out core-state balanced accuracy >= 0.75,True
+50-PC biological-state separation / individual-dispersion ratio >= 1.0,True

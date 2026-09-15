@@ -1,0 +1,155 @@
+==============================================================================================
+GDIS-Bio External Dataset Trajectory Characterization
+Dataset: GSE175634
+==============================================================================================
+
+No branch assignment, preprocessing, PCA, or GDIS is performed in p13.
+
+1. BASIC METADATA INVENTORY
+----------------------------------------------------------------------------------------------
+Cells: 230,786
+Individuals: 19
+Cell types: ['CF', 'CM', 'CMES', 'IPSC', 'MES', 'PROG', 'UNK']
+Experimental days: ['day0', 'day1', 'day11', 'day15', 'day3', 'day5', 'day7']
+Cells with deposited pseudotime: 217,528 / 230,786 (0.9426)
+
+2. PSEUDOTIME COMPLETENESS BY CELL TYPE
+----------------------------------------------------------------------------------------------
+type  n_cells  n_with_pseudotime  pseudotime_fraction  pseudotime_min  pseudotime_q25  pseudotime_median  pseudotime_mean  pseudotime_q75  pseudotime_max
+  CF  45890.0            45890.0                  1.0        0.032593        0.367075           0.405607         0.395850        0.433189        0.547549
+  CM  21862.0            21862.0                  1.0        0.066294        0.368249           0.466546         0.516619        0.658317        1.000000
+CMES  19144.0            19144.0                  1.0        0.035448        0.269015           0.308482         0.292518        0.328202        0.399606
+IPSC  39733.0            39733.0                  1.0        0.000000        0.017589           0.028432         0.034096        0.040807        0.796769
+ MES  55177.0            55177.0                  1.0        0.000864        0.028840           0.047112         0.061352        0.076249        0.384102
+PROG  35722.0            35722.0                  1.0        0.041973        0.276164           0.315187         0.304475        0.336789        0.528564
+ UNK  13258.0                0.0                  0.0             NaN             NaN                NaN              NaN             NaN             NaN
+
+3. PSEUDOTIME COMPLETENESS BY EXPERIMENTAL DAY
+----------------------------------------------------------------------------------------------
+diffday  n_cells  n_with_pseudotime  pseudotime_fraction  pseudotime_min  pseudotime_q25  pseudotime_median  pseudotime_mean  pseudotime_q75  pseudotime_max  day_numeric
+   day0  41330.0            41059.0             0.993443        0.000000        0.017798           0.028927         0.034364        0.041455        0.583828            0
+   day1  40889.0            40611.0             0.993201        0.000864        0.025944           0.039759         0.046668        0.059863        0.438873            1
+   day3  29937.0            28919.0             0.965995        0.004723        0.155629           0.274898         0.236364        0.321109        0.784378            3
+   day5  19508.0            17369.0             0.890353        0.001200        0.273177           0.321550         0.290163        0.338984        0.573795            5
+   day7  41477.0            36477.0             0.879451        0.002306        0.305794           0.360553         0.375291        0.425603        0.985499            7
+  day11  39342.0            35634.0             0.905750        0.035995        0.346960           0.404187         0.416242        0.442576        1.000000           11
+  day15  18303.0            17459.0             0.953887        0.018838        0.341792           0.384892         0.399387        0.429485        0.959393           15
+
+4. EXPERIMENTAL DAY vs DEPOSITED PSEUDOTIME
+----------------------------------------------------------------------------------------------
+Overall cell-level Spearman(day, pseudotime): 0.843868
+Adjacent-day median non-decreasing fraction: 0.833333
+
+5. BIOLOGICAL-STATE PSEUDOTIME ORDERING
+----------------------------------------------------------------------------------------------
+type  n_cells  n_with_pseudotime  pseudotime_fraction  pseudotime_median  pseudotime_q25  pseudotime_q75
+IPSC  39733.0            39733.0                  1.0           0.028432        0.017589        0.040807
+ MES  55177.0            55177.0                  1.0           0.047112        0.028840        0.076249
+CMES  19144.0            19144.0                  1.0           0.308482        0.269015        0.328202
+PROG  35722.0            35722.0                  1.0           0.315187        0.276164        0.336789
+  CM  21862.0            21862.0                  1.0           0.466546        0.368249        0.658317
+  CF  45890.0            45890.0                  1.0           0.405607        0.367075        0.433189
+
+CM sequence median monotonicity (IPSC→MES→CMES→PROG→CM): 1.000000
+CF sequence median monotonicity (IPSC→MES→CMES→PROG→CF): 1.000000
+
+6. INDIVIDUAL-LEVEL STATE COVERAGE
+----------------------------------------------------------------------------------------------
+individual  IPSC  MES  CMES  PROG   CM   CF  candidate_CM_coverage_flag  candidate_CF_coverage_flag
+     18489  2208 1386  1185   252 1826 1542                        True                        True
+     18499  1977 6280   255  3500 1604   67                        True                        True
+     18505  1404 2415   941  1371 1357   20                        True                       False
+     18508  3374 1153  2410   897 1445 4648                        True                        True
+     18511  2978 4654   468  2668 1371 2160                        True                        True
+     18517  1681 3036   794  1482 2537  266                        True                        True
+     18520   450 3722  1685  1796  749 2899                        True                        True
+     18855   877 2082   295   795  715 4641                        True                        True
+     18858  2142 5754   124  2629 1543    8                        True                       False
+     18870  3250 2515   155  5189  495   66                        True                        True
+     18907  1009 1163  1928   948  751 3223                        True                        True
+     18912  3593 1568  2185  2956 2821  798                        True                        True
+     19093  1962 7798  1176  1979 2552 3157                        True                        True
+     19108  1386 1693   335   180  166  181                        True                        True
+     19127  1903 1796  1342  1142   34 3944                       False                        True
+     19159  2474 1442   816  1212   15 6909                       False                        True
+     19190  2959 2489  1375  1921   35 8171                       False                        True
+     19193  2364 1125  1332  1104  956 3039                        True                        True
+     19209  1742 3106   343  3701  890  151                        True                        True
+
+NOTE: these coverage flags are descriptive only and do not exclude any individual.
+
+7. INDIVIDUAL-LEVEL PSEUDOTIME / DAY AGREEMENT
+----------------------------------------------------------------------------------------------
+individual  n_cells  n_with_pseudotime  pseudotime_fraction  n_days  n_days_with_pseudotime  spearman_day_vs_pseudotime  daily_median_monotonicity  has_at_least_min_pseudotime_cells
+     18489     8559               8399             0.981306       6                       6                    0.837049                   0.800000                               True
+     18499    14946              13683             0.915496       7                       7                    0.788982                   1.000000                               True
+     18505     7928               7508             0.947023       6                       6                    0.901218                   0.800000                               True
+     18508    14220              13927             0.979395       7                       7                    0.840484                   0.500000                               True
+     18511    16098              14299             0.888247       7                       7                    0.855039                   0.833333                               True
+     18517    11024               9796             0.888607       7                       7                    0.858824                   0.666667                               True
+     18520    11629              11301             0.971795       7                       7                    0.859567                   1.000000                               True
+     18855    11034               9405             0.852365       7                       7                    0.809096                   0.833333                               True
+     18858    14197              12200             0.859336       7                       7                    0.795129                   1.000000                               True
+     18870    13160              11670             0.886778       7                       7                    0.796514                   0.833333                               True
+     18907     9222               9022             0.978313       7                       7                    0.824002                   0.666667                               True
+     18912    14145              13921             0.984164       7                       7                    0.877985                   0.666667                               True
+     19093    19683              18624             0.946197       7                       7                    0.883634                   0.833333                               True
+     19108     4059               3941             0.970929       7                       7                    0.757683                   0.833333                               True
+     19127    10206              10161             0.995591       7                       7                    0.865413                   0.833333                               True
+     19159    12908              12868             0.996901       7                       7                    0.770909                   0.666667                               True
+     19190    17032              16950             0.995186       7                       7                    0.878007                   1.000000                               True
+     19193    10011               9920             0.990910       7                       7                    0.823278                   0.833333                               True
+     19209    10725               9933             0.926154       7                       7                    0.821655                   0.833333                               True
+
+8. INDIVIDUAL BIOLOGICAL-STATE PSEUDOTIME PROFILES
+----------------------------------------------------------------------------------------------
+individual  cm_state_profile_correlation_to_global  cf_state_profile_correlation_to_global  cm_state_median_monotonicity  cf_state_median_monotonicity
+     18489                                0.999277                                0.996499                          1.00                          1.00
+     18499                                0.992109                                0.990357                          1.00                          1.00
+     18505                                0.980019                                0.986317                          1.00                          1.00
+     18508                                0.958241                                0.991233                          0.75                          0.75
+     18511                                0.993653                                0.992678                          1.00                          1.00
+     18517                                0.996643                                0.979553                          1.00                          0.75
+     18520                                0.999656                                0.999538                          0.75                          0.75
+     18855                                0.993459                                0.999804                          1.00                          1.00
+     18858                                0.994115                                0.941070                          1.00                          0.75
+     18870                                0.993198                                0.996276                          1.00                          1.00
+     18907                                0.992314                                0.997748                          0.75                          0.75
+     18912                                0.997515                                0.996146                          1.00                          1.00
+     19093                                0.976235                                0.999912                          1.00                          1.00
+     19108                                0.985152                                0.997877                          1.00                          1.00
+     19127                                0.973686                                0.998251                          1.00                          1.00
+     19159                                0.965949                                0.994168                          0.75                          0.75
+     19190                                0.978882                                0.998729                          1.00                          1.00
+     19193                                0.971427                                0.996373                          1.00                          1.00
+     19209                                0.992891                                0.993791                          1.00                          1.00
+
+9. TERMINAL CM vs CF PSEUDOTIME COMPARISON
+----------------------------------------------------------------------------------------------
+type  n_cells  n_with_pseudotime  pseudotime_median  pseudotime_q25  pseudotime_q75  pseudotime_min  pseudotime_max
+  CM  21862.0            21862.0           0.466546        0.368249        0.658317        0.066294        1.000000
+  CF  45890.0            45890.0           0.405607        0.367075        0.433189        0.032593        0.547549
+
+10. FIGURES
+----------------------------------------------------------------------------------------------
+Saved cell-type/day, state-pseudotime, day-pseudotime, and individual-state figures.
+
+11. TRAJECTORY-CHARACTERIZATION QUALIFICATION
+----------------------------------------------------------------------------------------------
+[PASS] All expected developmental cell types are present
+[PASS] At least 90% of all cells have deposited pseudotime
+[PASS] Overall experimental day is positively associated with deposited pseudotime
+[REVIEW] Experimental-day median pseudotime is fully non-decreasing
+[PASS] CM candidate state medians are fully non-decreasing
+[PASS] CF candidate state medians are fully non-decreasing
+
+Characterization checks passed: 5/6
+
+FINAL STATUS: REVIEW REQUIRED
+At least one trajectory-ordering property should be reviewed before defining CM/CF validation trajectories.
+
+IMPORTANT: p13 does not assign cells to CM or CF trajectory branches. Branch construction must be justified after reviewing these characterization results.
+
+Report:  <PROJECT_ROOT>/results/p13_external_GSE175634_trajectory_characterization/p13_external_GSE175634_trajectory_characterization_report.txt
+Tables:  <PROJECT_ROOT>/results/p13_external_GSE175634_trajectory_characterization/tables
+Figures: <PROJECT_ROOT>/results/p13_external_GSE175634_trajectory_characterization/figures

@@ -1,0 +1,183 @@
+============================================================================================
+GDIS-Bio External Validation Acquisition and Preflight
+Dataset: GSE175634
+============================================================================================
+
+No normalization, PCA, trajectory reconstruction, or GDIS is performed in p12.
+
+1. DOWNLOAD AND INTEGRITY
+--------------------------------------------------------------------------------------------
+
+GSE175634_cell_metadata.tsv.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_metadata.tsv.gz
+  Status: downloaded
+  Local size: 9.82 MiB
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: 426f3f8ef9a02da8cbf8247ef5d80a142a7e72883df61dad26c8453bd3d627a1
+
+GSE175634_cell_indices.tsv.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_indices.tsv.gz
+  Status: downloaded
+  Local size: 1.50 MiB
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: f88c17042c7051d31b5baab04a13c722655175950fa904d3d98c615f5645f939
+
+GSE175634_gene_indices_counts.tsv.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_gene_indices_counts.tsv.gz
+  Status: downloaded
+  Local size: 230.42 KiB
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: 6ad124f5328ed32b4f6c6f02a237399a901fa64fb0fbdbf1ba8a9c2423873622
+
+GSE175634_collection_metadata.txt.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_collection_metadata.txt.gz
+  Status: downloaded
+  Local size: 2.92 KiB
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: 852bd218b458081d55f15d15ab03a63dba126e844ed6f12d391dea16066b2664
+
+GSE175634_experimental_design.txt.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_experimental_design.txt.gz
+  Status: downloaded
+  Local size: 736.00 B
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: a3e89118ae341014a435ba9f954f22fda3b43475ebc7bcf462e5184638e98669
+
+GSE175634_cell_counts.mtx.gz
+  Source: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/GSE175634_cell_counts.mtx.gz
+  Status: downloaded
+  Local size: 969.84 MiB
+  gzip integrity: PASS
+  SHA-256 calculation...
+  SHA-256: bc1314d98cf5f33ffc33ea284c1475117af6d72df35175ed7f8aa702445c3cce
+
+2. CELL METADATA
+--------------------------------------------------------------------------------------------
+Shape: 230,786 rows x 12 columns
+Columns:
+  - cell
+  - exp.grp
+  - sample
+  - diffday
+  - individual
+  - S.Score
+  - G2M.Score
+  - CC.Difference
+  - demux.dbl.prb
+  - leiden
+  - type
+  - dpt_pseudotime
+
+Required external-validation fields:
+  [PASS] cell
+  [PASS] exp.grp
+  [PASS] sample
+  [PASS] diffday
+  [PASS] individual
+  [PASS] type
+  [PASS] dpt_pseudotime
+
+diffday values: ['day0', 'day1', 'day11', 'day15', 'day3', 'day5', 'day7']
+
+individual values: ['18489', '18499', '18505', '18508', '18511', '18517', '18520', '18855', '18858', '18870', '18907', '18912', '19093', '19108', '19127', '19159', '19190', '19193', '19209']
+
+type values: ['CF', 'CM', 'CMES', 'IPSC', 'MES', 'PROG', 'UNK']
+
+exp.grp values: ['E1CD1col1', 'E1CD1col2', 'E1CD1col3', 'E1CD1col4', 'E1CD1col5', 'E1CD1col6', 'E1CD2col1', 'E1CD2col2', 'E1CD2col3', 'E1CD2col4', 'E1CD2col5', 'E1CD2col6', 'E1CD3col1', 'E1CD3col2', 'E1CD3col3', 'E1CD3col4', 'E1CD3col5', 'E1CD3col6', 'E2CD1col1', 'E2CD1col2', '... (57 total)']
+
+sample values: ['18489_0', '18489_1', '18489_11', '18489_15', '18489_3', '18489_7', '18499_0', '18499_1', '18499_11', '18499_15', '18499_3', '18499_5', '18499_7', '18505_0', '18505_1', '18505_11', '18505_15', '18505_3', '18505_7', '18508_0', '... (131 total)']
+
+Deposited diffusion pseudotime:
+  finite/non-missing: 217,528 / 230,786
+  min: 0.000000
+  median: 0.271825
+  max: 1.000000
+
+3. CELL/GENE INDICES AND COUNT MATRIX
+--------------------------------------------------------------------------------------------
+Cell-index shape: 230,786 x 2
+Cell-index columns: ['cell_index', 'cell_name']
+Gene-index shape: 38,943 x 2
+Gene-index columns: ['gene_index', 'gene_name']
+Matrix header: %%MatrixMarket matrix coordinate integer general
+Matrix dimensions: 38,943 x 230,786
+Matrix reported nonzeros: 317,416,972
+Resolved orientation: genes x cells
+Matrix/index dimensions: [PASS]
+
+4. METADATA / CELL-INDEX ID AGREEMENT
+--------------------------------------------------------------------------------------------
+Best index-ID column: cell_name
+Metadata unique IDs: 230,786
+Index unique IDs: 230,786
+Exact overlap: 230,786
+Exact ID agreement: [PASS]
+
+5. CELL TYPE x DIFFERENTIATION DAY
+--------------------------------------------------------------------------------------------
+diffday   day0   day1  day11  day15   day3   day5   day7
+type                                                    
+CF          16      9  21340   9668      4    188  14665
+CM          35      0   8881   5263    344     80   7259
+CMES         5    101     16      4  18654    262    102
+IPSC     37827    993     79     26    209    330    269
+MES       3119  39451    228     60   9060   1710   1549
+PROG        57     57   5090   2438    648  14799  12633
+UNK        271    278   3708    844   1018   2139   5000
+
+6. INDIVIDUAL / CELL-LINE INVENTORY
+--------------------------------------------------------------------------------------------
+ individual  n_cells
+      19093    19683
+      19190    17032
+      18511    16098
+      18499    14946
+      18508    14220
+      18858    14197
+      18912    14145
+      18870    13160
+      19159    12908
+      18520    11629
+      18855    11034
+      18517    11024
+      19209    10725
+      19127    10206
+      19193    10011
+      18907     9222
+      18489     8559
+      18505     7928
+      19108     4059
+
+7. COLLECTION / EXPERIMENTAL DESIGN
+--------------------------------------------------------------------------------------------
+Collection metadata: 171 x 23
+Collection columns: ['Line', 'Differentiation Day', 'Feeder Passage', 'FF Passage', 'Date', 'CD', 'col', 'orig.ident', 'Experiment Batch', 'Diff Start  Batch', 'How many wells collected', 'Confluence when collected as percent', 'Day 0 Confluence (%)', 'Beating on day of collection Y 1/N 0', 'Day this well started beating', '% beating when collected', 'First day beating for this line/diff start', 'avg. day this line/diffStart started beating', 'Networks+Stringy (0- none noted, 1--thin, 2- chunky, if no adjective-1)', 'flash freezing or cryopreserve (flash-0, cryo-1)', 'Sheets vs. clumps (0-no notes, 1- clumps, 2- sheets, 3-both)', 'debris (0-none or not noted, 1-some, 2- lots)', 'swirls/semi-circles/background (not noted-0, noted-1)']
+Experimental design: 171 x 5
+Design columns: ['Exp', 'CD', 'col', 'Line', 'Day']
+
+8. PRELIMINARY EXTERNAL-VALIDATION QUALIFICATION
+--------------------------------------------------------------------------------------------
+[PASS] All six GEO files downloaded and passed gzip integrity
+[PASS] Metadata contains cell ID
+[PASS] Metadata contains differentiation day
+[PASS] Metadata contains individual/cell-line identity
+[PASS] Metadata contains biological cell-type annotation
+[PASS] Metadata contains deposited diffusion pseudotime
+[PASS] Count-matrix dimensions match cell/gene indices
+[PASS] Metadata IDs exactly match a cell-index column
+
+Preliminary checks passed: 8/8
+
+FINAL STATUS: PASS
+GSE175634 is structurally ready for dedicated trajectory characterization.
+
+Next step: characterize cell types, differentiation days, individuals, and deposited diffusion pseudotime before defining the external-validation GDIS trajectories.
+
+Raw data: <PROJECT_ROOT>/raw_data/GSE175634
+Report:   <PROJECT_ROOT>/results/p12_external_GSE175634_download_preflight/p12_external_GSE175634_download_preflight_report.txt
+Tables:   <PROJECT_ROOT>/results/p12_external_GSE175634_download_preflight/tables

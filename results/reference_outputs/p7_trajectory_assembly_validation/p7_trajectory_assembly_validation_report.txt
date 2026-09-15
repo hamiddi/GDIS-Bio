@@ -1,0 +1,127 @@
+==========================================================================================
+GDIS-Bio Pseudotemporal Trajectory Assembly Validation
+==========================================================================================
+
+SCIENTIFIC INTERPRETATION:
+These windows are pseudotime-ordered sequences of independent single cells, not longitudinal recordings of the same cell.
+
+Primary state space: 50 PCs
+Primary windowing: 400 cells/window, 100-cell step, 75% overlap
+Pre-specified sensitivity windowing: 300/75 and 500/125
+
+1. INPUT VALIDATION
+------------------------------------------------------------------------------------------
+Input cells: 18,099
+PC dimensions: 50
+Branches: [0, 1]
+Differentiations: [1, 2]
+Experimental days: [0, 1, 2, 3, 4, 5, 6, 7]
+Finite PCA values: True
+
+2. BRANCH x DIFFERENTIATION GROUP SIZES
+------------------------------------------------------------------------------------------
+ branch  differentiation  n_cells
+      0                1     4452
+      0                2     5056
+      1                1     3902
+      1                2     4689
+
+3. WINDOW ASSEMBLY
+------------------------------------------------------------------------------------------
+
+Configuration: sensitivity_w300_s75
+  w=300, step=75, overlap=75%
+  branch0_diff1: 4,452 cells -> 56 windows; coverage=0.9939; parameter strict increments=1.0000
+  branch0_diff2: 5,056 cells -> 64 windows; coverage=0.9939; parameter strict increments=1.0000
+  branch1_diff1: 3,902 cells -> 49 windows; coverage=0.9995; parameter strict increments=1.0000
+  branch1_diff2: 4,689 cells -> 59 windows; coverage=0.9917; parameter strict increments=1.0000
+
+Configuration: primary_w400_s100
+  w=400, step=100, overlap=75%
+  branch0_diff1: 4,452 cells -> 41 windows; coverage=0.9883; parameter strict increments=1.0000
+  branch0_diff2: 5,056 cells -> 47 windows; coverage=0.9889; parameter strict increments=1.0000
+  branch1_diff1: 3,902 cells -> 36 windows; coverage=0.9995; parameter strict increments=1.0000
+  branch1_diff2: 4,689 cells -> 43 windows; coverage=0.9810; parameter strict increments=1.0000
+
+Configuration: sensitivity_w500_s125
+  w=500, step=125, overlap=75%
+  branch0_diff1: 4,452 cells -> 32 windows; coverage=0.9827; parameter strict increments=1.0000
+  branch0_diff2: 5,056 cells -> 37 windows; coverage=0.9889; parameter strict increments=1.0000
+  branch1_diff1: 3,902 cells -> 28 windows; coverage=0.9931; parameter strict increments=1.0000
+  branch1_diff2: 4,689 cells -> 34 windows; coverage=0.9864; parameter strict increments=1.0000
+
+4. PRIMARY WINDOW OUTPUTS
+------------------------------------------------------------------------------------------
+Primary windows: 167
+Primary window-membership rows: 66,800
+Primary covered unique cells: 17,900
+
+5. BIOLOGICAL LANDMARKS MAPPED TO PRIMARY WINDOWS
+------------------------------------------------------------------------------------------
+ branch  differentiation         state  state_n_cells  state_median_pseudotime  nearest_window_index  nearest_window_parameter  absolute_parameter_difference nearest_window_dominant_state  nearest_window_median_day
+      0                1    prog_nkx61           1019                 0.058568                     3                  0.057298                       0.001270                    prog_nkx61                        0.0
+      0                1 neurog3_early            364                 0.171404                    10                  0.171322                       0.000082                 neurog3_early                        1.0
+      0                1   neurog3_mid            693                 0.270233                    15                  0.264130                       0.006103                   neurog3_mid                        2.0
+      0                1  neurog3_late            720                 0.417513                    22                  0.409567                       0.007946                  neurog3_late                        4.0
+      0                1         sc_ec           1656                 0.739645                    34                  0.734283                       0.005361                         sc_ec                        5.0
+      0                2    prog_nkx61            706                 0.090105                     2                  0.095921                       0.005816                    prog_nkx61                        1.0
+      0                2 neurog3_early            417                 0.174967                     7                  0.172633                       0.002335                 neurog3_early                        3.0
+      0                2   neurog3_mid            922                 0.274124                    14                  0.274369                       0.000246                   neurog3_mid                        3.0
+      0                2  neurog3_late           1263                 0.418087                    25                  0.422387                       0.004300                  neurog3_late                        3.0
+      0                2         sc_ec           1748                 0.752717                    40                  0.762559                       0.009841                         sc_ec                        6.0
+      1                1    prog_nkx61            995                 0.054914                     3                  0.055117                       0.000203                    prog_nkx61                        0.0
+      1                1 neurog3_early            404                 0.170517                    10                  0.171128                       0.000610                 neurog3_early                        1.0
+      1                1   neurog3_mid            677                 0.269037                    15                  0.262000                       0.007037                   neurog3_mid                        3.0
+      1                1  neurog3_late            742                 0.416287                    22                  0.405345                       0.010942                  neurog3_late                        4.0
+      1                1       sc_beta           1084                 0.746012                    32                  0.768098                       0.022086                       sc_beta                        6.0
+      1                2    prog_nkx61            689                 0.089977                     2                  0.096526                       0.006549                    prog_nkx61                        1.0
+      1                2 neurog3_early            443                 0.172877                     7                  0.170639                       0.002237                 neurog3_early                        2.5
+      1                2   neurog3_mid            985                 0.278230                    14                  0.273389                       0.004841                   neurog3_mid                        3.0
+      1                2  neurog3_late           1211                 0.421738                    25                  0.419500                       0.002237                  neurog3_late                        3.0
+      1                2       sc_beta           1361                 0.747444                    38                  0.749387                       0.001943                       sc_beta                        6.0
+
+6. CROSS-REPLICATE WINDOW-PARAMETER AGREEMENT
+------------------------------------------------------------------------------------------
+ branch  diff1_windows  diff2_windows  normalized_position_parameter_correlation  normalized_position_parameter_mae
+      0             41             47                                   0.997231                           0.033902
+      1             36             43                                   0.998822                           0.043897
+
+7. PRIMARY TRAJECTORY-ASSEMBLY QUALIFICATION
+------------------------------------------------------------------------------------------
+[PASS] Every group has at least 30 complete windows
+[PASS] Every group covers at least 98% of its cells
+[PASS] Window parameters are non-decreasing in every group
+[PASS] Strict window-parameter increments occur in at least 95% of adjacent windows
+[PASS] Parameter ties are at most 5%
+[PASS] All expected biological states are represented among covered cells
+[PASS] All experimental days represented in each group remain represented among covered cells
+[PASS] All primary trajectory arrays have shape n_windows x 400 x 50
+[PASS] Input PCA coordinates are finite
+
+Primary assembly checks passed: 9/9
+
+8. PRE-SPECIFIED WINDOW-SENSITIVITY CONFIGURATIONS
+------------------------------------------------------------------------------------------
+               config  window_size  step_size  overlap_fraction  primary  minimum_windows  maximum_windows  minimum_cell_coverage  minimum_strict_parameter_increment_fraction  maximum_parameter_tie_fraction
+    primary_w400_s100          400        100              0.75     True               36               47               0.981019                                          1.0                             0.0
+ sensitivity_w300_s75          300         75              0.75    False               49               64               0.991683                                          1.0                             0.0
+sensitivity_w500_s125          500        125              0.75    False               28               37               0.982704                                          1.0                             0.0
+
+9. FIGURES
+------------------------------------------------------------------------------------------
+Saved primary-window coverage, span, and biological-progression figures.
+
+10. FINAL STATUS
+------------------------------------------------------------------------------------------
+FINAL STATUS: PASS
+The four branch x differentiation pseudotemporal sequences have been assembled successfully.
+Primary GDIS input is frozen at 400 cells/window, 100-cell step, 50 PCs.
+Sensitivity inputs are frozen at 300/75 and 500/125 using the same 50-PC state space.
+The next step may calculate GDIS without changing the windowing design based on observed GDIS values.
+
+NO GDIS VALUES WERE CALCULATED.
+
+Report:  <PROJECT_ROOT>/results/p7_trajectory_assembly_validation/p7_trajectory_assembly_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p7_trajectory_assembly_validation/tables
+Figures: <PROJECT_ROOT>/results/p7_trajectory_assembly_validation/figures
+Data:    <PROJECT_ROOT>/results/p7_trajectory_assembly_validation/data

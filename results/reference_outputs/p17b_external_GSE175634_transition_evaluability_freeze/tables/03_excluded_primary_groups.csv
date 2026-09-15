@@ -1,0 +1,3 @@
+config,scope,individual,transition_id,destination_state,destination_state_median_pseudotime,parameter_min,parameter_max,landmark_minus_parameter_max,landmark_inside_parameter_range,n_windows,final_primary_gdis_eligible
+primary_w400_s100,cf_extension,19108,T3_CF,CF,0.37690464,0.013453955,0.325725825,0.05117881499999999,False,34,False
+primary_w400_s100,cm_extension,19108,T3_CM,CM,0.37534056,0.013453955,0.3243261149999999,0.051014445000000075,False,34,False

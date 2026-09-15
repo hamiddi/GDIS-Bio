@@ -1,0 +1,3 @@
+branch,n_cells,sc_beta_n,sc_ec_n,sc_beta_fraction,sc_ec_fraction,beta_fraction_within_beta_ec,ec_fraction_within_beta_ec
+0,9508,0,3404,0.0,0.3580143037442154,0.0,1.0
+1,8591,2445,0,0.2846001629612385,0.0,1.0,0.0

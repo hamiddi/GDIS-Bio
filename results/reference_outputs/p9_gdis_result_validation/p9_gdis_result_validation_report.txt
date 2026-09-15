@@ -1,0 +1,98 @@
+============================================================================================
+GDIS-Bio Primary Result Validation and Replicate Consensus
+============================================================================================
+
+No GDIS values are recomputed in this script.
+All biological landmarks were frozen before the p8 GDIS run.
+
+1. EVENT LOCALIZATION RELATIVE TO FROZEN BIOLOGICAL LANDMARKS
+--------------------------------------------------------------------------------------------
+ branch lineage  differentiation  neurog3_early_median_landmark  gdis_peak_parameter  gdis_peak_minus_early_landmark  transition_energy_peak_parameter  transition_center_minus_early_landmark  transition_center_precedes_early_median  sustained_peak_parameter  gdis_peak_value  transition_energy_peak_value  gdis_peak_median_day gdis_peak_dominant_state
+      0   SC-EC                1                       0.171404             0.192374                        0.020970                          0.120740                               -0.050663                                     True                  0.155103         0.852791                      0.869697                   1.0            neurog3_early
+      0   SC-EC                2                       0.174967             0.172633                       -0.002335                          0.140523                               -0.034445                                     True                  0.156250         0.863924                      1.000000                   3.0            neurog3_early
+      1 SC-beta                1                       0.170517             0.189676                        0.019159                          0.154206                               -0.016311                                     True                  0.243776         0.830154                      0.824385                   1.0            neurog3_early
+      1 SC-beta                2                       0.172877             0.170639                       -0.002237                          0.138464                               -0.034413                                     True                  0.154938         0.863612                      0.968195                   2.5            neurog3_early
+
+2. GDIS PROGRESSION ACROSS FROZEN BIOLOGICAL LANDMARKS
+--------------------------------------------------------------------------------------------
+ branch lineage  differentiation  state_order         state  state_median_pseudotime  nearest_window_parameter  parameter_error     gdis  sustained_instability  transition_instability  transition_energy
+      0   SC-EC                1            0    prog_nkx61                 0.058568                  0.057298         0.001270 0.539370               0.509896                0.048006           0.348541
+      0   SC-EC                1            1 neurog3_early                 0.171404                  0.171322         0.000082 0.841983               0.813622                0.118515           0.826942
+      0   SC-EC                1            2   neurog3_mid                 0.270233                  0.264130         0.006103 0.784696               0.791759                0.027343           0.776918
+      0   SC-EC                1            3  neurog3_late                 0.417513                  0.409567         0.007946 0.742521               0.749096                0.000013           0.334385
+      0   SC-EC                1            4         sc_ec                 0.739645                  0.734283         0.005361 0.810591               0.811356                0.000000           0.154560
+      0   SC-EC                2            0    prog_nkx61                 0.090105                  0.095921         0.005816 0.284987               0.204356                0.066598           0.396844
+      0   SC-EC                2            1 neurog3_early                 0.174967                  0.172633         0.002335 0.863924               0.816433                0.139630           0.798383
+      0   SC-EC                2            2   neurog3_mid                 0.274124                  0.274369         0.000246 0.787732               0.789951                0.021245           0.519550
+      0   SC-EC                2            3  neurog3_late                 0.418087                  0.422387         0.004300 0.754435               0.751694                0.000102           0.339308
+      0   SC-EC                2            4         sc_ec                 0.752717                  0.762559         0.009841 0.797266               0.797747                0.000000           0.088595
+      1 SC-beta                1            0    prog_nkx61                 0.054914                  0.055117         0.000203 0.472720               0.451189                0.032183           0.380510
+      1 SC-beta                1            1 neurog3_early                 0.170517                  0.171128         0.000610 0.824160               0.802856                0.121138           0.784291
+      1 SC-beta                1            2   neurog3_mid                 0.269037                  0.262000         0.007037 0.817615               0.815177                0.016274           0.315574
+      1 SC-beta                1            3  neurog3_late                 0.416287                  0.405345         0.010942 0.745420               0.741488                0.000257           0.378470
+      1 SC-beta                1            4       sc_beta                 0.746012                  0.768098         0.022086 0.803229               0.803306                0.000000           0.098259
+      1 SC-beta                2            0    prog_nkx61                 0.089977                  0.096526         0.006549 0.279755               0.210987                0.049924           0.286086
+      1 SC-beta                2            1 neurog3_early                 0.172877                  0.170639         0.002237 0.863612               0.814963                0.135639           0.833488
+      1 SC-beta                2            2   neurog3_mid                 0.278230                  0.273389         0.004841 0.791925               0.786047                0.016475           0.434969
+      1 SC-beta                2            3  neurog3_late                 0.421738                  0.419500         0.002237 0.718139               0.736111                0.000028           0.230165
+      1 SC-beta                2            4       sc_beta                 0.747444                  0.749387         0.001943 0.796628               0.796192                0.000000           0.075616
+
+3. STAGE-TO-STAGE METRIC CHANGES
+--------------------------------------------------------------------------------------------
+ branch lineage  differentiation    from_state      to_state  delta_gdis  delta_sustained_instability  delta_transition_instability  delta_transition_energy
+      0   SC-EC                1    prog_nkx61 neurog3_early    0.302613                     0.303726                      0.070509                 0.478401
+      0   SC-EC                1 neurog3_early   neurog3_mid   -0.057287                    -0.021863                     -0.091172                -0.050024
+      0   SC-EC                1   neurog3_mid  neurog3_late   -0.042175                    -0.042664                     -0.027330                -0.442533
+      0   SC-EC                1  neurog3_late         sc_ec    0.068071                     0.062260                     -0.000013                -0.179826
+      0   SC-EC                2    prog_nkx61 neurog3_early    0.578937                     0.612077                      0.073032                 0.401539
+      0   SC-EC                2 neurog3_early   neurog3_mid   -0.076192                    -0.026482                     -0.118386                -0.278833
+      0   SC-EC                2   neurog3_mid  neurog3_late   -0.033296                    -0.038257                     -0.021142                -0.180242
+      0   SC-EC                2  neurog3_late         sc_ec    0.042831                     0.046053                     -0.000102                -0.250713
+      1 SC-beta                1    prog_nkx61 neurog3_early    0.351440                     0.351666                      0.088956                 0.403781
+      1 SC-beta                1 neurog3_early   neurog3_mid   -0.006545                     0.012322                     -0.104864                -0.468717
+      1 SC-beta                1   neurog3_mid  neurog3_late   -0.072196                    -0.073689                     -0.016016                 0.062896
+      1 SC-beta                1  neurog3_late       sc_beta    0.057810                     0.061818                     -0.000257                -0.280211
+      1 SC-beta                2    prog_nkx61 neurog3_early    0.583857                     0.603975                      0.085715                 0.547402
+      1 SC-beta                2 neurog3_early   neurog3_mid   -0.071687                    -0.028915                     -0.119164                -0.398519
+      1 SC-beta                2   neurog3_mid  neurog3_late   -0.073786                    -0.049936                     -0.016447                -0.204804
+      1 SC-beta                2  neurog3_late       sc_beta    0.078489                     0.060082                     -0.000028                -0.154549
+
+4. REPLICATE EVENT-LOCATION AGREEMENT
+--------------------------------------------------------------------------------------------
+ branch lineage  absolute_gdis_peak_parameter_difference  absolute_transition_center_difference  absolute_sustained_peak_difference
+      0   SC-EC                                 0.019741                               0.019782                            0.001147
+      1 SC-beta                                 0.019037                               0.015742                            0.088838
+
+5. BRANCH-LEVEL REPLICATE CONSENSUS
+--------------------------------------------------------------------------------------------
+ branch lineage  consensus_parameter_min  consensus_parameter_max  consensus_gdis_peak_parameter  consensus_gdis_peak_value  consensus_transition_energy_peak_parameter  mean_neurog3_early_landmark  consensus_transition_center_minus_early_landmark  mean_absolute_replicate_gdis_difference
+      0   SC-EC                 0.057380                 0.921783                       0.184583                   0.853834                                    0.141219                     0.173186                                         -0.031967                                 0.031203
+      1 SC-beta                 0.061097                 0.887832                       0.171697                   0.843728                                    0.138517                     0.171697                                         -0.033180                                 0.047366
+
+6. CROSS-BRANCH AGREEMENT IN THE COMMON ENDOCRINE PHASE
+--------------------------------------------------------------------------------------------
+ common_phase_min  common_phase_max_neurog3_late  gdis_cross_branch_pearson  gdis_cross_branch_spearman  gdis_cross_branch_mae  transition_energy_cross_branch_pearson  transition_energy_cross_branch_spearman  transition_energy_cross_branch_mae
+         0.061097                       0.418406                   0.975743                    0.943774               0.026935                                0.819893                                  0.75842                            0.112774
+
+7. DESCRIPTIVE CONCORDANCE CHECKS
+--------------------------------------------------------------------------------------------
+[CONSISTENT] All four GDIS global peaks have dominant state NEUROG3-early
+[CONSISTENT] All four transition-energy centers precede the median NEUROG3-early landmark
+[CONSISTENT] GDIS at the NEUROG3-early landmark exceeds GDIS at the progenitor landmark in all four groups
+
+8. RESULT SUMMARY
+--------------------------------------------------------------------------------------------
+Observed primary pattern:
+  - The global GDIS maximum localizes to the NEUROG3-early transition phase in all four branch x differentiation analyses.
+  - The data-driven transition-energy center occurs before the median NEUROG3-early landmark in all four groups.
+  - Mean separation from transition-energy center to median NEUROG3-early landmark: 0.033958 pseudotime units.
+  - Observed range of that separation: 0.016311 to 0.050663.
+  - This is evidence of reproducible transition localization relative to a pre-frozen state landmark; it is not by itself proof of prediction before true biological onset.
+  - A distinct later global GDIS maximum at the terminal SC-EC/SC-beta state is not supported by the primary result.
+
+Recommended next step:
+Benchmark the frozen GDIS result against conventional early-warning / transition metrics using the same windows and biological landmarks.
+
+Report:  <PROJECT_ROOT>/results/p9_gdis_result_validation/p9_gdis_result_validation_report.txt
+Tables:  <PROJECT_ROOT>/results/p9_gdis_result_validation/tables
+Figures: <PROJECT_ROOT>/results/p9_gdis_result_validation/figures

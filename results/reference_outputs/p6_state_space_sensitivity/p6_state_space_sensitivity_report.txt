@@ -1,0 +1,123 @@
+========================================================================================
+GDIS-Bio State-Space Dimensionality Sensitivity
+Dataset: GSE114412 Stage-5 endocrine trajectory
+========================================================================================
+
+No GDIS calculation is performed in this script.
+
+1. INPUT VALIDATION
+----------------------------------------------------------------------------------------
+[OK]  5 PCs: 18,099 cells
+[OK] 10 PCs: 18,099 cells
+[OK] 20 PCs: 18,099 cells
+[OK] 30 PCs: 18,099 cells
+[OK] 50 PCs: 18,099 cells
+
+2. EXPLAINED VARIANCE
+----------------------------------------------------------------------------------------
+ dimension  cumulative_explained_variance
+         5                       0.173979
+        10                       0.206975
+        20                       0.243650
+        30                       0.268955
+        50                       0.311693
+
+3. FIXED STRATIFIED SAMPLE FOR DISTANCE ANALYSIS
+----------------------------------------------------------------------------------------
+Distance-analysis sample size: 2,000
+
+4. PAIRWISE DISTANCE PRESERVATION RELATIVE TO 50 PCs
+----------------------------------------------------------------------------------------
+ dimension  distance_spearman_vs_50PC
+         5                   0.953201
+        10                   0.971408
+        20                   0.985356
+        30                   0.992093
+        50                   1.000000
+
+5. 30-NEAREST-NEIGHBOR OVERLAP RELATIVE TO 50 PCs
+----------------------------------------------------------------------------------------
+ dimension  mean_knn_overlap_vs_50PC  median_knn_overlap_vs_50PC  q25_knn_overlap_vs_50PC  q75_knn_overlap_vs_50PC
+         5                  0.102973                    0.100000                 0.033333                 0.133333
+        10                  0.230923                    0.233333                 0.133333                 0.300000
+        20                  0.403201                    0.400000                 0.300000                 0.500000
+        30                  0.544091                    0.533333                 0.466667                 0.633333
+        50                  1.000000                    1.000000                 1.000000                 1.000000
+
+6. BIOLOGICAL-CENTROID GEOMETRY PRESERVATION
+----------------------------------------------------------------------------------------
+ dimension  centroid_distance_spearman_vs_50PC
+         5                            0.997320
+        10                            0.999482
+        20                            0.999944
+        30                            0.999979
+        50                            1.000000
+
+7. CROSS-REPLICATE TRAJECTORY-GEOMETRY AGREEMENT
+----------------------------------------------------------------------------------------
+ dimension  branch  replicate_geometry_correlation
+         5       0                        0.997674
+         5       1                        0.998543
+        10       0                        0.996916
+        10       1                        0.998441
+        20       0                        0.997060
+        20       1                        0.998247
+        30       0                        0.997111
+        30       1                        0.998250
+        50       0                        0.997101
+        50       1                        0.998262
+
+8. CROSS-REPLICATE PSEUDOTIME GENERALIZATION
+----------------------------------------------------------------------------------------
+ dimension  minimum_generalization_rho  mean_generalization_rho  mean_absolute_error
+         5                    0.949933                 0.955105             0.067414
+        10                    0.951735                 0.955857             0.065137
+        20                    0.955069                 0.959007             0.062463
+        30                    0.954626                 0.959362             0.062169
+        50                    0.955609                 0.960518             0.061288
+
+9. CROSS-REPLICATE TERMINAL-FATE CLASSIFICATION
+----------------------------------------------------------------------------------------
+ dimension  minimum_balanced_accuracy  mean_balanced_accuracy  minimum_roc_auc  mean_roc_auc
+         5                   0.974845                0.978034         0.997607      0.998078
+        10                   0.975989                0.979147         0.997684      0.998120
+        20                   0.974275                0.978449         0.997568      0.998028
+        30                   0.974929                0.979388         0.997570      0.998016
+        50                   0.968723                0.974750         0.996748      0.997453
+
+10. INTEGRATED STATE-SPACE SENSITIVITY SUMMARY
+----------------------------------------------------------------------------------------
+ dimension  cumulative_explained_variance  distance_spearman_vs_50PC  mean_knn_overlap_vs_50PC  centroid_distance_spearman_vs_50PC  minimum_replicate_geometry_correlation  minimum_generalization_rho  minimum_balanced_accuracy  n_stability_checks_passed  all_stability_checks_pass
+         5                       0.173979                   0.953201                  0.102973                            0.997320                                0.997674                    0.949933                   0.974845                          5                      False
+        10                       0.206975                   0.971408                  0.230923                            0.999482                                0.996916                    0.951735                   0.975989                          5                      False
+        20                       0.243650                   0.985356                  0.403201                            0.999944                                0.997060                    0.955069                   0.974275                          5                      False
+        30                       0.268955                   0.992093                  0.544091                            0.999979                                0.997111                    0.954626                   0.974929                          5                      False
+        50                       0.311693                   1.000000                  1.000000                            1.000000                                0.997101                    0.955609                   0.968723                          6                       True
+
+11. PRE-SPECIFIED PRIMARY DIMENSIONALITY SELECTION
+----------------------------------------------------------------------------------------
+Selection rule: choose the SMALLEST PC dimensionality that satisfies ALL representation-stability criteria.
+Thresholds:
+  distance Spearman vs 50 PCs >= 0.90
+  mean 30-NN overlap vs 50 PCs >= 0.60
+  centroid-distance Spearman vs 50 PCs >= 0.95
+  minimum replicate-geometry correlation >= 0.95
+  minimum cross-replicate pseudotime rho >= 0.70
+  minimum terminal-fate balanced accuracy >= 0.90
+
+PRIMARY DIMENSIONALITY SELECTED: 50 PCs
+
+12. SENSITIVITY FIGURES
+----------------------------------------------------------------------------------------
+
+13. FINAL STATUS
+----------------------------------------------------------------------------------------
+FINAL STATUS: PASS
+50 PCs is the pre-specified primary state-space dimensionality for the first GDIS analysis.
+The remaining dimensions should be retained as sensitivity-analysis state spaces.
+
+No GDIS values were calculated.
+
+Report:  <PROJECT_ROOT>/results/p6_state_space_sensitivity/p6_state_space_sensitivity_report.txt
+Tables:  <PROJECT_ROOT>/results/p6_state_space_sensitivity/tables
+Figures: <PROJECT_ROOT>/results/p6_state_space_sensitivity/figures

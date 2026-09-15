@@ -1,0 +1,107 @@
+==========================================================================================================
+GDIS-Bio GSE175634 External Validation Evidence Freeze
+==========================================================================================================
+
+NO NEW GDIS OR INFERENTIAL ANALYSIS IS PERFORMED HERE.
+This report consolidates the already completed p17b-p22 external-validation evidence.
+
+1. FINAL EXTERNAL COHORT
+----------------------------------------------------------------------------------------------------------
+          scope  p17_primary_groups  final_primary_gdis_groups  excluded_for_transition_evaluability
+shared_backbone                  19                         19                                     0
+   cm_extension                  16                         15                                     1
+   cf_extension                  15                         14                                     1
+
+Total final primary profiles: 48
+
+2. FINAL PRIMARY GDIS EVIDENCE
+----------------------------------------------------------------------------------------------------------
+          scope transition_id  n_profiles  median_absolute_gdis_peak_error  median_signed_gdis_peak_offset  gdis_localization_p  gdis_localization_q  gdis_localization_significant_fdr  n_positive_source_destination_change  n_negative_source_destination_change  median_source_destination_gdis_change  source_destination_wilcoxon_q  source_destination_increase_significant_fdr  gdis_descriptive_localization_rank_among_6_metrics
+shared_backbone            T2          19                         0.037620                        0.023660             0.002000             0.004000                               True                                    15                                     4                               0.053433                       0.037079                                         True                                                 4.0
+   cm_extension         T3_CM          15                         0.095395                       -0.065844             0.000650             0.002520                               True                                     9                                     6                               0.008419                       0.203064                                        False                                                 4.0
+   cf_extension         T3_CF          14                         0.040503                       -0.031866             0.018649             0.027974                               True                                     0                                    14                              -0.051021                       1.000000                                        False                                                 4.0
+
+3. PAIRED GDIS-vs-CONVENTIONAL EVIDENCE
+----------------------------------------------------------------------------------------------------------
+          scope transition_id                            baseline_label  n_individuals  median_gdis_abs_error  median_baseline_abs_error  gdis_wins  ties  gdis_losses  q_sign_gdis_better_bh  q_wilcoxon_gdis_better_bh  paired_superiority_supported
+shared_backbone            T2                            Total variance             19               0.037620                   0.035737         11     4            4               0.142163                   0.605095                         False
+shared_backbone            T2 Mean lag-1 pseudotemporal autocorrelation             19               0.037620                   0.099110         14     1            4               0.061768                   0.069340                         False
+shared_backbone            T2             Gaussian differential entropy             19               0.037620                   0.036340         12     3            4               0.115219                   0.416295                         False
+shared_backbone            T2         Mean pseudotemporal step distance             19               0.037620                   0.033063         10     3            6               0.454498                   0.605095                         False
+   cm_extension         T3_CM                            Total variance             15               0.095395                   0.047541          5     1            9               0.993530                   0.987079                         False
+   cm_extension         T3_CM Mean lag-1 pseudotemporal autocorrelation             15               0.095395                   0.203950         12     1            2               0.038818                   0.018956                          True
+   cm_extension         T3_CM             Gaussian differential entropy             15               0.095395                   0.067559          3     1           11               0.993530                   0.987079                         False
+   cm_extension         T3_CM         Mean pseudotemporal step distance             15               0.095395                   0.067559          3     1           11               0.993530                   0.987079                         False
+   cf_extension         T3_CF                            Total variance             14               0.040503                   0.028560          3     1           10               0.993530                   0.987079                         False
+   cf_extension         T3_CF Mean lag-1 pseudotemporal autocorrelation             14               0.040503                   0.222444         13     0            1               0.010986                   0.003662                          True
+   cf_extension         T3_CF             Gaussian differential entropy             14               0.040503                   0.023791          4     0           10               0.993530                   0.987079                         False
+   cf_extension         T3_CF         Mean pseudotemporal step distance             14               0.040503                   0.028560          3     2            9               0.993530                   0.987079                         False
+
+4. PRE-SPECIFIED SENSITIVITY EVIDENCE
+----------------------------------------------------------------------------------------------------------
+sensitivity_type     sensitivity_label           scope  n_profiles  median_pearson  median_spearman  median_mean_abs_difference  median_abs_peak_shift  max_abs_peak_shift  median_primary_abs_peak_landmark_error  median_sensitivity_abs_peak_landmark_error  fraction_peak_within_0p05_of_primary  median_abs_transition_energy_peak_shift
+       dimension                  30PC    cf_extension          14        0.935902         0.943186                    0.017962               0.000000            0.091184                                0.040503                                    0.036690                              0.928571                                 0.000000
+       dimension                  30PC    cm_extension          15        0.981825         0.973001                    0.011513               0.000000            0.066200                                0.095395                                    0.095395                              0.933333                                 0.000000
+       dimension                  30PC shared_backbone          19        0.984982         0.967554                    0.013062               0.000000            0.255991                                0.037620                                    0.035752                              0.947368                                 0.000000
+          window  sensitivity_w300_s75    cf_extension          14        0.935820         0.940274                    0.014826               0.002006            0.032006                                0.040503                                    0.039073                              1.000000                                 0.001230
+          window  sensitivity_w300_s75    cm_extension          15        0.984459         0.974942                    0.007217               0.009240            0.113290                                0.095395                                    0.093891                              0.866667                                 0.001188
+          window  sensitivity_w300_s75 shared_backbone          19        0.952058         0.964217                    0.015492               0.005783            0.151844                                0.037620                                    0.051093                              0.947368                                 0.002769
+          window sensitivity_w500_s125    cf_extension          14        0.948997         0.934635                    0.015139               0.001812            0.147064                                0.040503                                    0.044931                              0.785714                                 0.001868
+          window sensitivity_w500_s125    cm_extension          15        0.987863         0.977994                    0.006289               0.003648            0.407750                                0.095395                                    0.116438                              0.800000                                 0.001219
+          window sensitivity_w500_s125 shared_backbone          19        0.961739         0.977831                    0.014558               0.002357            0.266005                                0.037620                                    0.027912                              0.947368                                 0.001593
+
+5. FROZEN SCIENTIFIC CLAIMS
+----------------------------------------------------------------------------------------------------------
+
+[SUPPORTED] C1
+GDIS transition-region localization generalized to the independent GSE175634 cardiac differentiation dataset for T2, T3-CM, and T3-CF.
+Guardrail: This means significant alignment to independently frozen state landmarks versus circular-shift nulls; it does not establish exact onset prediction.
+
+[SUPPORTED] C2
+The shared-backbone T2 transition showed both significant GDIS localization and a significant positive MES-to-CMES GDIS change across individuals.
+Guardrail: Do not generalize this monotonic increase to all terminal transitions.
+
+[SUPPORTED] C3
+GDIS localized the T3-CM and T3-CF terminal transition regions significantly versus structure-preserving nulls even though the score did not show a consistent source-to-destination increase.
+Guardrail: GDIS need not peak at the mature destination-state median and should not be interpreted as a monotonic maturation score.
+
+[SUPPORTED] C4
+GDIS outperformed lag-1 pseudotemporal autocorrelation for T3-CM and T3-CF in paired individual-level localization tests after FDR correction.
+Guardrail: T2 showed the same direction but did not remain significant after FDR correction.
+
+[NOT SUPPORTED] C5
+Do not claim that GDIS is universally superior to variance, Gaussian entropy, or pseudotemporal step distance.
+Guardrail: Those conventional metrics were competitive or descriptively better localized in several external transition settings, and paired superiority tests did not support a general GDIS advantage.
+
+[SUPPORTED] C6
+Full GDIS localized all three external transitions substantially better than its internal transition-energy component.
+Guardrail: Transition energy frequently peaked at an earlier developmental transition and should not be presented as an independently validated late-transition locator.
+
+[SUPPORTED] C7
+The external GDIS result was robust to the pre-specified window-size analyses and particularly stable between 30-PC and 50-PC state spaces.
+Guardrail: The primary analysis remains the frozen 50-PC, 400-cell, 100-step configuration; sensitivity results do not replace it.
+
+[NOT SUPPORTED] C8
+Do not describe the external result as prospective prediction of biological transition onset.
+Guardrail: The deposited pseudotime is a rank ordering of independent cells, and state medians/IQRs are landmarks rather than true onset times.
+
+6. EVIDENCE-FREEZE QUALIFICATION
+----------------------------------------------------------------------------------------------------------
+[PASS] All three primary GDIS transition-localization tests remain significant after FDR
+[PASS] Paired GDIS superiority over lag-1 autocorrelation is supported for both terminal transitions
+[PASS] No universal GDIS superiority over variance, entropy, or step distance is asserted
+[PASS] Full GDIS is significantly better localized than transition energy in all three scopes
+[PASS] Frozen 30-PC and both window-size sensitivity summaries are present for all scopes
+
+Qualification checks passed: 5/5
+
+FINAL STATUS: PASS
+GSE175634 external validation is complete and frozen.
+
+FINAL EXTERNAL-VALIDATION INTERPRETATION:
+GDIS significantly localized independently defined transition regions across the shared cardiac developmental transition and both terminal extensions. The effect was robust to pre-specified window and state-space sensitivity analyses. However, conventional variance, Gaussian entropy, and pseudotemporal step distance were also strong transition markers and were equally competitive or better in several settings. GDIS showed its clearest comparative advantage over lag-1 pseudotemporal autocorrelation in the terminal transitions. These results support GDIS as a complementary integrative dynamical-instability measure rather than a universally superior early-warning statistic.
+
+NO PROSPECTIVE BIOLOGICAL ONSET-PREDICTION CLAIM IS MADE.
+
+Report: <PROJECT_ROOT>/results/p23_external_GSE175634_evidence_freeze/p23_external_GSE175634_evidence_freeze_report.txt
+Tables: <PROJECT_ROOT>/results/p23_external_GSE175634_evidence_freeze/tables

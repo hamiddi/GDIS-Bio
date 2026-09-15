@@ -1,0 +1,182 @@
+==========================================================================================================
+GDIS-Bio GSE175634 Conventional Early-Warning Benchmark
+==========================================================================================================
+
+Frozen analysis design:
+  50 PCs; 400 cells/window; 100-cell step; 75% overlap
+  Final p17b transition-evaluable cohort: 48 profiles
+  GDIS values are read unchanged from p18.
+
+Conventional benchmark metrics:
+  - Total variance
+  - Mean lag-1 pseudotemporal autocorrelation
+  - Gaussian differential entropy
+  - Mean pseudotemporal step distance
+
+NOTE: autocorrelation and step distance are pseudotemporal, not physical-time, quantities.
+
+1. COMPUTE CONVENTIONAL METRICS ON FROZEN WINDOWS
+----------------------------------------------------------------------------------------------------------
+[01/48] cf_extension     | individual 18489 |  62 windows
+[02/48] cf_extension     | individual 18508 | 121 windows
+[03/48] cf_extension     | individual 18511 | 126 windows
+[04/48] cf_extension     | individual 18517 |  69 windows
+[05/48] cf_extension     | individual 18520 | 102 windows
+[06/48] cf_extension     | individual 18855 |  83 windows
+[07/48] cf_extension     | individual 18907 |  79 windows
+[08/48] cf_extension     | individual 18912 | 108 windows
+[09/48] cf_extension     | individual 19093 | 157 windows
+[10/48] cf_extension     | individual 19127 |  98 windows
+[11/48] cf_extension     | individual 19159 | 125 windows
+[12/48] cf_extension     | individual 19190 | 166 windows
+[13/48] cf_extension     | individual 19193 |  86 windows
+[14/48] cf_extension     | individual 19209 |  87 windows
+[15/48] cm_extension     | individual 18489 |  65 windows
+[16/48] cm_extension     | individual 18499 | 133 windows
+[17/48] cm_extension     | individual 18505 |  71 windows
+[18/48] cm_extension     | individual 18508 |  89 windows
+[19/48] cm_extension     | individual 18511 | 118 windows
+[20/48] cm_extension     | individual 18517 |  92 windows
+[21/48] cm_extension     | individual 18520 |  81 windows
+[22/48] cm_extension     | individual 18855 |  44 windows
+[23/48] cm_extension     | individual 18858 | 118 windows
+[24/48] cm_extension     | individual 18870 | 113 windows
+[25/48] cm_extension     | individual 18907 |  54 windows
+[26/48] cm_extension     | individual 18912 | 128 windows
+[27/48] cm_extension     | individual 19093 | 151 windows
+[28/48] cm_extension     | individual 19193 |  65 windows
+[29/48] cm_extension     | individual 19209 |  94 windows
+[30/48] shared_backbone  | individual 18489 |  47 windows
+[31/48] shared_backbone  | individual 18499 | 117 windows
+[32/48] shared_backbone  | individual 18505 |  58 windows
+[33/48] shared_backbone  | individual 18508 |  75 windows
+[34/48] shared_backbone  | individual 18511 | 104 windows
+[35/48] shared_backbone  | individual 18517 |  66 windows
+[36/48] shared_backbone  | individual 18520 |  73 windows
+[37/48] shared_backbone  | individual 18855 |  37 windows
+[38/48] shared_backbone  | individual 18858 | 103 windows
+[39/48] shared_backbone  | individual 18870 | 108 windows
+[40/48] shared_backbone  | individual 18907 |  47 windows
+[41/48] shared_backbone  | individual 18912 | 100 windows
+[42/48] shared_backbone  | individual 19093 | 126 windows
+[43/48] shared_backbone  | individual 19108 |  32 windows
+[44/48] shared_backbone  | individual 19127 |  58 windows
+[45/48] shared_backbone  | individual 19159 |  56 windows
+[46/48] shared_backbone  | individual 19190 |  84 windows
+[47/48] shared_backbone  | individual 19193 |  56 windows
+[48/48] shared_backbone  | individual 19209 |  85 windows
+
+2. GLOBAL-PEAK LOCALIZATION SUMMARY
+----------------------------------------------------------------------------------------------------------
+          scope transition_id                        metric                              metric_label  n_profiles  median_absolute_peak_localization_error  mean_absolute_peak_localization_error  median_signed_peak_offset  q25_absolute_peak_localization_error  q75_absolute_peak_localization_error
+   cf_extension         T3_CF gaussian_differential_entropy             Gaussian differential entropy          14                                 0.023791                               0.029015                  -0.012050                              0.013005                              0.045313
+   cf_extension         T3_CF                          gdis                                      GDIS          14                                 0.040503                               0.043370                  -0.031866                              0.031821                              0.054230
+   cf_extension         T3_CF     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          14                                 0.222444                               0.197072                  -0.222444                              0.130545                              0.257710
+   cf_extension         T3_CF            mean_step_distance         Mean pseudotemporal step distance          14                                 0.028560                               0.030980                   0.015552                              0.019143                              0.042377
+   cf_extension         T3_CF                total_variance                            Total variance          14                                 0.028560                               0.032285                   0.020252                              0.019826                              0.041266
+   cf_extension         T3_CF             transition_energy                    GDIS transition energy          14                                 0.299979                               0.218270                  -0.299979                              0.060739                              0.340901
+   cm_extension         T3_CM gaussian_differential_entropy             Gaussian differential entropy          15                                 0.067559                               0.091277                  -0.067559                              0.021765                              0.127087
+   cm_extension         T3_CM                          gdis                                      GDIS          15                                 0.095395                               0.124995                  -0.065844                              0.021524                              0.211880
+   cm_extension         T3_CM     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          15                                 0.203950                               0.220743                   0.061603                              0.105572                              0.322267
+   cm_extension         T3_CM            mean_step_distance         Mean pseudotemporal step distance          15                                 0.067559                               0.080584                  -0.042752                              0.020554                              0.095963
+   cm_extension         T3_CM                total_variance                            Total variance          15                                 0.047541                               0.083224                  -0.010493                              0.020610                              0.105910
+   cm_extension         T3_CM             transition_energy                    GDIS transition energy          15                                 0.398153                               0.370928                  -0.398153                              0.352528                              0.452505
+shared_backbone            T2 gaussian_differential_entropy             Gaussian differential entropy          19                                 0.036340                               0.046018                   0.036340                              0.031406                              0.065568
+shared_backbone            T2                          gdis                                      GDIS          19                                 0.037620                               0.068721                   0.023660                              0.023404                              0.064915
+shared_backbone            T2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          19                                 0.099110                               0.111159                  -0.081523                              0.063335                              0.151927
+shared_backbone            T2            mean_step_distance         Mean pseudotemporal step distance          19                                 0.033063                               0.040672                   0.033063                              0.023372                              0.054738
+shared_backbone            T2                total_variance                            Total variance          19                                 0.035737                               0.042238                   0.035737                              0.026027                              0.054738
+shared_backbone            T2             transition_energy                    GDIS transition energy          19                                 0.258705                               0.247644                  -0.258705                              0.242960                              0.270596
+
+3. SOURCE-to-DESTINATION METRIC CHANGE SUMMARY
+----------------------------------------------------------------------------------------------------------
+          scope transition_id                        metric                              metric_label  n_profiles  n_positive_change  median_change  mean_change  median_normalized_change
+   cf_extension         T3_CF gaussian_differential_entropy             Gaussian differential entropy          14                 13       4.382601     4.176833                  0.128791
+   cf_extension         T3_CF                          gdis                                      GDIS          14                  0      -0.051021    -0.066920                 -0.063494
+   cf_extension         T3_CF     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          14                  5      -0.002375    -0.000271                 -0.037185
+   cf_extension         T3_CF            mean_step_distance         Mean pseudotemporal step distance          14                 13       1.040583     1.096611                  0.133708
+   cf_extension         T3_CF                total_variance                            Total variance          14                 11      16.793455    16.318208                  0.188510
+   cf_extension         T3_CF             transition_energy                    GDIS transition energy          14                  3      -0.261246    -0.221273                 -0.267032
+   cm_extension         T3_CM gaussian_differential_entropy             Gaussian differential entropy          15                 15       7.259655     7.576547                  0.194883
+   cm_extension         T3_CM                          gdis                                      GDIS          15                  9       0.008419     0.054910                  0.010493
+   cm_extension         T3_CM     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          15                 11       0.016120     0.022998                  0.222365
+   cm_extension         T3_CM            mean_step_distance         Mean pseudotemporal step distance          15                 15       3.504414     3.537529                  0.332784
+   cm_extension         T3_CM                total_variance                            Total variance          15                 15      81.329043    72.183556                  0.442762
+   cm_extension         T3_CM             transition_energy                    GDIS transition energy          15                  0      -0.382052    -0.398208                 -0.382052
+shared_backbone            T2 gaussian_differential_entropy             Gaussian differential entropy          19                 19      20.373087    20.641560                  0.733574
+shared_backbone            T2                          gdis                                      GDIS          19                 15       0.053433     0.034799                  0.069650
+shared_backbone            T2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          19                 10       0.000135     0.000611                  0.001644
+shared_backbone            T2            mean_step_distance         Mean pseudotemporal step distance          19                 19       3.634440     3.516139                  0.628668
+shared_backbone            T2                total_variance                            Total variance          19                 19      42.352650    42.555944                  0.557129
+shared_backbone            T2             transition_energy                    GDIS transition energy          19                  3      -0.275850    -0.299413                 -0.293544
+
+4. CROSS-INDIVIDUAL PROFILE AGREEMENT (DESCRIPTIVE)
+----------------------------------------------------------------------------------------------------------
+          scope                        metric                              metric_label  n_pairs  median_pearson  q25_pearson  q75_pearson  median_spearman  median_pairwise_mae
+   cf_extension gaussian_differential_entropy             Gaussian differential entropy       91        0.968985     0.946496     0.980802         0.995747             2.985808
+   cf_extension                          gdis                                      GDIS       91        0.611843     0.435603     0.771312         0.408189             0.050311
+   cf_extension     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation       91        0.395585     0.012905     0.575153         0.440435             0.019604
+   cf_extension            mean_step_distance         Mean pseudotemporal step distance       91        0.930315     0.898174     0.964631         0.983971             0.808603
+   cf_extension                total_variance                            Total variance       91        0.916386     0.879293     0.956229         0.966501            10.886522
+   cf_extension             transition_energy                    GDIS transition energy       91        0.695716     0.600868     0.773911         0.727943             0.131617
+   cm_extension gaussian_differential_entropy             Gaussian differential entropy      105        0.971727     0.957806     0.983455         0.995392             3.086273
+   cm_extension                          gdis                                      GDIS      105        0.565640     0.408949     0.760492         0.436853             0.060438
+   cm_extension     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation      105        0.189910    -0.025227     0.430646         0.189711             0.018050
+   cm_extension            mean_step_distance         Mean pseudotemporal step distance      105        0.955522     0.927189     0.973558         0.990902             0.870169
+   cm_extension                total_variance                            Total variance      105        0.959283     0.920704     0.973927         0.989998            11.869175
+   cm_extension             transition_energy                    GDIS transition energy      105        0.645662     0.555295     0.732132         0.646627             0.134971
+shared_backbone gaussian_differential_entropy             Gaussian differential entropy      171        0.963668     0.943870     0.980574         0.994867             3.000408
+shared_backbone                          gdis                                      GDIS      171        0.486805     0.299112     0.684907         0.174871             0.058456
+shared_backbone     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation      171        0.246805    -0.041218     0.544723         0.243345             0.019126
+shared_backbone            mean_step_distance         Mean pseudotemporal step distance      171        0.914075     0.854715     0.952387         0.981499             0.749559
+shared_backbone                total_variance                            Total variance      171        0.885701     0.789696     0.942856         0.938987             9.781592
+shared_backbone             transition_energy                    GDIS transition energy      171        0.713184     0.630135     0.797810         0.632429             0.117655
+
+5. INTEGRATED DESCRIPTIVE BENCHMARK
+----------------------------------------------------------------------------------------------------------
+          scope transition_id                        metric                              metric_label  n_profiles  median_absolute_peak_localization_error  median_signed_peak_offset  n_positive_change  median_normalized_change  median_pearson  median_spearman
+   cf_extension         T3_CF gaussian_differential_entropy             Gaussian differential entropy          14                                 0.023791                  -0.012050                 13                  0.128791        0.968985         0.995747
+   cf_extension         T3_CF                          gdis                                      GDIS          14                                 0.040503                  -0.031866                  0                 -0.063494        0.611843         0.408189
+   cf_extension         T3_CF     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          14                                 0.222444                  -0.222444                  5                 -0.037185        0.395585         0.440435
+   cf_extension         T3_CF            mean_step_distance         Mean pseudotemporal step distance          14                                 0.028560                   0.015552                 13                  0.133708        0.930315         0.983971
+   cf_extension         T3_CF                total_variance                            Total variance          14                                 0.028560                   0.020252                 11                  0.188510        0.916386         0.966501
+   cf_extension         T3_CF             transition_energy                    GDIS transition energy          14                                 0.299979                  -0.299979                  3                 -0.267032        0.695716         0.727943
+   cm_extension         T3_CM gaussian_differential_entropy             Gaussian differential entropy          15                                 0.067559                  -0.067559                 15                  0.194883        0.971727         0.995392
+   cm_extension         T3_CM                          gdis                                      GDIS          15                                 0.095395                  -0.065844                  9                  0.010493        0.565640         0.436853
+   cm_extension         T3_CM     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          15                                 0.203950                   0.061603                 11                  0.222365        0.189910         0.189711
+   cm_extension         T3_CM            mean_step_distance         Mean pseudotemporal step distance          15                                 0.067559                  -0.042752                 15                  0.332784        0.955522         0.990902
+   cm_extension         T3_CM                total_variance                            Total variance          15                                 0.047541                  -0.010493                 15                  0.442762        0.959283         0.989998
+   cm_extension         T3_CM             transition_energy                    GDIS transition energy          15                                 0.398153                  -0.398153                  0                 -0.382052        0.645662         0.646627
+shared_backbone            T2 gaussian_differential_entropy             Gaussian differential entropy          19                                 0.036340                   0.036340                 19                  0.733574        0.963668         0.994867
+shared_backbone            T2                          gdis                                      GDIS          19                                 0.037620                   0.023660                 15                  0.069650        0.486805         0.174871
+shared_backbone            T2     mean_lag1_autocorrelation Mean lag-1 pseudotemporal autocorrelation          19                                 0.099110                  -0.081523                 10                  0.001644        0.246805         0.243345
+shared_backbone            T2            mean_step_distance         Mean pseudotemporal step distance          19                                 0.033063                   0.033063                 19                  0.628668        0.914075         0.981499
+shared_backbone            T2                total_variance                            Total variance          19                                 0.035737                   0.035737                 19                  0.557129        0.885701         0.938987
+shared_backbone            T2             transition_energy                    GDIS transition energy          19                                 0.258705                  -0.258705                  3                 -0.293544        0.713184         0.632429
+
+6. BENCHMARK QUALIFICATION
+----------------------------------------------------------------------------------------------------------
+[PASS] All benchmark metric values are finite
+[PASS] All 48 frozen scope x individual profiles are benchmarked
+[PASS] Every benchmark profile uses exactly the same windows as p18 GDIS
+[PASS] GDIS and transition-energy values are reused from p18 rather than recomputed
+
+Entropy covariance numerical safeguard used in 0 total windows.
+
+Qualification checks passed: 4/4
+
+FINAL COMPUTATIONAL STATUS: PASS
+
+INTERPRETATION RULES:
+  - Smaller peak-localization error means closer alignment to the independently frozen destination-state median.
+  - No metric is considered superior from one descriptive criterion alone.
+  - Destination-state medians are biological state landmarks, not proven transition-onset times.
+  - Pairwise profile correlations are descriptive because pairs sharing individuals are not independent.
+  - No benchmark result is used to retune GDIS.
+
+Next step:
+Apply structure-preserving circular-shift nulls and paired individual-level GDIS-vs-baseline localization tests to these now-frozen benchmark profiles.
+
+Report: <PROJECT_ROOT>/results/p21_external_GSE175634_conventional_ews_benchmark/p21_external_GSE175634_conventional_ews_benchmark_report.txt
+Tables: <PROJECT_ROOT>/results/p21_external_GSE175634_conventional_ews_benchmark/tables
+Data:   <PROJECT_ROOT>/results/p21_external_GSE175634_conventional_ews_benchmark/data
