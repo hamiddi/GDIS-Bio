@@ -4,9 +4,29 @@
 
 **Authors:** Hamid Ismail, Ahmed Harb, Basem William, and Marwan Bikdash
 
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](environment.yml)
+[![pyGDIS 1.0.0](https://img.shields.io/badge/pyGDIS-1.0.0-6f42c1.svg)](https://pypi.org/project/pygdis/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Reproducibility](https://img.shields.io/badge/workflow-reproducible-brightgreen.svg)](docs/reproducibility_workflow.md)
+
+**Repository:** https://github.com/hamiddi/GDIS-Bio
+
 GDIS-Bio is the complete reproducibility workflow accompanying the manuscript **“GDIS-Bio: A Generalized Dynamical Instability Framework for Localizing Transcriptional State Transitions in Single-Cell Trajectories.”** The repository preserves the analysis sequence from public-data acquisition through preprocessing, trajectory validation, state-space construction, GDIS calculation, sensitivity analysis, conventional benchmarking, structure-preserving null validation, independent external validation, and final evidence freezing.
 
 The framework uses the reference **pyGDIS v1.0.0** implementation and is designed to localize transition-associated instability along pseudotemporally ordered single-cell transcriptional trajectories. GDIS is treated as a complementary integrative measure rather than as a universal replacement for conventional transition statistics.
+
+## At a glance
+
+- **Discovery dataset:** GSE114412, human pancreatic endocrine differentiation.
+- **External-validation dataset:** GSE175634, human iPSC-to-cardiac differentiation.
+- **Primary state space:** 50 principal components.
+- **Primary local trajectory window:** 400 cells with a 100-cell step.
+- **Sensitivity analyses:** 5/10/20/30 PCs and 300/75 and 500/125 window configurations.
+- **Null validation:** 20,000 structure-preserving circular shifts.
+- **Benchmark metrics:** total variance, Gaussian differential entropy, mean pseudotemporal step distance, and lag-1 pseudotemporal autocorrelation.
+- **External transfer:** the GDIS formulation and primary analytical settings are applied without dataset-specific retuning.
+
+The repository includes the complete analysis sequence, compact frozen reference outputs, manuscript figures/tables used for traceability, and Linux/macOS and Windows launchers for reproducing the workflow.
 
 ## Reproducibility principles
 
@@ -47,6 +67,36 @@ python tools/check_environment.py
 
 The manuscript reference environment recorded Python 3.11.16, NumPy 2.4.6, pandas 2.3.3, SciPy 1.17.1, Scanpy 1.11.5, AnnData 0.12.19, and pyGDIS 1.0.0. Matplotlib, scikit-learn, and requests are also required; their exact versions were not recorded in the manuscript run reports.
 
+## Computational resources
+
+The workflow is CPU- and memory-intensive, particularly during preprocessing and state-space construction for GSE175634. A GPU is **not required** by the current implementation. The values below are practical recommendations for reproducing the complete workflow rather than strict hardware requirements.
+
+| Resource | Suggested starting point | Recommended for the full workflow | Notes |
+|---|---:|---:|---|
+| CPU | 8 logical cores | 16–32 logical cores | Several geometry/nearest-neighbor operations use all available cores (`n_jobs=-1`). |
+| RAM | 32 GB | 64 GB or more | External preprocessing is the most memory-intensive stage. The GSE175634 analysis includes >217,000 cells and constructs a dense float32 2,000-HVG matrix for PCA in addition to sparse count matrices and AnnData objects. |
+| Free disk space | 10 GB | 20 GB or more | The reference raw-data download is ~1.06 GiB compressed and the frozen results tree was ~1.39 GiB; additional space is needed temporarily for decompression and intermediate files. |
+| GPU | Not required | Not required | The manuscript workflow is CPU-based. |
+| Internet | Required for initial download | Broadband recommended | `p1` and `p12` download the public GEO source files. |
+
+**Operating systems.** The scripts use repository-relative paths and Python `pathlib`. Linux/HPC is recommended for the complete high-memory workflow, while Windows is supported through `run_all.ps1`. From Windows Command Prompt, the PowerShell launcher can be invoked with:
+
+```cmd
+powershell -ExecutionPolicy Bypass -File .\run_all.ps1
+```
+
+**Runtime.** Wall-clock time was not systematically benchmarked because it depends strongly on CPU count, storage speed, available memory, and network performance. Users with limited resources can execute the pipeline stage-by-stage and reuse completed intermediates rather than rerunning the full workflow.
+
+### Data and intermediate-file footprint
+
+Large public inputs and computational intermediates are intentionally excluded from GitHub. The supplied download and analysis scripts recreate them locally. In the manuscript reference run:
+
+- compressed public raw data occupied approximately **1.06 GiB**;
+- the complete results tree occupied approximately **1.39 GiB**;
+- the largest external-validation preprocessing steps require additional temporary memory and storage beyond these final footprints.
+
+For this reason, **20 GB or more of free local storage and 64 GB RAM are recommended** for a comfortable full rerun. Partial analyses and downstream stages may require substantially less.
+
 ### 3. Run the full pipeline
 
 Linux/macOS:
@@ -62,6 +112,20 @@ powershell -ExecutionPolicy Bypass -File .\run_all.ps1
 ```
 
 The full workflow is computationally intensive and produces large intermediate matrices that are intentionally excluded from GitHub. See [`docs/reproducibility_workflow.md`](docs/reproducibility_workflow.md) for the complete stage-by-stage description.
+
+### Run selected stages
+
+Each analysis stage can also be executed independently once its upstream inputs exist. For example:
+
+```bash
+python scripts/p1_download_data.py
+python scripts/p5_preprocessing_state_space.py
+python scripts/p8_gdis_primary_analysis.py
+python scripts/p12_download_preflight_GSE175634.py
+python scripts/p18_GSE175634_primary_external_gdis.py
+```
+
+This is useful for development, troubleshooting, or reproducing only a specific manuscript result. The required upstream dependencies for every stage are documented in [`docs/reproducibility_workflow.md`](docs/reproducibility_workflow.md).
 
 ## Pipeline
 
@@ -146,6 +210,18 @@ GDIS-Bio/
 
 `results/reference_outputs/` contains compact tables and reports from the frozen manuscript run so that regenerated outputs can be compared against the reference analysis. Large `.h5ad`, state-space, and trajectory-array intermediates are regenerated by the workflow and are not tracked.
 
+## Reproducibility checks
+
+Before running the analysis, verify the software environment with:
+
+```bash
+python tools/check_environment.py
+```
+
+After a rerun, compare regenerated summary tables and reports against `results/reference_outputs/`. The repository preserves compact reference evidence specifically so that important manuscript values can be audited without distributing the full multi-gigabyte intermediate results tree.
+
+For publication or archival use, we recommend recording the Git commit hash or a tagged release together with the manuscript so that the exact analysis version remains identifiable.
+
 ## Manuscript-to-code traceability
 
 See [`docs/manuscript_mapping.md`](docs/manuscript_mapping.md) for the mapping between Figures 6–10, Supplementary Figures S4–S5, Supplementary Table S11, the generating analysis stages, and the corresponding reference tables.
@@ -164,6 +240,10 @@ The primary GDIS calculations use **pyGDIS 1.0.0**, imported as `gdis` by the an
 ## Citation
 
 If you use this workflow, please cite the accompanying GDIS-Bio manuscript and this repository. GitHub-compatible citation metadata are provided in [`CITATION.cff`](CITATION.cff).
+
+## Questions and issues
+
+For reproducibility questions, unexpected software behavior, or problems recreating a manuscript output, please open an issue in the [GitHub issue tracker](https://github.com/hamiddi/GDIS-Bio/issues). When possible, include the operating system, Python/Conda environment, analysis stage, and the relevant log or error message.
 
 ## License
 
