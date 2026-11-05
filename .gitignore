@@ -26,6 +26,9 @@ results/*
 !results/README.md
 !results/reference_outputs/
 !results/reference_outputs/**
+# Local run state and regenerated source artifacts are not committed
+results/pipeline_state/
+# Selected reference outputs are explicitly whitelisted above
 
 # Temporary/log files
 *.log

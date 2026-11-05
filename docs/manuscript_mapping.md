@@ -1,16 +1,22 @@
-# Manuscript-to-code mapping
+# Manuscript v5: code-to-evidence mapping
 
-This table maps the final supplied manuscript assets to the principal analysis stages and compact reference outputs. Final publication artwork may combine or restyle multiple script-generated outputs; the numerical source remains the referenced analysis stage.
+The authoritative figure/table numbering is that of **GDIS-Bio revised manuscript v5**; historical artwork in `manuscript_assets/figures/` retains old filenames to avoid silently changing provenance. Files there are **legacy artwork** and should not be assumed to have the same number as a v5 figure.
 
-| Manuscript asset | Principal analysis stage(s) | Key reference outputs |
+| Manuscript item | Primary stages | Evidence source |
 |---|---|---|
-| Figure 6 — primary discovery GDIS profiles | `p8`, `p9` | `p8.../01_primary_gdis_summary.csv`; `p9.../01_event_localization_vs_neurog3_early.csv` |
-| Figure 7 — discovery conventional benchmark | `p10` | `p10.../02_peak_localization_benchmark.csv`; `05_integrated_benchmark_summary.csv` |
-| Figure 8 — structure-preserving null validation | `p11` | `p11.../01_circular_shift_alignment_null_tests.csv` |
-| Figure 9 — external transition localization | `p18`, `p19` | `p19.../02_individual_peak_and_transition_statistics.csv`; `07_primary_gdis_external_validation_summary.csv` |
-| Figure 10 — external benchmark | `p21`, `p22` | `p21.../04_scope_localization_summary.csv`; `p22.../06_descriptive_localization_ranking.csv` |
-| Supplementary Figure S4 — external sensitivity | `p20` | `p20.../01_profile_level_sensitivity_comparisons.csv`; `02_scope_level_sensitivity_summary.csv` |
-| Supplementary Figure S5 — individual benchmark | `p22` | `p22.../02_individual_metric_localization_and_change.csv` |
-| Supplementary Table S11 — external benchmark and paired tests | `p22` | `04_paired_gdis_vs_conventional_localization.csv`; `05_gdis_vs_transition_energy_localization.csv`; `06_descriptive_localization_ranking.csv` |
+| Figure 1: pancreatic GDIS profiles | P8–P9 | Original Figure_6 legacy illustration, numeric P8–P9 outputs |
+| Figure 2: pancreatic benchmark | P10 | Original Figure_7 legacy illustration; P10 tables |
+| Figure 3: circular-shift null | P11 | Original Figure_8 legacy illustration; P11 tables |
+| Figure 4: cardiac transition overview | P18–P19 | Original Figure_9 legacy illustration; P18–P19 tables |
+| Figure 5: cardiac benchmark | P21–P22 | Original Figure_10 legacy illustration; P21–P22 tables |
+| Supplementary Figure S4: cardiac individual profiles | External primary cardiac profiles and independent state composition | Reconstructed publication figure; original archive naming is not authoritative |
+| Supplementary Figure S5: cardiac sensitivity | P20 | Former S4 sensitivity image (legacy artwork) |
+| Supplementary Figure S6: cardiac individual-level benchmark | P22 | Former S5 individual benchmark image (legacy artwork) |
+| Supplementary Figure S7: component ablation | P24 | P24 archived summary tables; final publication figure external to this package |
+| Supplementary Figure S8: ordering robustness | P25 | P25m publication figure generator; P25 archived tables |
+| Supplementary Tables S8–S10 | P26, P27, P28 | `results/reference_outputs/reviewer_analyses/` |
+| Supplementary Tables S11–S14 | P19–P22 | Original external results and separately curated manuscript supplementary tables |
+| Supplementary Tables S15–S19 | P25 | P25 detail tables and curated manuscript supplementary tables |
+| Supplementary Table S20 | P29 | P29 archived window summary files |
 
-All paths above are under `results/reference_outputs/`.
+Supplementary Tables S1–S7 derive from the original pancreatic and cardiac results. Some final journal tables are editorial aggregations, not single script outputs. Confirm final publication assets match the submitted supplements.

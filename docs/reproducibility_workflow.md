@@ -1,57 +1,73 @@
-# Reproducibility workflow
+# Reproducibility: step-by-step pipeline
 
-The repository preserves the execution order used for the manuscript. Design and biological-landmark freezing occurs **before** GDIS calculation in both discovery and external-validation stages.
+## Levels of reproduction
 
-| Stage | Purpose |
-|---|---|
-| `p1` | Download GSE114412 Stage-5 public files |
-| `p2` | Preflight raw discovery data |
-| `p3` | Characterize discovery dataset |
-| `p4` | Validate deposited endocrine trajectory |
-| `p4b` | Validate differentiation replicates |
-| `p5` | Preprocess expression data and construct the primary state space |
-| `p6` | Evaluate PCA/state-space dimensionality sensitivity |
-| `p6b` | Validate the 50-PC reference geometry |
-| `p7` | Assemble and validate pseudotemporal sliding windows |
-| `p8` | Run the first/frozen discovery GDIS analysis |
-| `p9` | Validate discovery GDIS localization and replicate agreement |
-| `p10` | Benchmark conventional transition-associated metrics |
-| `p11` | Run discovery statistical/null validation |
-| `p12` | Download and preflight GSE175634 |
-| `p13` | Characterize external trajectories |
-| `p14` | Freeze external cohort, landmarks, and design before GDIS |
-| `p15` | Preprocess external data and construct the common state space |
-| `p16` | Validate external state-space geometry before GDIS |
-| `p17` | Assemble external trajectory windows without GDIS |
-| `p17b` | Freeze final evaluable external GDIS groups |
-| `p18` | Run the first/frozen external GDIS analysis |
-| `p19` | Validate external GDIS statistically |
-| `p20` | Run prespecified external GDIS sensitivity analyses |
-| `p21` | Benchmark conventional metrics externally |
-| `p22` | Run paired/statistical external benchmark comparison |
-| `p23` | Freeze and consolidate final external evidence |
+1. **Offline reference verification (fast):** `python tools/verify_reference.py`. Validates the packaged reviewer-output structure and selected counts; it does *not* rerun GDIS.
+2. **Inspect reference outputs:** browse `results/reference_outputs/` and `results/reference_outputs/reviewer_analyses/`; for command-line comparison against newly generated data, use `python tools/restore_review_outputs.py` only when explicit archived copies are needed.
+3. **Full scientific rerun (costly):** run the core stages from public GEO data, then reviewer stages. This requires internet, HPC-scale memory, disk and external software dependencies. This entire workflow has NOT been rerun in the repository-assembly environment.
 
-## One-command execution
+## Install
 
-Linux/macOS:
 ```bash
-bash run_all.sh
+conda env create -f environment.yml
+conda activate gdis_bio
+python tools/check_environment.py
+python tools/pipeline.py --list
+python tools/verify_reference.py
 ```
 
-Windows PowerShell:
-```powershell
-powershell -ExecutionPolicy Bypass -File .\run_all.ps1
+## Run the reproducible workflow
+
+Run the command **from any working directory**, using the Python interpreter from the activated environment. The driver always launches each script from the repository root.
+
+```bash
+# Preview commands (no computation or downloads)
+python tools/pipeline.py --phase all --dry-run
+
+# Full pipeline P1–P29 (large; can take substantial memory/disk)
+python tools/pipeline.py --phase all
+
+# Core P1–P23 only
+python tools/pipeline.py --phase core
+
+# Reviewer P24–P29 after completing all upstream core inputs
+python tools/pipeline.py --phase review --check
+python tools/pipeline.py --phase review
+
+# Select and resume a specific range
+python tools/pipeline.py --phase review --from-stage p26_ --to-stage p29_ --dry-run
+python tools/pipeline.py --phase review --resume
+
+# Run only P29 (requires archived core input files present in results/)
+python tools/pipeline.py --phase review --only p29_
+
+# P28 may require the P5 preprocessed cell-level annotations
+python tools/pipeline.py --phase review --only p28_ --p28-cells results/p5_preprocessing_state_space/data/GSE114412_endocrine_preprocessed_pca.h5ad
 ```
 
-The full run downloads >1 GB of compressed public data and creates large intermediate state-space and trajectory files. An HPC or high-memory workstation is recommended for the complete external-validation workflow.
+The equivalent Linux and Windows helpers are `bash run_pipeline.sh --phase all` and `powershell -ExecutionPolicy Bypass -File .\run_pipeline.ps1 -phase all` (Python direct invocation is preferred for full option compatibility).
 
-## Frozen-analysis safeguards
+`--check` returns a nonzero exit code when listed known prerequisites are missing; it does not verify every script-specific input.
 
-- Biological landmarks are defined independently of GDIS.
-- No dataset-specific retuning is performed for external validation.
-- Primary state space: 50 PCs; lower-dimensional alternatives are sensitivity analyses.
-- Primary windows: 400 cells with a 100-cell step; 300/75 and 500/125 are prespecified sensitivities.
-- `pyGDIS==1.0.0` is used for the primary GDIS calculations.
-- No universal biological GDIS threshold is imposed (`critical_value=None`).
-- Overlapping windows are not treated as independent inferential replicates.
-- Pseudotime ordering is not interpreted as physical-time tracking of the same cells.
+`--resume` skips only stages with a matching successful marker and source checksum created by this driver; it **does not prove** that the intermediate files still exist, that external inputs are unchanged, or that a result matches the manuscript. Delete `results/pipeline_state/` to force recomputation. The driver stops on the first nonzero stage exit. It does not silently skip unsuccessful stages.
+
+## Review stages
+
+P24 requires archived P18 component profiles. P25 family relies on frozen cardiac P17/P18 trajectory inputs; its local perturbation and alternative-ordering stages may be expensive. P26/P27 rely on frozen P10/P11 data; P28 may require P5 original cell annotations; P29 relies on P7/P17/P18 window metadata. These upstream data are generated by the core pipeline and may not be present in the compact GitHub download.
+
+The updated `p25m` creates a v5-labeled **Figure S8** and auxiliary tables. The historical `p25l` generator produces legacy numbering and is intentionally excluded from the default pipeline.
+
+The archived review reference outputs can be copied to canonical working paths for inspection using `python tools/restore_review_outputs.py --apply`; **do not use `--overwrite` if you have fresh experimental results**. Restoration is not an independent computation, and published result comparison should use distinct paths.
+
+For full pipeline hardware guidelines, see README. Python version and major dependencies are pinned as they were reported, though additional transitive dependencies are resolved by Conda. The reference software version is `pygdis==1.0.0`.
+
+## Verification and release
+
+```bash
+python -m compileall -q scripts tools
+python tools/verify_reference.py
+python tools/pipeline.py --phase all --dry-run
+python tools/check_repository.py
+```
+
+Before making the GitHub repository public, rerun the workflow on a clean checkout or explicitly disclose which stages were verified using frozen outputs instead. Store a reproducibility log including CPU, RAM, versions, dates, scripts and commit ID.
