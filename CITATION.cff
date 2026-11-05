@@ -3,6 +3,7 @@ message: "If you use GDIS-Bio, please cite this repository and the accompanying 
 title: "GDIS-Bio: A Generalized Dynamical Instability Framework for Localizing Transcriptional State Transitions in Single-Cell Trajectories"
 type: software
 version: 1.1.0
+doi: 10.5281/zenodo.23984772
 authors:
   - family-names: Ismail
     given-names: Hamid
