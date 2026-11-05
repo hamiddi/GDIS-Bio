@@ -24,6 +24,7 @@
 - [Analysis pipeline](#analysis-pipeline)
 - [P25 ordering-robustness pipeline](#p25-ordering-robustness-pipeline)
 - [Installation](#installation)
+- [Computational requirements](#computational-requirements)
 - [Quick start](#quick-start)
 - [Reproducibility and validation](#reproducibility-and-validation)
 - [Key results represented in this repository](#key-results-represented-in-this-repository)
@@ -193,22 +194,20 @@ A repository-level validator is included:
 bash scripts/p25_pipeline_validate.sh --smoke
 ```
 
-The smoke mode always checks:
+The smoke mode checks:
 
 - required P25 files;
 - Python dependencies;
 - syntax compilation;
-- obvious temporary/backup artifacts.
+- obvious temporary/backup artifacts;
+- one real-data P25-I reconstruction;
+- absence of a computational failure in the smoke profile.
 
-If the generated P15 state-space file and P17b frozen manifest are present, it also runs one real-data P25-I reconstruction and checks that no computational failure occurs. A clean source-only GitHub clone is not expected to contain those generated upstream files, so their absence is reported as informational rather than as a validation failure.
-
-For integrity checking of an already materialized full P25 output tree:
+For integrity checking of the already generated full P25 output tree:
 
 ```bash
 bash scripts/p25_pipeline_validate.sh --verify
 ```
-
-When the full P25-I output is present, `--verify` checks the 48-profile cohort numerically. In a source-only clone without generated results, it completes the repository/code checks and reports that numerical verification was skipped.
 
 The validated P25-I cohort contains:
 
@@ -277,6 +276,21 @@ For a complete scientific rerun, Conda is recommended because the workflow inclu
 
 ---
 
+
+## Computational requirements
+
+Complete execution is computationally intensive, especially for the cardiac dataset, which includes over **217,000 cells** before later eligibility filtering. The following are practical planning estimates, not guaranteed minimum requirements or measured performance bounds.
+
+| Resource | Suggested starting point | Recommended for complete analysis | Notes |
+|---|---:|---:|---|
+| CPU | 8 logical cores | 16–32 logical cores | Nearest-neighbor and geometry calculations may use multiple cores |
+| RAM | 32 GB | **64 GB or more** | External preprocessing and PCA can have large transient memory requirements |
+| Free disk space | 10 GB | **20 GB or more** | Downloaded data, decompression, and intermediate matrices need extra space |
+| GPU | Not required | Not required | Reference workflow is CPU-oriented |
+| Internet | Required | Stable broadband | GEO acquisition stages download public data |
+
+The historical run recorded approximately **1.06 GiB of compressed source data** and approximately **1.39 GiB of results**, but temporary intermediate and memory demands can exceed those final sizes. Wall-clock time was not systematically benchmarked. **Linux/HPC is recommended for a complete rerun.**
+
 ## Quick start
 
 Clone the repository and create the environment:
@@ -292,7 +306,7 @@ conda activate gdis_bio
 Check that the scientific scripts compile:
 
 ```bash
-PYTHONPYCACHEPREFIX=/tmp/gdis_bio_pycache python -m compileall -q scripts
+python -m compileall -q scripts
 ```
 
 Validate the P25 pipeline:
@@ -302,33 +316,11 @@ bash scripts/p25_pipeline_validate.sh --smoke
 bash scripts/p25_pipeline_validate.sh --verify
 ```
 
-### Pipeline driver
+### Important repository-assembly note
 
-The repository includes a transparent pipeline driver that executes the archived scientific scripts as separate Python processes without changing their analytical logic.
+The release archive and the scientific `scripts/` directory may be distributed separately during repository preparation. Before publishing or tagging a release, confirm that the final GitHub repository contains the directories and files referenced by its launch scripts and documentation.
 
-```bash
-# Inspect all stages
-python tools/pipeline.py --list
-
-# Confirm that all stage scripts are present
-python tools/pipeline.py --phase all --check
-
-# Preview commands without executing the scientific analyses
-python tools/pipeline.py --phase all --dry-run
-
-# Original P1–P23 workflow
-python tools/pipeline.py --phase core
-
-# Reviewer-response P24–P29 workflow
-python tools/pipeline.py --phase review
-
-# Complete workflow
-python tools/pipeline.py --phase all
-```
-
-The historical `run_all.sh` / `run_all.ps1` launchers execute the P1–P23 core workflow. `run_pipeline.sh` / `run_pipeline.ps1` invoke `tools/pipeline.py`.
-
-Do not commit:
+In particular, do not commit:
 
 ```text
 __pycache__/
@@ -352,7 +344,7 @@ GDIS-Bio distinguishes several levels of reproducibility.
 At minimum:
 
 ```bash
-PYTHONPYCACHEPREFIX=/tmp/gdis_bio_pycache python -m compileall -q scripts
+python -m compileall -q scripts
 bash scripts/p25_pipeline_validate.sh --smoke
 ```
 
@@ -443,9 +435,6 @@ GDIS-Bio/
 │   ├── ...
 │   ├── p25m_...py
 │   └── p25_pipeline_validate.sh
-├── tools/
-│   ├── check_environment.py
-│   └── pipeline.py
 ├── docs/
 │   ├── dataset_descriptions.md
 │   ├── reproducibility_workflow.md
@@ -464,7 +453,7 @@ GDIS-Bio/
 └── run_pipeline.ps1
 ```
 
-The top-level launchers and the `tools/` utilities are included in this repository and are checked during release preparation.
+Some release assemblies may additionally include `tools/` or `config/`. If those directories are referenced by a wrapper script, they must be present in the final public repository before that wrapper is advertised as supported.
 
 ---
 
